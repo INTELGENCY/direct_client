@@ -1,0 +1,22 @@
+@import  "./Drawer.scss";
+.layoutCommon{
+min-width: 97%;
+}
+@media screen and (max-width:1600px) and (min-width: 1200px){
+    .layoutCommon{
+    max-width: 95%;
+    min-width: 94%;
+    }
+}
+@media screen and  (max-width: 1199px) and (min-width: 900px) {
+    .layoutCommon{
+    max-width: 93%;
+    min-width: 92%;
+    }
+}
+@media screen and  (max-width: 899px)  {
+    .layoutCommon{
+    // max-width: 90%;
+    min-width: 10%;
+    }
+}
