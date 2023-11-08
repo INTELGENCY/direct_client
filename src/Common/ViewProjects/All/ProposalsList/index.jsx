@@ -95,7 +95,7 @@ function ProposalsList() {
       id: 1,
       ProjectNames: "Development of Brake Para",
       Category: "Defence",
-      Initiator: "Aman Ullah Mahfooz",
+      Initiator: "Aman Ullah",
       StartDate: "3/3/2021",
       EndDate: "3/3/2024",
       ProjectStatus: "ongoing",
