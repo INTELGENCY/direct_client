@@ -52,12 +52,12 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-function DataGrids({ checkboxSelection }) {
+function DataGrids({ checkboxSelection, dataRow, dataColumn }) {
   return (
     <Card sx={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={rows}
-        columns={columns}
+        rows={dataRow ? dataRow : rows}
+        columns={dataColumn ? dataColumn : columns}
         initialState={{
           pagination: {
             paginationModel: {

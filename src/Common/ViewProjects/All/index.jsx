@@ -17,6 +17,7 @@ import axios from "axios";
 import { keys } from "../../../config";
 import Skeletons from "../../Skeletons";
 import DataGrids from "../../TableMui/DataGrids";
+import ProposalsList from "./ProposalsList";
 const TabCustome = styled(Tab)(({ theme }) => ({
   border: "1px solid  rgba(0, 0, 0, 0.51)",
   //   color: "rgba(0, 0, 0, 0.51)",
@@ -65,11 +66,7 @@ const TabListCustome = styled(TabList)(({ theme }) => ({
     width: "80vw",
   },
 }));
-const TabData = [
-  "General Purpose Projects",
-  "Specialized Purpose Projects",
-  "Call for Proposals",
-];
+const TabData = ["Projects", "Call for Proposals"];
 function All() {
   const [value, setValue] = useState(1);
   const [postsAll, setPostsAll] = useState([]);
@@ -152,12 +149,12 @@ function All() {
               )}
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={2}>
-              <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
-                Comming Soon!
-              </Typography>
-            </TabPanel>
-            <TabPanel sx={{ paddingInline: "0px" }} value={3}>
-              <DataGrids />
+              <ProposalsList />
+              <TabPanel sx={{ paddingInline: "0px" }} value={3}>
+                <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
+                  Comming Soon!
+                </Typography>
+              </TabPanel>
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={4}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
