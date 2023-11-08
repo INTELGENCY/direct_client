@@ -16,24 +16,19 @@ function TimelineMui({ content }) {
           },
         }}
       >
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot sx={{ backgroundColor: "#24B56F", p:.6 }} />
-            <TimelineConnector sx={{ backgroundColor: "#24B56F" }} />
-          </TimelineSeparator>
-          <TimelineContent>
-            <TimeLineContent name={"safdasdf"} />
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot sx={{ backgroundColor: "#24B56F", p:.6 }} />
-            <TimelineConnector sx={{ backgroundColor: "#24B56F" }} />
-          </TimelineSeparator>
-          <TimelineContent>
-            <TimeLineContent name={"safdasdf"} />
-          </TimelineContent>
-        </TimelineItem>
+        {Array(2)
+          .fill(null)
+          .map(() => (
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot sx={{ backgroundColor: "#24B56F", p: 0.6 }} />
+                <TimelineConnector sx={{ backgroundColor: "#24B56F" }} />
+              </TimelineSeparator>
+              <TimelineContent>
+                <TimeLineContent name={"safdasdf"} />
+              </TimelineContent>
+            </TimelineItem>
+          ))}
       </Timeline>
     </>
   );
@@ -50,14 +45,19 @@ const TimeLineContent = ({ name }) => {
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Stack direction={"row"} gap={.7}>
+        <Stack direction={"row"} gap={0.7}>
           <Typography color={"GrayText"}>3/12/2021</Typography>
           <Typography color={"GrayText"}>-</Typography>
           <Typography color={"GrayText"}>3/12/2024</Typography>
         </Stack>
       </Grid>
       <Grid item xs={12}>
-        <Typography paddingBottom={2} variant="body1" textAlign={"justify"} fontWeight={500}>
+        <Typography
+          paddingBottom={2}
+          variant="body1"
+          textAlign={"justify"}
+          fontWeight={500}
+        >
           Contrary to popular belief, Lorem Ipsum is not simply random text. It
           has roots in a piece of classical Latin literature from 45 BC, making
           it over 2000 years old. Richard McClintock, a Latin professor at
