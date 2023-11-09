@@ -3,6 +3,7 @@ import MainHeadings from "../../../Common/AnimationMui/MainHeadings";
 import DisplayUploadedFiles from "../../../Common/DisplayUploadedFiles";
 import IconsHeadings from "../../../Common/AnimationMui/IconHeadings";
 import { CloudUpload, Description, Equalizer, Language } from "@mui/icons-material";
+import MilesStonesAdmin from "./MilesStonesAdmin";
 function ViewProposals() {
   return (
     <Grid container sx={{ pt: 6, pb: 2, pl: 2, pr: 2 }} gap={4}>
@@ -96,6 +97,9 @@ function ViewProposals() {
             </Typography>
           </Stack>
         </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <MilesStonesAdmin />
       </Grid>
       <Grid item xs={12}>
         <DisplayUploadedFiles />
