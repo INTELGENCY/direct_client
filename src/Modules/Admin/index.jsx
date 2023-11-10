@@ -8,6 +8,7 @@ import Otp from "./OTP";
 import ProjectDetails from "../../Common/ProjectDetails";
 import ViewProposals from "./ViewProposals/index.jsx";
 import ViewLists from "./SubAdmin/ViewLists/index.jsx";
+import ProposalList from "./ProposalList/index.jsx";
 function index() {
   return (
     <Routes>
@@ -20,6 +21,7 @@ function index() {
             element={<ProjectDetails />}
           />
           <Route path="/dashboard/subadmin" element={<ViewLists />} />
+          <Route path="/dashboard/proposallist" element={<ProposalList />} />
         </Route>
       </Route>
       <Route path="/admin" element={<Authenticator Authenticating />}>

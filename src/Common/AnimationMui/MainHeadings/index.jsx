@@ -15,11 +15,11 @@ const RightBorder = styled("div")(({ theme }) => ({
   border: "2px solid" + theme.palette.bg.greenMui,
   borderRadius: "17px",
 }));
-function MainHeadings({ text }) {
+function MainHeadings({ text, variant }) {
   return (
     <Grow in timeout={850}>
       <div>
-        <Typography variant="h1">{text}</Typography>
+        <Typography variant={variant ? variant : "h1"}>{text}</Typography>
         <DividerOne>
           <LeftBorder></LeftBorder>
           <RightBorder></RightBorder>
