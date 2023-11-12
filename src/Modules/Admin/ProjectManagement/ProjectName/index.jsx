@@ -9,8 +9,8 @@ import {
   Tabs,
   Tab,
 } from "@mui/material";
-import React from "react";
 import Overview from "../Overview";
+import { useState } from "react";
 const AvatarUpload = styled(Avatar)(({ theme }) => ({
   width: "170px",
   height: "170px",
@@ -24,16 +24,11 @@ const Pstyled = styled(Typography)(({ theme }) => ({
   // lineHeight: 1.6,
   fontWeight: "400",
 }));
-const arrayTabs = ["Overview", "Management", "Milestones"];
-function ProjectName() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+const arrayTabs = ["Overview", "Milestones"];
+function ProjectName({ value, handleChange }) {
   return (
     <Card elevation={4} sx={{ p: 3 }}>
-      <Grid container gap={.5}>
+      <Grid container gap={0.5}>
         <Grid item xs={12}>
           <Stack width={"100%"} direction={"row"} gap={2}>
             <AvatarUpload variant="square" />
