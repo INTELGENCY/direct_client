@@ -4,7 +4,7 @@ import Proposals from "./Proposals";
 
 function ProposalList() {
   return (
-    <Grid container gap={6} sx={{ pt: 8 }}>
+    <Grid container gap={6} sx={{ pt: 8, pb: 4 }}>
       <Grid item xs={12}>
         <ProjectName />
       </Grid>

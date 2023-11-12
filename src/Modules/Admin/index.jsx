@@ -9,6 +9,7 @@ import ProjectDetails from "../../Common/ProjectDetails";
 import ViewProposals from "./ViewProposals/index.jsx";
 import ViewLists from "./SubAdmin/ViewLists/index.jsx";
 import ProposalList from "./ProposalList/index.jsx";
+import ProjectManagement from "./ProjectManagement";
 function index() {
   return (
     <Routes>
@@ -22,6 +23,7 @@ function index() {
           />
           <Route path="/dashboard/subadmin" element={<ViewLists />} />
           <Route path="/dashboard/proposallist" element={<ProposalList />} />
+          <Route path="/dashboard/projectmanagement" element={<ProjectManagement />} />
         </Route>
       </Route>
       <Route path="/admin" element={<Authenticator Authenticating />}>

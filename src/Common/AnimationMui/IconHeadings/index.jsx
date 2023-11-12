@@ -7,6 +7,8 @@ function IconsHeadings({
   helpOutline,
   button,
   startIconButton,
+  paddingBottom,
+  paddingLeft,
   handleClickButton,
 }) {
   return (
@@ -14,7 +16,11 @@ function IconsHeadings({
       direction={"row"}
       justifyContent={"flex-start"}
       alignItems={"center"}
-      gap={2}
+      gap={1.5}
+      sx={{
+        pb: paddingBottom ? paddingBottom : 0,
+        pl: paddingLeft ? paddingLeft : 0,
+      }}
     >
       <Fab disabled size="medium" aria-label="upload">
         {icons}
