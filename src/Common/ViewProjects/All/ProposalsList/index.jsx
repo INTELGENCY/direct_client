@@ -1,7 +1,9 @@
 import { Button, Chip, Fade, Grid, Tooltip, Typography } from "@mui/material";
 import DataGrids from "../../../TableMui/DataGrids";
+import { useNavigate } from "react-router-dom";
 
 function ProposalsList() {
+  const navigate = useNavigate()
   const columns = [
     {
       field: "id",
@@ -82,7 +84,11 @@ function ProposalsList() {
       headerAlign: "center",
       editable: true,
       renderCell: (param) => (
-        <Button variant="contained" color="primary">
+        <Button
+          onClick={() => navigate("/directportal/dashboard/proposallist")}
+          variant="contained"
+          color="primary"
+        >
           View
         </Button>
       ),
