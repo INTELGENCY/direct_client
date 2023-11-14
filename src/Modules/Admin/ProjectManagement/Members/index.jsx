@@ -1,4 +1,6 @@
-import { Search } from "@mui/icons-material";
+import { AdminPanelSettings, LocationCity, Search } from "@mui/icons-material";
+import BusinessIcon from "@mui/icons-material/Business";
+import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import {
   Grid,
   IconButton,
@@ -48,13 +50,46 @@ function Members() {
         </Stack>
       </Grid>
       <Grid item xs={12}>
-        <CardSection sectionName={"Management Team"} color={"#2980b9"} />
+        <CardSection
+          sectionName={"Management Team"}
+          icons={
+            <AdminPanelSettings
+              sx={{
+                color: "bg.darkBlue",
+                fontSize: "23px",
+              }}
+            />
+          }
+          color={"#2980b9"}
+        />
       </Grid>
       <Grid item xs={12}>
-        <CardSection sectionName={"Industry"} color={"#9c88ff"} />
+        <CardSection
+          sectionName={"Industry"}
+          color={"#9c88ff"}
+          icons={
+            <BusinessIcon
+              sx={{
+                color: "bg.darkBlue",
+                fontSize: "25px",
+              }}
+            />
+          }
+        />
       </Grid>
       <Grid item xs={12}>
-        <CardSection sectionName={"Funding Agency"} color={"#fa8231"} />
+        <CardSection
+          sectionName={"Funding Agency"}
+          color={"#fa8231"}
+          icons={
+            <LocationCity
+              sx={{
+                color: "bg.darkBlue",
+                fontSize: "25px",
+              }}
+            />
+          }
+        />
       </Grid>
     </Grid>
   );
