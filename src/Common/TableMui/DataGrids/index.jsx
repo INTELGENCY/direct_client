@@ -8,7 +8,9 @@ const columns = [
   {
     field: "id",
     headerName: "ID",
-    width: 90,
+    width: 60,
+    align:"center",
+    headerAlign:"center"
   },
   {
     field: "firstName",

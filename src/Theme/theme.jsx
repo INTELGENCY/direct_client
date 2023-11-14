@@ -4,7 +4,7 @@ export const customTheme = createTheme({
   // Extend the base theme's palette
   palette: {
     bg: {
-      black: "rgb(27, 28, 28  )",
+      black: "rgb(27, 28, 28)",
       darkBlue: "#252B42",
       blue: "#3498db",
       lightPurple: "#5758BB",
@@ -24,6 +24,9 @@ export const customTheme = createTheme({
       greenDark: "#098E6E",
       greenDarker: "#115740",
       greenGradient: `linear-gradient(269deg, #075B2B 16.65%, #098E6E 97.87%) `,
+    },
+    boxShadows: {
+      boxShadowNormal: "0px 0px 10px 0px rgba(7, 6, 18, 0.20)",
     },
     text: {
       dark: darkColor,
