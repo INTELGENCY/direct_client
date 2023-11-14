@@ -7,14 +7,20 @@ import {
   Grid,
   Stack,
   Typography,
+  styled,
 } from "@mui/material";
-
+const ButtonDelete = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.bg.slightlyLightRed,
+  "&:hover": {
+    backgroundColor: theme.palette.bg.normalRed,
+  },
+}));
 function Cards() {
   return (
     <Card
       sx={{
-        pb: 4,
-        pt: 6,
+        pb: 6,
+        pt: 7.5,
         pr: 4,
         pl: 4,
         boxShadow: "0px 0px 10px 0px rgba(7, 6, 18, 0.20)",
@@ -23,7 +29,7 @@ function Cards() {
       <Grid container gap={2}>
         <Grid item xs={12}>
           <Stack
-            gap={1}
+            gap={2}
             direction={"column"}
             justifyContent={"center"}
             alignItems={"center"}
@@ -41,13 +47,21 @@ function Cards() {
           <Divider></Divider>
         </Grid>
         <Grid item xs={12}>
-          <Stack direction={"column"} alignItems={"center"} gap={1}>
-            <Button variant="outlined" startIcon={<Face />}>
-              View Profile
+          <Stack
+            direction={"row"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            gap={1.5}
+          >
+            <Button variant="contained" startIcon={<Face />}>
+              Profile
             </Button>
-            <Button variant="outlined" color="error" startIcon={<Delete />}>
-              Remove From Team
-            </Button>
+            <ButtonDelete
+              variant="contained"
+              startIcon={<Delete />}
+            >
+              Remove
+            </ButtonDelete>
           </Stack>
         </Grid>
       </Grid>

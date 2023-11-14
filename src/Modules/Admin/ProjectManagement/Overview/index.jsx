@@ -9,11 +9,13 @@ import {
   Tooltip,
   Typography,
   Zoom,
+  styled,
 } from "@mui/material";
 import InfoCards from "./InfoCards";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
 import { AdminPanelSettings, Cloud, TaskSharp } from "@mui/icons-material";
 import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
+import { CardsData } from "./data";
 const columnsFiles = [
   {
     field: "id",
@@ -315,27 +317,39 @@ const rowsTasks = [
     detail: "",
   },
 ];
+const StyledIconCloud = styled(Cloud)(({ theme }) => ({
+  color: theme.palette.bg.darkBlue,
+  fontSize: "20px",
+}));
+const StyledIconAdminPanelSettings = styled(AdminPanelSettings)(
+  ({ theme }) => ({
+    color: theme.palette.bg.darkBlue,
+    fontSize: "20px",
+  })
+);
+const StyledIconTaskSharp = styled(TaskSharp)(({ theme }) => ({
+  color: theme.palette.bg.darkBlue,
+  fontSize: "20px",
+}));
 function Overview() {
   return (
     <Grid container rowGap={2} justifyContent={"space-between"}>
       <Grid item xs={12}>
-        <Grid container justifyContent={"space-between"}>
-          {Array(3)
-            .fill(null)
-            .map((e, i) => (
-              <Grid item xs={3.9}>
-                <InfoCards />
-              </Grid>
-            ))}
+        <Grid alignItems="stretch" container justifyContent={"space-between"}>
+          {CardsData?.map((e, i) => (
+            <Grid item xs={3.9}>
+              <InfoCards dataCards={e} key={i} />
+            </Grid>
+          ))}
         </Grid>
       </Grid>
       <Grid item xs={6.85}>
         <Card elevation={4} sx={{ pt: 2 }}>
           <IconsHeadings
-            paddingLeft={1}
+            paddingLeft={2}
             paddingBottom={2}
             text={"Latest Files"}
-            icons={<Cloud sx={{ color: "#252B42" }} />}
+            icons={<StyledIconCloud />}
           />
           <DataGrids dataRow={rowsFiles} dataColumn={columnsFiles} />
         </Card>
@@ -343,10 +357,10 @@ function Overview() {
       <Grid item xs={5}>
         <Card elevation={4} sx={{ pt: 2 }}>
           <IconsHeadings
-            paddingLeft={1}
+            paddingLeft={2}
             paddingBottom={2}
             text={"Subadmins"}
-            icons={<AdminPanelSettings sx={{ color: "#252B42" }} />}
+            icons={<StyledIconAdminPanelSettings />}
           />
           <DataGrids dataRow={rowSubadmin} dataColumn={columnsSubadmin} />
         </Card>
@@ -354,10 +368,10 @@ function Overview() {
       <Grid item xs={12}>
         <Card elevation={4} sx={{ pt: 2 }}>
           <IconsHeadings
-            paddingLeft={1}
+            paddingLeft={2}
             paddingBottom={2}
             text={"Tasks"}
-            icons={<TaskSharp sx={{ color: "#252B42" }} />}
+            icons={<StyledIconTaskSharp />}
           />
           <DataGrids dataRow={rowsTasks} dataColumn={columnsTasks} />
         </Card>
