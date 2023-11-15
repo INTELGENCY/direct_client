@@ -1,14 +1,11 @@
-import { useState } from "react";
-import { Button, ButtonGroup, Card, Divider, Grid, Stack } from "@mui/material";
+import { Card, Divider, Grid } from "@mui/material";
 import { Gantt } from "gantt-task-react";
-import "gantt-task-react/dist/index.css";
-import ViewSwitcher from "./ViewSwitcher";
-import { initTasks, getStartEndDateForProject } from "./Data";
-import AttachmentsMilestones from "./AttachmentsMilestones";
-import GanttCharts from "./GanttCharts";
-import TimelineAdmin from "./TimelineAdmin";
-import Tasks from "./Tasks";
-function Milestones() {
+import ViewSwitcher from "../ViewSwitcher";
+import { initTasks } from "../Data";
+import { useState } from "react";
+import { customTheme } from "../../../../../Theme/theme";
+
+function GanttCharts() {
   const [view, setView] = useState("Day");
   const [tasks, setTasks] = useState(initTasks());
   const [isChecked, setIsChecked] = useState(true);
@@ -77,18 +74,35 @@ function Milestones() {
   };
 
   return (
-    <Grid container gap={4}>
-      <Grid item xs={12}>
-        <Tasks />
-      </Grid>
-      <Grid item xs={12}>
-        <GanttCharts />
-      </Grid>
-      <Grid item xs={12}>
-        <AttachmentsMilestones />
-      </Grid>
-    </Grid>
+    <div>
+      <Card
+        sx={{ p: 3, boxShadow: customTheme.palette.boxShadows.boxShadowTable }}
+      >
+        <Grid container gap={2}>
+          <Grid item xs={12}>
+            <ViewSwitcher onViewModeChange={(viewMode) => setView(viewMode)} />
+          </Grid>
+          <Grid item xs={12}>
+            <Divider></Divider>
+          </Grid>
+          <Grid item xs={12}>
+            <Gantt
+              tasks={tasks}
+              viewMode={view}
+              onDateChange={handleTaskChange}
+              onDelete={handleTaskDelete}
+              onProgressChange={handleProgressChange}
+              onDoubleClick={handleDoubleClick}
+              onSelect={handleSelect}
+              onExpanderClick={handleExpanderClick}
+              listCellWidth={isChecked ? "155px" : ""}
+              columnWidth={columnWidth}
+            />
+          </Grid>
+        </Grid>
+      </Card>
+    </div>
   );
 }
 
-export default Milestones;
+export default GanttCharts;
