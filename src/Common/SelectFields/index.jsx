@@ -127,7 +127,7 @@ function SelectFields({
             placeholder="i am select"
           >
             {array.map((e, i) => (
-              <MenuItem value={10} key={i}>
+              <MenuItem  value={i} key={i}>
                 {e}
               </MenuItem>
             ))}

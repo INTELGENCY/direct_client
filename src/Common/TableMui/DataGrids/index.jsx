@@ -9,8 +9,8 @@ const columns = [
     field: "id",
     headerName: "ID",
     width: 60,
-    align:"center",
-    headerAlign:"center"
+    align: "center",
+    headerAlign: "center",
   },
   {
     field: "firstName",
@@ -64,9 +64,10 @@ function DataGrids({ checkboxSelection, dataRow, dataColumn }) {
     <Card sx={{ height: 400, width: "100%" }}>
       <DataGrid
         sx={{
-          "& .MuiDataGrid-root": {
+          "&.MuiDataGrid-root": {
             border: "none !important",
             borderWidth: "none !important",
+            outline: "none",
           },
         }}
         rows={dataRow ? dataRow : rows}

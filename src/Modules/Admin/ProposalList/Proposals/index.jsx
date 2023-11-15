@@ -5,15 +5,31 @@ import {
   Avatar,
   AvatarGroup,
   Button,
+  Card,
   Grid,
+  IconButton,
+  Rating,
   Stack,
+  TextField,
   Typography,
 } from "@mui/material";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
 import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
-import { ExpandMore, Propane, Share, ShareOutlined } from "@mui/icons-material";
+import {
+  Close,
+  ExpandMore,
+  Propane,
+  Share,
+  ShareOutlined,
+  Star,
+} from "@mui/icons-material";
 import MainHeadings from "../../../../Common/AnimationMui/MainHeadings";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import ModalMui from "../../../../Common/ModalMui";
+import InputFields from "../../../../Common/InputFields/InputFields";
+import SelectFields from "../../../../Common/SelectFields";
 const rows = [
   {
     id: 1,
@@ -42,6 +58,10 @@ const rows = [
 ];
 function Proposals() {
   const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
+
   const columns = [
     {
       field: "id",
@@ -69,30 +89,84 @@ function Proposals() {
       renderCell: (params) =>
         params.row.researcherName === "" ||
         params.row.researcherName === undefined ? (
-          <Button variant="contained" startIcon={<ShareOutlined />}>
-            Share
-          </Button>
+          <>
+            <Button
+              onClick={handleOpenModal}
+              component={motion.div}
+              whileTap={{ scale: 0.9 }}
+              variant="contained"
+              endIcon={<ShareOutlined />}
+            >
+              Assign
+            </Button>
+            <ModalMui
+              openModalMui={openModal}
+              handleCloseModalMui={handleCloseModal}
+              content={<ModalContent handleCloseModal={handleCloseModal} />}
+            />
+          </>
         ) : (
           params.row.researcherName
         ),
     },
     {
       field: "viewBtn",
-      headerName: "Actions",
-      width: 100,
+      headerName: "View Proposal",
+      width: 150,
       editable: true,
       renderCell: (params) => (
         <Button
+          component={motion.div}
+          whileTap={{ scale: 0.9 }}
           onClick={() => navigate("/directportal/dashboard/viewproposal")}
           variant="contained"
         >
           View
         </Button>
       ),
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "feedbackResearcher",
+      headerName: "Feedback From Researcher",
+      width: 300,
+      editable: true,
+      renderCell: (params) => (
+        <Stack direction="row" alignItems={"center"} gap={1}>
+          <Rating
+            name="text-feedback"
+            value={4.3}
+            readOnly
+            precision={0.1}
+            emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
+          />
+          <Typography letterSpacing={1} variant={"caption"}>(4.2)</Typography>
+        </Stack>
+      ),
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "viewFeedback",
+      headerName: "View Feedback",
+      width: 200,
+      editable: true,
+      renderCell: (params) => (
+        <Button
+          component={motion.div}
+          whileTap={{ scale: 0.9 }}
+          variant="contained"
+        >
+          View
+        </Button>
+      ),
+      align: "center",
+      headerAlign: "center",
     },
   ];
   return (
-    <Grid container gap={2}>
+    <Grid container gap={4}>
       <Grid item xs={12}>
         <Stack
           direction={"row"}
@@ -100,39 +174,72 @@ function Proposals() {
           justifyContent={"space-between"}
         >
           <MainHeadings variant={"h2"} text={"Proposals"} />
-
-          <Stack
-            direction={"row"}
-            gap={2}
-            alignItems={"center"}
-            justifyContent={"flex-end"}
-          >
-            <AvatarGroup max={4}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-              <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-              <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-              <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
-              <Avatar
-                alt="Trevor Henderson"
-                src="/static/images/avatar/5.jpg"
-              />
-            </AvatarGroup>
-            <Button
-              color="success"
-              sx={{ textTransform: "capitalize" }}
-              variant="outlined"
-              endIcon={<Share />}
-            >
-              Share
-            </Button>
-          </Stack>
         </Stack>
       </Grid>
       <Grid item xs={12}>
-        <DataGrids dataRow={rows} dataColumn={columns} />
+        <Card elevation={2}>
+          <DataGrids dataRow={rows} dataColumn={columns} />
+        </Card>
       </Grid>
     </Grid>
   );
 }
 
 export default Proposals;
+
+function ModalContent({ handleCloseModal }) {
+  const arraySelect = [
+    "IT",
+    "Robotics",
+    "Manfacturer",
+    "Mechanics",
+    "Data Management",
+  ];
+  return (
+    <Grid container gap={2}>
+      <Grid item sx={{ mb: 3 }} xs={12}>
+        <Typography variant="h2">Assign Proposal</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <SelectFields label={"Select Field"} array={arraySelect} />
+      </Grid>
+      <Grid item xs={12}>
+        <InputFields
+          type={"search"}
+          label={"Researcher"}
+          placeholder={"Researcher"}
+        />
+      </Grid>
+      <Grid item sx={{ mt: 2 }} xs={12}>
+        <Stack
+          gap={1}
+          direction={"row"}
+          justifyContent={"flex-end"}
+          alignItems={"center"}
+        >
+          <Button
+            component={motion.div}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleCloseModal}
+            sx={{
+              backgroundColor: "bg.slightlyLightRed",
+              "&:hover": {
+                backgroundColor: "bg.normalRed",
+              },
+            }}
+            variant="contained"
+          >
+            Cancel
+          </Button>
+          <Button
+            component={motion.div}
+            whileTap={{ scale: 0.9 }}
+            variant="contained"
+          >
+            Assign
+          </Button>
+        </Stack>
+      </Grid>
+    </Grid>
+  );
+}

@@ -258,7 +258,9 @@ function InputFields({
       )}
       {type === "search" && (
         <TextField
-          type="text"
+          type="search"
+          fullWidth
+          placeholder="Search..."
           InputProps={{
             endAdornment: (
               <InputAdornment sx={{ cursor: "pointer" }} position="end">
