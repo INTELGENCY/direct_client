@@ -4,14 +4,21 @@ import {
   Chip,
   Divider,
   Grid,
-  LinearProgress,
+  IconButton,
   Stack,
   Typography,
 } from "@mui/material";
 import { customTheme } from "../../../../../../Theme/theme";
 import ProgressMui from "../../../../../../Common/ProgressMui";
+import { motion } from "framer-motion";
+import ModalMui from "../../../../../../Common/ModalMui";
+import { useState } from "react";
+import ModalContent from "./ModalContent";
 
 function Cards() {
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
   return (
     <Card
       sx={{
@@ -30,14 +37,16 @@ function Cards() {
             <Typography variant="h5" fontWeight={600}>
               Task's name comes here
             </Typography>
-            <Chip
-            color={'primary'}
-              sx={{
-                backgroundColor: customTheme.palette.bg.parrotGreen,
-                color: "white",
-              }}
-              label={"Complete"}
-            />
+            <Stack direction="column">
+              <Chip
+                color={"primary"}
+                sx={{
+                  backgroundColor: customTheme.palette.bg.parrotGreen,
+                  color: "white",
+                }}
+                label={"Complete"}
+              />
+            </Stack>
           </Stack>
         </Grid>
         <Grid item xs={12}>
@@ -81,11 +90,29 @@ function Cards() {
           </Typography>
         </Grid> */}
         <Grid item xs={12}>
-          <Grid container>
-            <Grid item xs={12}>
-              <ProgressMui value={24} />
-            </Grid>
-          </Grid>
+          <ProgressMui value={24} />
+        </Grid>
+        <Grid item xs={12}>
+          <Button
+            component={motion.div}
+            sx={{ textTransform: "capitalize", letterSpacing: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+            variant="contained"
+            size="small"
+            onClick={handleOpenModal}
+          >
+            View
+          </Button>
+          <ModalMui
+            width={"70vw"}
+            height={"80vh"}
+            top={"10%"}
+            left={"15%"}
+            openModalMui={openModal}
+            handleCloseModalMui={handleCloseModal}
+            content={<ModalContent handleCloseModal={handleCloseModal} />}
+            noButtons
+          />
         </Grid>
       </Grid>
     </Card>
@@ -93,3 +120,5 @@ function Cards() {
 }
 
 export default Cards;
+
+
