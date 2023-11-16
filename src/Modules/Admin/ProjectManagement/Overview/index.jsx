@@ -13,7 +13,12 @@ import {
 } from "@mui/material";
 import InfoCards from "./InfoCards";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
-import { AdminPanelSettings, Cloud, TaskSharp } from "@mui/icons-material";
+import {
+  AdminPanelSettings,
+  AttachFile,
+  Cloud,
+  TaskSharp,
+} from "@mui/icons-material";
 import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
 import { CardsData } from "./data";
 const columnsFiles = [
@@ -348,8 +353,15 @@ function Overview() {
           <IconsHeadings
             paddingLeft={2}
             paddingBottom={2}
-            text={"Latest Files"}
-            icons={<StyledIconCloud />}
+            text={"Latest Attachments"}
+            icons={
+              <AttachFile
+                sx={{
+                  color: "bg.darkBlue",
+                  fontSize: "20px",
+                }}
+              />
+            }
           />
           <DataGrids dataRow={rowsFiles} dataColumn={columnsFiles} />
         </Card>
@@ -359,7 +371,7 @@ function Overview() {
           <IconsHeadings
             paddingLeft={2}
             paddingBottom={2}
-            text={"Subadmins"}
+            text={"Management Team"}
             icons={<StyledIconAdminPanelSettings />}
           />
           <DataGrids dataRow={rowSubadmin} dataColumn={columnsSubadmin} />

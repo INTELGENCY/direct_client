@@ -11,12 +11,16 @@ import {
 import React from "react";
 import Cards from "../Cards";
 import { Add, Delete } from "@mui/icons-material";
+import IconsHeadings from "../../../../../Common/AnimationMui/IconHeadings";
 
-function CardSection({ sectionName, color }) {
+function CardSection({ sectionName, icons }) {
   return (
     <Grid container gap={3}>
       <Grid item xs={12}>
-        <Typography variant="h3" fontWeight={500}>{sectionName}</Typography>
+        <IconsHeadings
+          text={sectionName}
+          icons={icons}
+        />
       </Grid>
       <Grid item xs={12}>
         <Grid container rowGap={3} justifyContent={"space-between"}>

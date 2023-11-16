@@ -8,6 +8,7 @@ function IconsHeadings({
   button,
   startIconButton,
   paddingBottom,
+  paddingTop,
   paddingLeft,
   handleClickButton,
 }) {
@@ -20,6 +21,7 @@ function IconsHeadings({
       sx={{
         pb: paddingBottom ? paddingBottom : 0,
         pl: paddingLeft ? paddingLeft : 0,
+        pt: paddingTop ? paddingTop : 0,
       }}
     >
       <Fab disabled size="small" aria-label="upload">
