@@ -11,51 +11,86 @@ import {
 } from "@mui/material";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
 import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
-import { ExpandMore, Propane, Share } from "@mui/icons-material";
+import { ExpandMore, Propane, Share, ShareOutlined } from "@mui/icons-material";
 import MainHeadings from "../../../../Common/AnimationMui/MainHeadings";
-const columns = [
-  {
-    field: "id",
-    headerName: "ID",
-    width: 90,
-  },
-  {
-    field: "name",
-    headerName: "Name",
-    width: "100%",
-    editable: true,
-    renderCell: (params) => (
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMore />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>Accordion 1</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    ),
-  },
-];
-
+import { useNavigate } from "react-router-dom";
 const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-  { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-  { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-  { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-  { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-  { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-  { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-  { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+  {
+    id: 1,
+    companyName: "Rapidev",
+    submissionDate: "2/2/2022",
+    researcherName: "Abdullah Asif",
+  },
+  {
+    id: 2,
+    companyName: "Intelgency",
+    submissionDate: "3/2/2022",
+    researcherName: "Aman Ullah",
+  },
+  {
+    id: 3,
+    companyName: "Systems Ltd",
+    submissionDate: "4/2/2022",
+    researcherName: "",
+  },
+  {
+    id: 4,
+    companyName: "Zones Ltd",
+    submissionDate: "7/2/2022",
+    researcherName: "Ali",
+  },
 ];
 function Proposals() {
+  const navigate = useNavigate();
+  const columns = [
+    {
+      field: "id",
+      headerName: "No.",
+      width: 90,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "companyName",
+      headerName: "Company Name",
+      width: 300,
+      editable: true,
+    },
+    {
+      field: "submissionDate",
+      headerName: "Submission Date",
+      width: 250,
+      editable: true,
+    },
+    {
+      field: "researcherName",
+      headerName: "Assigned to",
+      width: 250,
+      renderCell: (params) =>
+        params.row.researcherName === "" ||
+        params.row.researcherName === undefined ? (
+          <Button variant="contained" startIcon={<ShareOutlined />}>
+            Share
+          </Button>
+        ) : (
+          params.row.researcherName
+        ),
+    },
+    {
+      field: "viewBtn",
+      headerName: "Actions",
+      width: 100,
+      editable: true,
+      renderCell: (params) => (
+        <Button
+          onClick={() => navigate("/directportal/dashboard/viewproposal")}
+          variant="contained"
+        >
+          View
+        </Button>
+      ),
+    },
+  ];
   return (
     <Grid container gap={2}>
       <Grid item xs={12}>
@@ -94,7 +129,7 @@ function Proposals() {
         </Stack>
       </Grid>
       <Grid item xs={12}>
-        <DataGrids checkboxSelection />
+        <DataGrids dataRow={rows} dataColumn={columns} />
       </Grid>
     </Grid>
   );

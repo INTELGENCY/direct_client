@@ -5,7 +5,18 @@ export const customTheme = createTheme({
   palette: {
     bg: {
       black: "rgb(27, 28, 28  )",
+      darkBlue: "#252B42",
+      blue: "#3498db",
+      lightPurple: "#5758BB",
+      lightOrange: "#e67e22",
+      orange: "#f39c12",
+      lightRed: "#ff7675",
+      slightlyLightRed: "#e74c3c",
+      normalRed: "#c0392b",
+      lightGray: "#5758BB",
+      Gray: "gray",
       white: "#FFFFFF",
+      parrotGreen: "#6ab04c",
       greenLight: "#00AD50",
       greenMui: "#2e7d32",
       greenMuiHover: "#1b5e20",
@@ -17,6 +28,7 @@ export const customTheme = createTheme({
     text: {
       dark: darkColor,
       grey: "#737373",
+      slightyLightGray: "#5758BB",
       lightGrey: "rgb(220,220,220)",
     },
     customPalette2: {

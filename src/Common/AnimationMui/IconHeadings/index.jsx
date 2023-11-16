@@ -22,10 +22,10 @@ function IconsHeadings({
         pl: paddingLeft ? paddingLeft : 0,
       }}
     >
-      <Fab disabled size="medium" aria-label="upload">
+      <Fab disabled size="small" aria-label="upload">
         {icons}
       </Fab>
-      <Typography variant="h2" fontWeight={500}>
+      <Typography variant="h3" fontWeight={600}>
         {text}
       </Typography>
       {helpOutline && (

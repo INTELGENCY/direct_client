@@ -28,7 +28,6 @@ const steps = [
   "Primary Details",
   "Secondary Details",
   "Secondary Details",
-  "Secondary Details",
 ];
 const GridButtonsSteps = styled(Grid)(({ theme }) => ({
   display: "flex",

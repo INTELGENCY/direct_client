@@ -18,18 +18,21 @@ function Milestones() {
 
   const handleTaskChange = (task) => {
     console.log("On date change Id:" + task.id);
-    let newTasks = tasks.map((t) => (t.id === task.id ? task : t));
+    if (!task?.id) {
+      return;
+    }
+    let newTasks = tasks?.map((t) => (t.id === task.id ? task : t));
 
-    if (task.project) {
+    if (task?.project) {
       const [start, end] = getStartEndDateForProject(newTasks, task.project);
-      const project = newTasks.find((t) => t.id === task.project);
+      const project = newTasks?.find((t) => t.id === task.project);
 
       if (
         project.start.getTime() !== start.getTime() ||
         project.end.getTime() !== end.getTime()
       ) {
         const changedProject = { ...project, start, end };
-        newTasks = newTasks.map((t) =>
+        newTasks = newTasks?.map((t) =>
           t.id === task.project ? changedProject : t
         );
       }
@@ -40,17 +43,20 @@ function Milestones() {
   const handleTaskDelete = (task) => {
     const conf = window.confirm("Are you sure about " + task.name + " ?");
     if (conf) {
-      setTasks(tasks.filter((t) => t.id !== task.id));
+      setTasks(tasks?.filter((t) => t.id !== task.id));
     }
     return conf;
   };
 
   const handleProgressChange = async (task) => {
-    setTasks(tasks.map((t) => (t.id === task.id ? task : t)));
+    if (!task?.id) {
+      return;
+    }
+    setTasks(tasks?.map((t) => (t.id === task.id ? task : t)));
     console.log("On progress change Id:" + task.id);
   };
 
-  const handleDblClick = (task) => {
+  const handleDoubleClick = (task) => {
     alert("On Double Click event Id:" + task.id);
   };
 
@@ -59,7 +65,10 @@ function Milestones() {
   };
 
   const handleExpanderClick = (task) => {
-    setTasks(tasks.map((t) => (t.id === task.id ? task : t)));
+    if (!task?.id) {
+      return;
+    }
+    setTasks(tasks?.map((t) => (t.id === task.id ? task : t)));
     console.log("On expander click Id:" + task.id);
   };
 
@@ -79,7 +88,7 @@ function Milestones() {
             onDateChange={handleTaskChange}
             onDelete={handleTaskDelete}
             onProgressChange={handleProgressChange}
-            onDoubleClick={handleDblClick}
+            onDoubleClick={handleDoubleClick}
             onSelect={handleSelect}
             onExpanderClick={handleExpanderClick}
             listCellWidth={isChecked ? "155px" : ""}
