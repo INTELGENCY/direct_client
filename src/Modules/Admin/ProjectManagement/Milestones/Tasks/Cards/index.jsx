@@ -23,6 +23,8 @@ function Cards() {
     <Card
       sx={{
         p: 2,
+        ml: 1,
+        mr: 1,
         boxShadow: customTheme.palette.boxShadows.boxShadowCardsLight,
       }}
     >

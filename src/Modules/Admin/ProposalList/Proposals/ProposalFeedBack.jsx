@@ -1,7 +1,5 @@
 import { Card, Grid, IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
-import { customTheme } from "../../../../../../Theme/theme";
-import IconsHeadings from "../../../../../../Common/AnimationMui/IconHeadings";
 import {
   AttachFile,
   Close,
@@ -9,18 +7,20 @@ import {
   CommentSharp,
   Description,
 } from "@mui/icons-material";
-import DataGrids from "../../../../../../Common/TableMui/DataGrids";
-import { columnsFiles, rowsFiles } from "../../../UploadedFiles/data";
-function ModalContent({ handleCloseModal }) {
+import DataGrids from "../../../../Common/TableMui/DataGrids";
+import {
+  columnsFiles,
+  rowsFiles,
+} from "../../ProjectManagement/UploadedFiles/data";
+import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
+import { customTheme } from "../../../../Theme/theme";
+function ProposalFeedBack({ handleCloseModal }) {
   return (
     <Grid container gap={2} sx={{ height: "100%", overflow: "auto" }}>
       <Grid item sx={{ mb: 3 }} xs={12}>
         <Stack direction={"row"} justifyContent={"space-between"}>
           <Stack direction={"row"} alignItems={"center"} gap={1}>
-            <Typography variant="h2">Task Heading</Typography>
-            <Typography variant="body2" fontWeight={500}>
-              (Task Number 2)
-            </Typography>
+            <Typography variant="h2" >Feedback</Typography>
           </Stack>
           <IconButton onClick={handleCloseModal}>
             <CloseOutlined />
@@ -106,4 +106,4 @@ function ModalContent({ handleCloseModal }) {
   );
 }
 
-export default ModalContent;
+export default ProposalFeedBack;
