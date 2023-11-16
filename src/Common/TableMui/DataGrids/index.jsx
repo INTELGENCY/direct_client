@@ -61,7 +61,7 @@ const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
 }));
 function DataGrids({ checkboxSelection, dataRow, dataColumn }) {
   return (
-    <Card sx={{ height: 400, width: "100%" }}>
+    <Card elevation={0} sx={{ height: 400, width: "100%" }}>
       <DataGrid
         sx={{
           "&.MuiDataGrid-root": {

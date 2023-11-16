@@ -100,6 +100,8 @@ function Proposals() {
               Assign
             </Button>
             <ModalMui
+              top={"35%"}
+              left={"35%"}
               openModalMui={openModal}
               handleCloseModalMui={handleCloseModal}
               content={<ModalContent handleCloseModal={handleCloseModal} />}
@@ -141,7 +143,9 @@ function Proposals() {
             precision={0.1}
             emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
           />
-          <Typography letterSpacing={1} variant={"caption"}>(4.2)</Typography>
+          <Typography letterSpacing={1} variant={"caption"}>
+            (4.2)
+          </Typography>
         </Stack>
       ),
       align: "center",
