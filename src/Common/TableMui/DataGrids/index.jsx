@@ -51,11 +51,22 @@ const rows = [
   { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
-
+const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
+  root: {
+    borderWidth: "0px !important",
+    border: "none",
+  },
+}));
 function DataGrids({ checkboxSelection, dataRow, dataColumn }) {
   return (
     <Card sx={{ height: 400, width: "100%" }}>
       <DataGrid
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none !important",
+            borderWidth: "none !important",
+          },
+        }}
         rows={dataRow ? dataRow : rows}
         columns={dataColumn ? dataColumn : columns}
         initialState={{
