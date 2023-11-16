@@ -24,7 +24,7 @@ const Pstyled = styled(Typography)(({ theme }) => ({
   // lineHeight: 1.6,
   fontWeight: "400",
 }));
-const arrayTabs = ["Overview", "Milestones"];
+const arrayTabs = ["Overview", "Milestones", "Members"];
 function ProjectName({ value, handleChange }) {
   return (
     <Card elevation={4} sx={{ p: 3 }}>

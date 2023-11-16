@@ -5,6 +5,7 @@ import Overview from "./Overview";
 import Milestones from "./Milestones";
 import { useState } from "react";
 import { TransitionGroup } from "react-transition-group";
+import Members from "./Members";
 function ProjectManagement() {
   const [value, setValue] = useState(0);
   console.log(value);
@@ -34,6 +35,15 @@ function ProjectManagement() {
             <Fade in timeout={500}>
               <div>
                 <Milestones />
+              </div>
+            </Fade>
+          </TransitionGroup>
+        )}
+        {value === 2 && (
+          <TransitionGroup>
+            <Fade in timeout={500}>
+              <div>
+                <Members />
               </div>
             </Fade>
           </TransitionGroup>
