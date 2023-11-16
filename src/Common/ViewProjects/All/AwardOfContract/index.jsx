@@ -11,10 +11,15 @@ import DataGrids from "../../../TableMui/DataGrids";
 import { useNavigate } from "react-router-dom";
 import { customTheme } from "../../../../Theme/theme";
 import IconsHeadings from "../../../AnimationMui/IconHeadings";
-import { ArticleOutlined, Propane, UploadFile } from "@mui/icons-material";
+import {
+  ArticleOutlined,
+  EmojiEvents,
+  Propane,
+  UploadFile,
+} from "@mui/icons-material";
 import { motion } from "framer-motion";
 
-function ProposalsList() {
+function AwardOfContract() {
   const navigate = useNavigate();
   const columns = [
     {
@@ -28,7 +33,7 @@ function ProposalsList() {
       field: "ProjectNames",
       headerName: "Project Names",
       width: 450,
-      editable: true,
+
       renderCell: (params) => (
         <Tooltip
           sx={{ cursor: "pointer" }}
@@ -47,19 +52,17 @@ function ProposalsList() {
       field: "Initiator",
       headerName: "Initiator",
       width: 200,
-      editable: true,
     },
     {
       field: "Category",
       headerName: "Category",
       width: 150,
-      editable: true,
     },
     {
       field: "StartDate",
       headerName: "Start Date",
       width: 150,
-      editable: true,
+
       align: "center",
       headerAlign: "center",
     },
@@ -67,7 +70,7 @@ function ProposalsList() {
       field: "EndDate",
       headerName: "End Date",
       width: 150,
-      editable: true,
+
       align: "center",
       headerAlign: "center",
     },
@@ -77,7 +80,7 @@ function ProposalsList() {
       width: 200,
       align: "center",
       headerAlign: "center",
-      editable: true,
+
       renderCell: (param) => (
         <Chip color="success" clickable label={param.row.ProjectStatus} />
       ),
@@ -86,7 +89,7 @@ function ProposalsList() {
       field: "Proposals",
       headerName: "No. of Proposals",
       width: 150,
-      editable: true,
+
       align: "center",
       headerAlign: "center",
     },
@@ -96,7 +99,7 @@ function ProposalsList() {
       width: 150,
       align: "center",
       headerAlign: "center",
-      editable: true,
+
       renderCell: (param) => (
         <Button
           component={motion.div}
@@ -202,11 +205,11 @@ function ProposalsList() {
           }}
         >
           <IconsHeadings
-            text={"Proposals"}
+            text={"Award Of Contract"}
             paddingLeft={2.7}
             paddingTop={3}
             paddingBottom={2}
-            icons={<ArticleOutlined sx={{ color: "bg.darkBlue" }} />}
+            icons={<EmojiEvents sx={{ color: "bg.darkBlue" }} />}
           />
           <DataGrids dataRow={rows} dataColumn={columns} />
         </Card>
@@ -215,5 +218,4 @@ function ProposalsList() {
   );
 }
 
-export default ProposalsList;
-// 0px 2px 4px -1px rgba(-1,0,0,0.2), 0px 4px 12px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.1)
+export default AwardOfContract;

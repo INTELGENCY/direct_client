@@ -352,6 +352,7 @@ function Overview() {
         <Card elevation={4} sx={{ pt: 2 }}>
           <IconsHeadings
             paddingLeft={2}
+            paddingTop={1}
             paddingBottom={2}
             text={"Latest Attachments"}
             icons={
@@ -370,6 +371,7 @@ function Overview() {
         <Card elevation={4} sx={{ pt: 2 }}>
           <IconsHeadings
             paddingLeft={2}
+            paddingTop={1}
             paddingBottom={2}
             text={"Management Team"}
             icons={<StyledIconAdminPanelSettings />}
@@ -381,6 +383,7 @@ function Overview() {
         <Card elevation={4} sx={{ pt: 2 }}>
           <IconsHeadings
             paddingLeft={2}
+            paddingTop={1}
             paddingBottom={2}
             text={"Tasks"}
             icons={<StyledIconTaskSharp />}

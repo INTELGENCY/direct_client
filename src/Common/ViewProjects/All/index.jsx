@@ -18,12 +18,21 @@ import { keys } from "../../../config";
 import Skeletons from "../../Skeletons";
 import DataGrids from "../../TableMui/DataGrids";
 import ProposalsList from "./ProposalsList";
+import PreAwardFormalities from "./PreAwardFormalities";
+import AwardOfContract from "./AwardOfContract";
 const TabCustome = styled(Tab)(({ theme }) => ({
-  border: "1px solid  rgba(0, 0, 0, 0.51)",
+  border: "1px solid #E9E9EB",
+  "& .Mui-selected": {
+    background: "#F5F8FF",
+  },
+  // border: "1px solid  rgba(0, 0, 0, 0.51)",
   //   color: "rgba(0, 0, 0, 0.51)",
   "& .Mui-selected": {
-    color: theme.palette.bg.greenDark,
-    borderBottomColor: theme.palette.background.greenDark,
+    color: theme.palette.bg.parrotGreen,
+    borderBottomColor: theme.palette.background.parrotGreen,
+  },
+  "&:hover": {
+    background: "#F5F8FF",
   },
 }));
 const GridCustom = styled(Grid)(({ theme }) => ({
@@ -66,7 +75,12 @@ const TabListCustome = styled(TabList)(({ theme }) => ({
     width: "80vw",
   },
 }));
-const TabData = ["Projects", "Call for Proposals"];
+const TabData = [
+  "Projects",
+  "Call for Proposals",
+  "Pre-Award Formalities",
+  "Award For Contract",
+];
 function All() {
   const [value, setValue] = useState(1);
   const [postsAll, setPostsAll] = useState([]);
@@ -150,16 +164,12 @@ function All() {
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={2}>
               <ProposalsList />
-              <TabPanel sx={{ paddingInline: "0px" }} value={3}>
-                <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
-                  Comming Soon!
-                </Typography>
-              </TabPanel>
+            </TabPanel>
+            <TabPanel sx={{ paddingInline: "0px" }} value={3}>
+              <PreAwardFormalities />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={4}>
-              <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
-                Comming Soon!
-              </Typography>
+              <AwardOfContract />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={5}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>

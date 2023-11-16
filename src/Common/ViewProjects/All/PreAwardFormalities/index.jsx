@@ -11,10 +11,15 @@ import DataGrids from "../../../TableMui/DataGrids";
 import { useNavigate } from "react-router-dom";
 import { customTheme } from "../../../../Theme/theme";
 import IconsHeadings from "../../../AnimationMui/IconHeadings";
-import { ArticleOutlined, Propane, UploadFile } from "@mui/icons-material";
+import {
+  ArticleOutlined,
+  Propane,
+  SourceRounded,
+  UploadFile,
+} from "@mui/icons-material";
 import { motion } from "framer-motion";
 
-function ProposalsList() {
+function PreAwardFormalities() {
   const navigate = useNavigate();
   const columns = [
     {
@@ -28,7 +33,7 @@ function ProposalsList() {
       field: "ProjectNames",
       headerName: "Project Names",
       width: 450,
-      editable: true,
+
       renderCell: (params) => (
         <Tooltip
           sx={{ cursor: "pointer" }}
@@ -47,19 +52,17 @@ function ProposalsList() {
       field: "Initiator",
       headerName: "Initiator",
       width: 200,
-      editable: true,
     },
     {
       field: "Category",
       headerName: "Category",
       width: 150,
-      editable: true,
     },
     {
       field: "StartDate",
       headerName: "Start Date",
       width: 150,
-      editable: true,
+
       align: "center",
       headerAlign: "center",
     },
@@ -67,7 +70,7 @@ function ProposalsList() {
       field: "EndDate",
       headerName: "End Date",
       width: 150,
-      editable: true,
+
       align: "center",
       headerAlign: "center",
     },
@@ -77,7 +80,7 @@ function ProposalsList() {
       width: 200,
       align: "center",
       headerAlign: "center",
-      editable: true,
+
       renderCell: (param) => (
         <Chip color="success" clickable label={param.row.ProjectStatus} />
       ),
@@ -86,7 +89,15 @@ function ProposalsList() {
       field: "Proposals",
       headerName: "No. of Proposals",
       width: 150,
-      editable: true,
+
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "ProposalsHighRating",
+      headerName: "Proposals with High Rating",
+      width: 300,
+
       align: "center",
       headerAlign: "center",
     },
@@ -96,7 +107,7 @@ function ProposalsList() {
       width: 150,
       align: "center",
       headerAlign: "center",
-      editable: true,
+
       renderCell: (param) => (
         <Button
           component={motion.div}
@@ -122,6 +133,7 @@ function ProposalsList() {
       EndDate: "3/3/2024",
       ProjectStatus: "ongoing",
       Proposals: "5",
+      ProposalsHighRating: "14/5",
       ViewProposals: "",
     },
     {
@@ -133,6 +145,7 @@ function ProposalsList() {
       StartDate: "30/3/2020",
       EndDate: "23/5/2024",
       ProjectStatus: "ongoing",
+      ProposalsHighRating: "14/5",
       Proposals: "12",
       ViewProposals: "",
     },
@@ -145,6 +158,7 @@ function ProposalsList() {
       StartDate: "30/3/2020",
       EndDate: "30/12/2024",
       ProjectStatus: "ongoing",
+      ProposalsHighRating: "14/5",
       Proposals: "1",
       ViewProposals: "",
     },
@@ -158,9 +172,11 @@ function ProposalsList() {
       ProjectStatus: "ongoing",
       Proposals: "24",
       ViewProposals: "",
+      ProposalsHighRating: "14/5",
     },
     {
       id: 5,
+      ProposalsHighRating: "14/5",
       ProjectNames: "Radar equipment from Airforce",
       Category: "Defence",
       Initiator: "Usama",
@@ -174,6 +190,7 @@ function ProposalsList() {
       id: 6,
       ProjectNames: "Submarine project reaches ‘mega milestone",
       Category: "Defence",
+      ProposalsHighRating: "14/5",
       Initiator: "Aman",
       StartDate: "30/3/2020",
       EndDate: "30/9/2025",
@@ -187,6 +204,7 @@ function ProposalsList() {
       Category: "Defence",
       Initiator: "Abdullah",
       StartDate: "30/3/2020",
+      ProposalsHighRating: "14/5",
       EndDate: "30/3/2027",
       ProjectStatus: "ongoing",
       Proposals: "24",
@@ -202,11 +220,11 @@ function ProposalsList() {
           }}
         >
           <IconsHeadings
-            text={"Proposals"}
+            text={"Pre-Award Formalities"}
             paddingLeft={2.7}
             paddingTop={3}
             paddingBottom={2}
-            icons={<ArticleOutlined sx={{ color: "bg.darkBlue" }} />}
+            icons={<SourceRounded sx={{ color: "bg.darkBlue" }} />}
           />
           <DataGrids dataRow={rows} dataColumn={columns} />
         </Card>
@@ -215,5 +233,4 @@ function ProposalsList() {
   );
 }
 
-export default ProposalsList;
-// 0px 2px 4px -1px rgba(-1,0,0,0.2), 0px 4px 12px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.1)
+export default PreAwardFormalities;
