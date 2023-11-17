@@ -20,6 +20,7 @@ import DataGrids from "../../TableMui/DataGrids";
 import ProposalsList from "./ProposalsList";
 import PreAwardFormalities from "./PreAwardFormalities";
 import AwardOfContract from "./AwardOfContract";
+import MilestoneTable from "./MillestoneTable";
 const TabCustome = styled(Tab)(({ theme }) => ({
   border: "1px solid #E9E9EB",
   "& .Mui-selected": {
@@ -80,6 +81,7 @@ const TabData = [
   "Call for Proposals",
   "Pre-Award Formalities",
   "Award For Contract",
+  "Milestones",
 ];
 function All() {
   const [value, setValue] = useState(1);
@@ -172,9 +174,7 @@ function All() {
               <AwardOfContract />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={5}>
-              <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
-                Comming Soon!
-              </Typography>
+              <MilestoneTable />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={6}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>

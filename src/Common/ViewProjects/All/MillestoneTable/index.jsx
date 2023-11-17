@@ -11,10 +11,10 @@ import DataGrids from "../../../TableMui/DataGrids";
 import { useNavigate } from "react-router-dom";
 import { customTheme } from "../../../../Theme/theme";
 import IconsHeadings from "../../../AnimationMui/IconHeadings";
-import { EmojiEvents } from "@mui/icons-material";
+import { Route } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
-function AwardOfContract() {
+function MilestoneTable() {
   const navigate = useNavigate();
   const columns = [
     {
@@ -200,11 +200,11 @@ function AwardOfContract() {
           }}
         >
           <IconsHeadings
-            text={"Award Of Contract"}
+            text={"Milestones"}
             paddingLeft={2.7}
             paddingTop={3}
             paddingBottom={2}
-            icons={<EmojiEvents sx={{ color: "bg.darkBlue" }} />}
+            icons={<Route sx={{ color: "bg.darkBlue" }} />}
           />
           <DataGrids dataRow={rows} dataColumn={columns} />
         </Card>
@@ -213,4 +213,4 @@ function AwardOfContract() {
   );
 }
 
-export default AwardOfContract;
+export default MilestoneTable;
