@@ -252,6 +252,7 @@ function ModalContent({ handleCloseModal }) {
           </Button>
         </Stack>
       </Grid>
+      
     </Grid>
   );
 }
