@@ -28,7 +28,7 @@ function ProposalsList() {
       field: "ProjectNames",
       headerName: "Project Names",
       width: 450,
-      editable: true,
+      
       renderCell: (params) => (
         <Tooltip
           sx={{ cursor: "pointer" }}
@@ -47,19 +47,19 @@ function ProposalsList() {
       field: "Initiator",
       headerName: "Initiator",
       width: 200,
-      editable: true,
+      
     },
     {
       field: "Category",
       headerName: "Category",
       width: 150,
-      editable: true,
+      
     },
     {
       field: "StartDate",
       headerName: "Start Date",
       width: 150,
-      editable: true,
+      
       align: "center",
       headerAlign: "center",
     },
@@ -67,7 +67,7 @@ function ProposalsList() {
       field: "EndDate",
       headerName: "End Date",
       width: 150,
-      editable: true,
+      
       align: "center",
       headerAlign: "center",
     },
@@ -77,7 +77,7 @@ function ProposalsList() {
       width: 200,
       align: "center",
       headerAlign: "center",
-      editable: true,
+      
       renderCell: (param) => (
         <Chip color="success" clickable label={param.row.ProjectStatus} />
       ),
@@ -86,7 +86,7 @@ function ProposalsList() {
       field: "Proposals",
       headerName: "No. of Proposals",
       width: 150,
-      editable: true,
+      
       align: "center",
       headerAlign: "center",
     },
@@ -96,7 +96,7 @@ function ProposalsList() {
       width: 150,
       align: "center",
       headerAlign: "center",
-      editable: true,
+      
       renderCell: (param) => (
         <Button
           component={motion.div}

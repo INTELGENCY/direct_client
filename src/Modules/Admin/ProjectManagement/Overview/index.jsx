@@ -33,19 +33,17 @@ const columnsFiles = [
     field: "fileName",
     headerName: "File Name",
     width: 200,
-    editable: true,
   },
   {
     field: "upload",
     headerName: "Uploaded By",
     width: 150,
-    editable: true,
   },
   {
     field: "size",
     headerName: "Size",
     width: 100,
-    editable: true,
+
     align: "center",
     headerAlign: "center",
   },
@@ -53,7 +51,7 @@ const columnsFiles = [
     field: "date",
     headerName: "Date",
     width: 150,
-    editable: true,
+
     align: "right",
     headerAlign: "right",
   },
@@ -136,7 +134,7 @@ const columnsSubadmin = [
     field: "name",
     headerName: "Name",
     width: 200,
-    editable: true,
+
     renderCell: (params) => (
       <Stack direction={"row"} alignItems={"center"} gap={1}>
         <Avatar sizes="small" alt={`${params.row.name}`} src={""} />
@@ -150,13 +148,12 @@ const columnsSubadmin = [
     field: "role",
     headerName: "Role",
     width: 150,
-    editable: true,
   },
   {
     field: "joinDate",
     headerName: "Present in Team Since",
     width: 200,
-    editable: true,
+
     align: "right",
     headerAlign: "right",
   },
@@ -210,7 +207,7 @@ const columnsTasks = [
     field: "taskName",
     headerName: "Task Name",
     width: 300,
-    editable: true,
+
     renderCell: (params) => (
       <Tooltip
         sx={{ cursor: "pointer" }}
@@ -228,7 +225,7 @@ const columnsTasks = [
   {
     field: "progress",
     headerName: "Progress",
-    editable: true,
+
     align: "right",
     headerAlign: "right",
     renderCell: (params) => (
@@ -242,14 +239,14 @@ const columnsTasks = [
     field: "dueDate",
     headerName: "Due Date",
     width: 200,
-    editable: true,
+
     align: "right",
     headerAlign: "right",
   },
   {
     field: "detail",
     headerName: "View Details",
-    editable: true,
+
     align: "center",
     headerAlign: "center",
     renderCell: (params) => <Button variant={"contained"}>View</Button>,

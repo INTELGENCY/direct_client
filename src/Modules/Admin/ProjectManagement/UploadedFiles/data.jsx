@@ -14,19 +14,17 @@ export const columnsFiles = [
     field: "fileName",
     headerName: "File Name",
     width: 300,
-    editable: true,
   },
   {
     field: "upload",
     headerName: "Uploaded By",
     width: 250,
-    editable: true,
   },
   {
     field: "type",
     headerName: "File Type",
     width: 250,
-    editable: true,
+
     align: "center",
     headerAlign: "center",
   },
@@ -34,7 +32,7 @@ export const columnsFiles = [
     field: "size",
     headerName: "Size",
     width: 200,
-    editable: true,
+
     align: "center",
     headerAlign: "center",
   },
@@ -42,7 +40,7 @@ export const columnsFiles = [
     field: "date",
     headerName: "Uploaded Date",
     width: 200,
-    editable: true,
+
     align: "right",
     headerAlign: "right",
   },
@@ -50,7 +48,7 @@ export const columnsFiles = [
     field: "download",
     headerName: "Download",
     width: 300,
-    editable: true,
+
     align: "center",
     headerAlign: "center",
     renderCell: () => (

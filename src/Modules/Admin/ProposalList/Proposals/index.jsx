@@ -14,10 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
-import {
-  ShareOutlined,
-  Star,
-} from "@mui/icons-material";
+import { ShareOutlined, Star } from "@mui/icons-material";
 import MainHeadings from "../../../../Common/AnimationMui/MainHeadings";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -72,13 +69,11 @@ function Proposals() {
       field: "companyName",
       headerName: "Company Name",
       width: 300,
-      editable: true,
     },
     {
       field: "submissionDate",
       headerName: "Submission Date",
       width: 250,
-      editable: true,
     },
     {
       field: "researcherName",
@@ -113,7 +108,7 @@ function Proposals() {
       field: "viewBtn",
       headerName: "View Proposal",
       width: 150,
-      editable: true,
+
       renderCell: (params) => (
         <Button
           component={motion.div}
@@ -131,7 +126,7 @@ function Proposals() {
       field: "feedbackResearcher",
       headerName: "Feedback From Researcher",
       width: 300,
-      editable: true,
+
       renderCell: (params) => (
         <Stack direction="row" alignItems={"center"} gap={1}>
           <Rating
@@ -153,7 +148,7 @@ function Proposals() {
       field: "viewFeedback",
       headerName: "View Feedback",
       width: 200,
-      editable: true,
+
       renderCell: (params) => (
         <>
           <Button
@@ -164,7 +159,6 @@ function Proposals() {
           >
             View
           </Button>
-       
         </>
       ),
       align: "center",
