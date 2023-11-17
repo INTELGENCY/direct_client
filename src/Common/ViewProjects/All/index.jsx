@@ -21,6 +21,7 @@ import ProposalsList from "./ProposalsList";
 import PreAwardFormalities from "./PreAwardFormalities";
 import AwardOfContract from "./AwardOfContract";
 import MilestoneTable from "./MillestoneTable";
+import { dataProject } from "../../../utils/ProjectsData";
 const TabCustome = styled(Tab)(({ theme }) => ({
   border: "1px solid #E9E9EB",
   "& .Mui-selected": {
@@ -142,8 +143,8 @@ function All() {
             </TabListCustome>
 
             <TabPanel sx={{ paddingInline: "0px" }} value={1}>
-              {postsAll.length !== 0 ? (
-                <Cards cardsData={postsAll} />
+              {dataProject.length !== 0 ? (
+                <Cards cardsData={dataProject} />
               ) : (
                 <Grid container gap={1}>
                   {Array(4)

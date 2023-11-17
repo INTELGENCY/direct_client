@@ -26,27 +26,9 @@ import ProposalFeedBack from "./ProposalFeedBack";
 const rows = [
   {
     id: 1,
-    companyName: "Rapidev",
-    submissionDate: "2/2/2022",
+    companyName: "M/S Octathorn",
+    submissionDate: "11/3/2024",
     researcherName: "Abdullah Asif",
-  },
-  {
-    id: 2,
-    companyName: "Intelgency",
-    submissionDate: "3/2/2022",
-    researcherName: "Aman Ullah",
-  },
-  {
-    id: 3,
-    companyName: "Systems Ltd",
-    submissionDate: "4/2/2022",
-    researcherName: "",
-  },
-  {
-    id: 4,
-    companyName: "Zones Ltd",
-    submissionDate: "7/2/2022",
-    researcherName: "Ali",
   },
 ];
 function Proposals() {
@@ -144,26 +126,26 @@ function Proposals() {
       align: "center",
       headerAlign: "center",
     },
-    {
-      field: "viewFeedback",
-      headerName: "View Feedback",
-      width: 200,
+    // {
+    //   field: "viewFeedback",
+    //   headerName: "View Feedback",
+    //   width: 200,
 
-      renderCell: (params) => (
-        <>
-          <Button
-            onClick={handleOpenModalFeedback}
-            component={motion.div}
-            whileTap={{ scale: 0.9 }}
-            variant="contained"
-          >
-            View
-          </Button>
-        </>
-      ),
-      align: "center",
-      headerAlign: "center",
-    },
+    //   renderCell: (params) => (
+    //     <>
+    //       <Button
+    //         onClick={handleOpenModalFeedback}
+    //         component={motion.div}
+    //         whileTap={{ scale: 0.9 }}
+    //         variant="contained"
+    //       >
+    //         View
+    //       </Button>
+    //     </>
+    //   ),
+    //   align: "center",
+    //   headerAlign: "center",
+    // },
   ];
   return (
     <Grid container gap={4}>
@@ -252,7 +234,6 @@ function ModalContent({ handleCloseModal }) {
           </Button>
         </Stack>
       </Grid>
-      
     </Grid>
   );
 }

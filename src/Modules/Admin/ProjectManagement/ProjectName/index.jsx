@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Overview from "../Overview";
 import { useState } from "react";
+import { dataProject } from "../../../../utils/ProjectsData";
 const AvatarUpload = styled(Avatar)(({ theme }) => ({
   width: "170px",
   height: "170px",
@@ -31,7 +32,7 @@ function ProjectName({ value, handleChange }) {
       <Grid container gap={0.5}>
         <Grid item xs={12}>
           <Stack width={"100%"} direction={"row"} gap={2}>
-            <AvatarUpload variant="square" />
+            <AvatarUpload src={dataProject[0].image} variant="square" />
             <Stack
               width={"100%"}
               direction={"column"}
@@ -44,18 +45,10 @@ function ProjectName({ value, handleChange }) {
                 display={"block"}
                 width={"80%"}
               >
-                Lorem ipsum dolor sit amet consectetur consectetur ipsum dolor
-                sit amet consectetur Lorem ipsum dolor sit amet consectetur
+                {dataProject[0].title}
               </Typography>
               <Pstyled textAlign={"justify"} width={"85%"} variant="body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                dignissim sapien ut justo gravida maximus.Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Aenean dignissim sapien ut
-                justo gravida maximus. Quisque eget malesuada tellus. In hac
-                habitasse platea dictumst. Aenean in finibus tortor. Aenean
-                dignissim sapien ut justo gravida maximus. Quisque eget
-                malesuada tellus. In hac habitasse platea dictumst. Aenean in
-                finibus tortor.
+                {dataProject[0].description}
               </Pstyled>
             </Stack>
           </Stack>

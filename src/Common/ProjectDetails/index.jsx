@@ -4,6 +4,7 @@ import RightSection from "./RightSection";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { keys } from "../../config";
+import { dataProject } from "../../utils/ProjectsData";
 
 const Container = styled("div")(({ theme }) => ({
   display: "flex",
@@ -52,10 +53,10 @@ function ProjectDetails() {
   return (
     <Container>
       <ItemOne>
-        <LeftSection data={projectData} />
+        <LeftSection data={dataProject[0]} />
       </ItemOne>
       <ItemTwo>
-        <RightSection data={projectData} />
+        <RightSection data={dataProject[0]} />
       </ItemTwo>
     </Container>
   );

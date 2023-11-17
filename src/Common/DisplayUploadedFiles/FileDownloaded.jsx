@@ -2,7 +2,18 @@ import { Button, Card, Grid, Stack, Typography } from "@mui/material";
 import FileSVG from "/assets/icons/icon-other.svg";
 import { CloudDownload } from "@mui/icons-material";
 import useWindowSize from "../Hooks/useWindowSize";
-function FileDownloaded({ arrayFiles }) {
+function FileDownloaded({ realData }) {
+  const handleDownload = (file) => {
+    const blob = new Blob([file.content], { type: file.type });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = file.fileName || "download";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  };
   const windowSize = useWindowSize();
   return (
     <Grid container justifyContent={"space-between"} gap={1}>
@@ -26,7 +37,8 @@ function FileDownloaded({ arrayFiles }) {
                 gap={2}
               >
                 <Typography variant="h4">
-                {arrayFiles}</Typography>
+                  {realData.fileName ? realData.fileName : "NOFile"}
+                </Typography>
                 <Typography variant="body1" color={"GrayText"}>
                   1234 KBs
                 </Typography>
@@ -43,6 +55,7 @@ function FileDownloaded({ arrayFiles }) {
                 },
               }}
               startIcon={<CloudDownload />}
+              onClick={() => handleDownload(realData)}
             >
               Download
             </Button>

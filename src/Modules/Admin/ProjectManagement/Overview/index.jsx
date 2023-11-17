@@ -21,6 +21,7 @@ import {
 } from "@mui/icons-material";
 import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
 import { CardsData } from "./data";
+import AdminDownloadBtn from "../../../../Common/AdminDownloadBtn";
 const columnsFiles = [
   {
     field: "id",
@@ -32,7 +33,7 @@ const columnsFiles = [
   {
     field: "fileName",
     headerName: "File Name",
-    width: 200,
+    width: 450,
   },
   {
     field: "upload",
@@ -55,71 +56,60 @@ const columnsFiles = [
     align: "right",
     headerAlign: "right",
   },
+  {
+    field: "download",
+    headerName: "Download File",
+    width: 300,
+
+    align: "center",
+    headerAlign: "center",
+    renderCell: (param) => (
+      <>
+        <AdminDownloadBtn file={param.row.download} />
+      </>
+    ),
+  },
 ];
 
 const rowsFiles = [
   {
     id: 1,
-    fileName: "Snow",
+    fileName: "Design & Development of a Smart Ball Based Surveil",
     size: "45KBs",
-    upload: "Jon",
-    date: "Nov 10, 2022",
+    upload: "Ali",
+    type: "pdf",
+    date: "Nov 18, 2023",
+    download: {
+      type: "pdf",
+      fileName: "Design & Development of a Smart Ball Based Surveil",
+      content: "/pdf/Design & Development of a Smart Ball Based Surveil.pdf",
+    },
   },
   {
     id: 2,
-    fileName: "Lannister",
+    fileName: "Budget Breakdown",
     size: "45KBs",
-    upload: "Cersei",
-    date: "Nov 09, 2022",
+    upload: "Ali",
+    type: "pdf",
+    date: "Nov 18, 2023",
+    download: {
+      type: "pdf",
+      fileName: "Budget Breakdown",
+      content: "/pdf/Annexure-C (Budget Breakdown) Financial.pdf",
+    },
   },
   {
-    id: 3,
-    fileName: "Lannister",
-    size: "45KBs",
-    upload: "Jaime",
-    date: "Nov 08, 2022",
-  },
-  {
-    id: 4,
-    fileName: "Stark",
-    size: "45KBs",
-    upload: "Arya",
-    date: "Nov 7, 2022",
-  },
-  {
-    id: 5,
-    fileName: "Targaryen",
-    size: "45KBs",
-    upload: "Daenerys",
-    date: "Nov 06, 2022",
-  },
-  {
-    id: 6,
-    fileName: "Melisandre",
-    size: "45KBs",
-    upload: "Abdullah",
-    date: "Nov 05, 2022",
-  },
-  {
-    id: 7,
-    fileName: "Clifford",
-    size: "45KBs",
-    upload: "Ferrara",
-    date: "Nov 04, 2022",
-  },
-  {
-    id: 8,
-    fileName: "Frances",
-    size: "45KBs",
-    upload: "Rossini",
-    date: "Nov 03, 2022",
-  },
-  {
-    id: 9,
-    fileName: "Roxie",
-    size: "45KBs",
-    upload: "Harvey",
-    date: "Nov 02, 2022",
+    id: 2,
+    fileName: "Funds Utilization Report",
+    size: "523KBs",
+    upload: "Ali",
+    type: "pdf",
+    date: "Nov 20, 2023",
+    download: {
+      type: "pdf",
+      fileName: "Funds Utilization Report",
+      content: "/pdf/Annexure-Q (Funds Utilization Report ).pdf",
+    },
   },
 ];
 const columnsSubadmin = [

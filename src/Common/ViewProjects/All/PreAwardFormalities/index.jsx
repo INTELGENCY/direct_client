@@ -49,6 +49,26 @@ function PreAwardFormalities() {
       ),
     },
     {
+      field: "fundingAgency",
+      headerName: "Funding Agency",
+      width: 300,
+
+      renderCell: (params) => (
+        <Tooltip
+          sx={{ cursor: "pointer" }}
+          title={params.row.fundingAgency}
+          placement="bottom-start"
+          TransitionComponent={Fade}
+          TransitionProps={{ timeout: 400 }}
+        >
+          <Typography paddingRight={3} noWrap variant="body1">
+            {params.row.fundingAgency}
+          </Typography>
+        </Tooltip>
+      ),
+    },
+
+    {
       field: "Initiator",
       headerName: "Initiator",
       width: 200,
@@ -126,88 +146,15 @@ function PreAwardFormalities() {
   const rows = [
     {
       id: 1,
-      ProjectNames: "Development of Brake Para",
+      ProjectNames: "Smart Ball Based Surveillance System using AI (BKV-1)",
       Category: "Defence",
-      Initiator: "Aman Ullah",
-      StartDate: "3/3/2021",
-      EndDate: "3/3/2024",
+      Initiator: "Dr Amer Sohail Kashif",
+      StartDate: "11/16/2023",
+      EndDate: "11/3/2024",
       ProjectStatus: "ongoing",
-      Proposals: "5",
-      ProposalsHighRating: "14/5",
-      ViewProposals: "",
-    },
-    {
-      id: 2,
-      ProjectNames:
-        "Nust Portal Pakistan’s indigenous submarine project reaches ‘mega milestone",
-      Category: "Defence",
-      Initiator: "Abdullah",
-      StartDate: "30/3/2020",
-      EndDate: "23/5/2024",
-      ProjectStatus: "ongoing",
-      ProposalsHighRating: "14/5",
-      Proposals: "12",
-      ViewProposals: "",
-    },
-    {
-      id: 3,
-      ProjectNames:
-        "Pakistan Air Force receives AEW&C radar equipment from Saab",
-      Category: "Defence",
-      Initiator: "Ali",
-      StartDate: "30/3/2020",
-      EndDate: "30/12/2024",
-      ProjectStatus: "ongoing",
-      ProposalsHighRating: "14/5",
       Proposals: "1",
-      ViewProposals: "",
-    },
-    {
-      id: 4,
-      ProjectNames: "Experts are here solve your business problem.",
-      Category: "Defence",
-      Initiator: "Abdullah",
-      StartDate: "30/3/2022",
-      EndDate: "30/9/2024",
-      ProjectStatus: "ongoing",
-      Proposals: "24",
-      ViewProposals: "",
-      ProposalsHighRating: "14/5",
-    },
-    {
-      id: 5,
-      ProposalsHighRating: "14/5",
-      ProjectNames: "Radar equipment from Airforce",
-      Category: "Defence",
-      Initiator: "Usama",
-      StartDate: "30/3/2022",
-      EndDate: "30/6/2025",
-      ProjectStatus: "ongoing",
-      Proposals: "42",
-      ViewProposals: "",
-    },
-    {
-      id: 6,
-      ProjectNames: "Submarine project reaches ‘mega milestone",
-      Category: "Defence",
-      ProposalsHighRating: "14/5",
-      Initiator: "Aman",
-      StartDate: "30/3/2020",
-      EndDate: "30/9/2025",
-      ProjectStatus: "ongoing",
-      Proposals: "24",
-      ViewProposals: "",
-    },
-    {
-      id: 7,
-      ProjectNames: "The Brake Parachute System (BPS)",
-      Category: "Defence",
-      Initiator: "Abdullah",
-      StartDate: "30/3/2020",
-      ProposalsHighRating: "14/5",
-      EndDate: "30/3/2027",
-      ProjectStatus: "ongoing",
-      Proposals: "24",
+      ProposalsHighRating: "1/1",
+      fundingAgency: "Defence",
       ViewProposals: "",
     },
   ];

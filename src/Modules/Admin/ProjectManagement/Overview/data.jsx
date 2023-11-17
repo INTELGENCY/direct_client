@@ -4,8 +4,8 @@ import { customTheme } from "../../../../Theme/theme";
 export const CardsData = [
   {
     title: "Due Date",
-    subTitleOne: "Dec 12, 2022",
-    subTitleTwo: "(completed on Nov 07, 2022)",
+    subTitleOne: "Nov 3, 2024", 
+    subTitleTwo: "(in progress)",
     icon: (
       <CalendarMonth sx={{ fontSize: "35px", color: "bg.slightlyLightRed" }} />
     ),
@@ -13,8 +13,8 @@ export const CardsData = [
   },
   {
     title: "Budget",
-    subTitleOne: "$5,600.00",
-    subTitleTwo: "(spended $5,600.00)",
+    subTitleOne: "PKR 2,005,600.00",
+    subTitleTwo: "(spended PKR 35,600.00)",
     icon: <AccountBalance sx={{ fontSize: "35px", color: "bg.orange" }} />,
     borderColor: customTheme.palette.bg.orange,
   },

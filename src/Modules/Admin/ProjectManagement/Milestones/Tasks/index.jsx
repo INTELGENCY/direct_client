@@ -3,6 +3,7 @@ import Cards from "./Cards";
 import { customTheme } from "../../../../../Theme/theme";
 import IconsHeadings from "../../../../../Common/AnimationMui/IconHeadings";
 import { AttachFile } from "@mui/icons-material";
+import { TasksProject } from "../../../../../utils/ProjectsData";
 function Tasks() {
   const arraySelect = [
     "Newest",
@@ -42,13 +43,11 @@ function Tasks() {
             </Select>
           </Stack>
         </Grid>
-        {Array(6)
-          .fill(null)
-          .map((e, i) => (
-            <Grid item md={6} lg={4} xl={4}>
-              <Cards />
-            </Grid>
-          ))}
+        {TasksProject.map((e, i) => (
+          <Grid item md={6} lg={4} xl={4}>
+            <Cards dataCard={e} index={i} key={i} />
+          </Grid>
+        ))}
       </Grid>
     </Card>
   );
