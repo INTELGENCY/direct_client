@@ -21,7 +21,9 @@ body {
   padding-right: unset !important;
   position: relative;
 }
-
+.ql-container.ql-snow {
+  height: 200px;
+}
 .MuiPaper-root.MuiPaper-elevation.MuiAppBar-positionFixed.mui-fixed {
   padding-right: 0 !important;
 }
