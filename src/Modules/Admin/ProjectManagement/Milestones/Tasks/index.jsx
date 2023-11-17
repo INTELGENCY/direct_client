@@ -22,7 +22,7 @@ function Tasks() {
         boxShadow: customTheme.palette.boxShadows.boxShadowTable,
       }}
     >
-      <Grid container justifyContent={"flex-start"} columnGap={2} rowGap={2}>
+      <Grid container justifyContent={"flex-start"} rowGap={2}>
         <Grid item xs={12}>
           <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
             <IconsHeadings
@@ -41,7 +41,7 @@ function Tasks() {
         {Array(6)
           .fill(null)
           .map((e, i) => (
-            <Grid item xs={3.9}>
+            <Grid item xs={4}>
               <Cards />
             </Grid>
           ))}

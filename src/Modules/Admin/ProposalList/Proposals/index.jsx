@@ -14,12 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
-import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
 import {
-  Close,
-  ExpandMore,
-  Propane,
-  Share,
   ShareOutlined,
   Star,
 } from "@mui/icons-material";
@@ -30,6 +25,7 @@ import { useState } from "react";
 import ModalMui from "../../../../Common/ModalMui";
 import InputFields from "../../../../Common/InputFields/InputFields";
 import SelectFields from "../../../../Common/SelectFields";
+import ProposalFeedBack from "./ProposalFeedBack";
 const rows = [
   {
     id: 1,
@@ -61,7 +57,9 @@ function Proposals() {
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
-
+  const [openModalFeedback, setOpenModalFeedback] = useState(false);
+  const handleOpenModalFeedback = () => setOpenModalFeedback(true);
+  const handleCloseModalFeedback = () => setOpenModalFeedback(false);
   const columns = [
     {
       field: "id",
@@ -157,13 +155,17 @@ function Proposals() {
       width: 200,
       editable: true,
       renderCell: (params) => (
-        <Button
-          component={motion.div}
-          whileTap={{ scale: 0.9 }}
-          variant="contained"
-        >
-          View
-        </Button>
+        <>
+          <Button
+            onClick={handleOpenModalFeedback}
+            component={motion.div}
+            whileTap={{ scale: 0.9 }}
+            variant="contained"
+          >
+            View
+          </Button>
+       
+        </>
       ),
       align: "center",
       headerAlign: "center",
@@ -185,6 +187,18 @@ function Proposals() {
           <DataGrids dataRow={rows} dataColumn={columns} />
         </Card>
       </Grid>
+      <ModalMui
+        width={"70vw"}
+        height={"80vh"}
+        top={"10%"}
+        left={"15%"}
+        openModalMui={openModalFeedback}
+        handleCloseModalMui={handleCloseModalFeedback}
+        content={
+          <ProposalFeedBack handleCloseModal={handleCloseModalFeedback} />
+        }
+        noButtons
+      />
     </Grid>
   );
 }
@@ -244,6 +258,7 @@ function ModalContent({ handleCloseModal }) {
           </Button>
         </Stack>
       </Grid>
+      
     </Grid>
   );
 }

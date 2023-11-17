@@ -3,6 +3,7 @@ import React from "react";
 import InputFields from "../../../InputFields/InputFields";
 import { CloudUpload } from "@mui/icons-material";
 import TypographyGrow from "../../../AnimationMui/TypographyGrow";
+import Editor from "../../../Editor";
 const GridUpload = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "flex-start",
@@ -77,7 +78,7 @@ function FormOne({
           helperText={touched.abstract && errors.abstract}
         />
       </Grid>
-      <Grid item xs={12}>
+      {/* <Grid item xs={12}>
         <InputFields
           required
           type={"textbox"}
@@ -91,6 +92,9 @@ function FormOne({
           error={!!touched.description && !!errors.description}
           helperText={touched.description && errors.description}
         />
+      </Grid> */}
+      <Grid item xs={12}>
+        <Editor label={"Project Description"} required={true} />
       </Grid>
       <GridUpload item xs={12}>
         <ButtonUpload

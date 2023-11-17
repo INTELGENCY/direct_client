@@ -5,6 +5,7 @@ import FileUploadComp from "../../../../Common/FileUploadComp";
 import { Formik } from "formik";
 import Milesstones from "./Milesstones";
 import { IndustrySubmitProposal } from "../../../../Common/Validation/FormValidation";
+import Editor from "../../../../Common/Editor";
 const SummaryDiv = styled("div")(({}) => ({
   width: "95%",
   display: "flex",
@@ -59,12 +60,7 @@ function AddForm() {
             </Grid>
             <Grid item xs={12}>
               <Card sx={{ p: 2 }}>
-                <InputFields
-                  type={"textbox"}
-                  rows={5}
-                  label={"Description"}
-                  placeholder={"Write Objectives!"}
-                />
+                <Editor label={"Add Description"} required={true} />
               </Card>
             </Grid>
             <Grid item xs={12}>
