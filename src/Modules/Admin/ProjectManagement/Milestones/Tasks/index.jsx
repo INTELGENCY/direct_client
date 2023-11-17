@@ -24,7 +24,11 @@ function Tasks() {
     >
       <Grid container justifyContent={"flex-start"} rowGap={2}>
         <Grid item xs={12}>
-          <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+          <Stack
+            direction={"row"}
+            alignItems={"center"}
+            justifyContent={"space-between"}
+          >
             <IconsHeadings
               text="Tasks"
               icons={<AttachFile sx={{ color: "bg.darkBlue" }} />}
@@ -41,7 +45,7 @@ function Tasks() {
         {Array(6)
           .fill(null)
           .map((e, i) => (
-            <Grid item xs={4}>
+            <Grid item md={6} lg={4} xl={4}>
               <Cards />
             </Grid>
           ))}

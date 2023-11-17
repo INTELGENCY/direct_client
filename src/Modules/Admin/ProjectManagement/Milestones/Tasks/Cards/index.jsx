@@ -33,11 +33,17 @@ function Cards() {
           <Stack
             direction={"row"}
             alignItems={"center"}
+            gap={2}
             justifyContent={"space-between"}
             sx={{ pt: 1 }}
           >
-            <Typography variant="h5" fontWeight={600}>
-              Task's name comes here
+            <Typography
+              sx={{ width: "80%" }}
+              noWrap
+              variant="h5"
+              fontWeight={600}
+            >
+              Task's name comes here Task's name comes here
             </Typography>
             <Stack direction="column">
               <Chip
@@ -122,5 +128,3 @@ function Cards() {
 }
 
 export default Cards;
-
-
