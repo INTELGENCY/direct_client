@@ -337,9 +337,14 @@ function Overview() {
   return (
     <Grid container rowGap={2} justifyContent={"space-between"}>
       <Grid item xs={12}>
-        <Grid alignItems="stretch" container justifyContent={"space-between"}>
+        <Grid
+          alignItems="stretch"
+          rowGap={2}
+          container
+          justifyContent={"space-between"}
+        >
           {CardsData?.map((e, i) => (
-            <Grid item xs={3.9}>
+            <Grid item sx={12} sm={12} md={12} lg={3.9}>
               <InfoCards dataCards={e} key={i} />
             </Grid>
           ))}
