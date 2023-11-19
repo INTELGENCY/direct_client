@@ -126,26 +126,26 @@ function Proposals() {
       align: "center",
       headerAlign: "center",
     },
-    // {
-    //   field: "viewFeedback",
-    //   headerName: "View Feedback",
-    //   width: 200,
+    {
+      field: "viewFeedback",
+      headerName: "View Feedback",
+      width: 200,
 
-    //   renderCell: (params) => (
-    //     <>
-    //       <Button
-    //         onClick={handleOpenModalFeedback}
-    //         component={motion.div}
-    //         whileTap={{ scale: 0.9 }}
-    //         variant="contained"
-    //       >
-    //         View
-    //       </Button>
-    //     </>
-    //   ),
-    //   align: "center",
-    //   headerAlign: "center",
-    // },
+      renderCell: (params) => (
+        <>
+          <Button
+            onClick={handleOpenModalFeedback}
+            component={motion.div}
+            whileTap={{ scale: 0.9 }}
+            variant="contained"
+          >
+            View
+          </Button>
+        </>
+      ),
+      align: "center",
+      headerAlign: "center",
+    },
   ];
   return (
     <Grid container gap={4}>

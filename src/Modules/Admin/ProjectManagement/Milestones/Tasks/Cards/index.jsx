@@ -104,7 +104,7 @@ function Cards({ dataCard, index }) {
           <ProgressMui value={dataCard.progress} />
         </Grid>
         <Grid item xs={12}>
-          <Button
+          {/* <Button
             component={motion.div}
             sx={{ textTransform: "capitalize", letterSpacing: 0.5 }}
             whileTap={{ scale: 0.9 }}
@@ -123,7 +123,7 @@ function Cards({ dataCard, index }) {
             handleCloseModalMui={handleCloseModal}
             // content={<ModalContent handleCloseModal={handleCloseModal} />}
             noButtons
-          />
+          /> */}
         </Grid>
       </Grid>
     </Card>

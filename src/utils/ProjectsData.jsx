@@ -18,7 +18,7 @@ export const dataProject = [
 export const TasksProject = [
   {
     title: "Project Planning and Research",
-    progress: 100,
+    progress: 90, 
     startDate: "November 20, 2023",
     endDate: "December 4, 2023",
     status: "in progress",
@@ -41,7 +41,7 @@ export const TasksProject = [
     statusColor: "blue",
   },
   {
-    title: " Prototype Testing and Refinement",
+    title: "Prototype Testing and Refinement",
     progress: 0,
     startDate: "January 2, 2024",
     endDate: "January 15, 2024",
@@ -89,7 +89,7 @@ export const TasksProject = [
     statusColor: "none",
   },
   {
-    title: " Final Documentation and Presentation",
+    title: "Final Documentation and Presentation",
     progress: 0,
     startDate: "March 26, 2024",
     endDate: "April 9, 2024",
