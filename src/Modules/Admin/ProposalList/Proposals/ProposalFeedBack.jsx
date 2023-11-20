@@ -21,11 +21,6 @@ function ProposalFeedBack({ handleCloseModal }) {
       type: "pdf",
       date: "Nov 18, 2023",
       url: "/pdf/Design & Development of a Smart Ball Based Surveil.pdf",
-      // download: {
-      //   type: "pdf",
-      //   fileName: "Design & Development of a Smart Ball Based Surveil",
-      //   content: "/pdf/Design & Development of a Smart Ball Based Surveil.pdf",
-      // },
     },
   ];
 
@@ -121,7 +116,7 @@ function ProposalFeedBack({ handleCloseModal }) {
           <DataGrids dataRow={rowsFiles} dataColumn={columnsFiles} />
         </Card>
       </Grid>
-    </Grid> 
+    </Grid>
   );
 }
 

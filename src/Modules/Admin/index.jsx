@@ -21,7 +21,7 @@ function index() {
             path="/dashboard/projectdetails/:id"
             element={<ProjectDetails />}
           />
-          <Route path="/dashboard/subadmin" element={<ViewLists />} />
+          <Route path="/dashboard/management" element={<ViewLists />} />
           <Route path="/dashboard/proposallist" element={<ProposalList />} />
           <Route path="/dashboard/projectmanagement" element={<ProjectManagement />} />
         </Route>

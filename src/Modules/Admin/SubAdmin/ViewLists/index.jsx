@@ -1,5 +1,6 @@
 import {
   Button,
+  Card,
   Grid,
   IconButton,
   InputAdornment,
@@ -11,6 +12,7 @@ import { Add, FilterList, Search } from "@mui/icons-material";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
 import { useState } from "react";
 import AddSubAdmin from "../AddSubAdmin";
+import { customTheme } from "../../../../Theme/theme";
 
 function ViewLists() {
   const [open, setOpen] = useState(false);
@@ -63,7 +65,9 @@ function ViewLists() {
         </Stack>
       </Grid>
       <Grid item xs={12}>
-        <DataGrids checkboxSelection />
+        <Card sx={{ boxShadow: customTheme.palette.boxShadows.boxShadowTable }}>
+          <DataGrids />
+        </Card>
       </Grid>
       <AddSubAdmin setOpen={setOpen} open={open} />
     </Grid>

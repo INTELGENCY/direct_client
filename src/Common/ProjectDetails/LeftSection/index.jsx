@@ -11,6 +11,7 @@ import { Box } from "@mui/system";
 import SectionContainer from "../../Containers/SectionContainer";
 import Status, { SolidButton, TransparentButton } from "../../Buttons";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const GRID = styled(Grid)(({ theme }) => ({
   ["@media screen  and (min-width:1799px)"]: {},
@@ -35,6 +36,9 @@ const arr = [
 
 function LeftSection({ data }) {
   const [ShowMore, setShowMore] = useState(false);
+  const profile = useSelector((state) => state.profile.profile);
+  const isIndustry = profile?.type === "industry";
+  const isAcademia = profile?.type === "academia";
   return (
     <SectionContainer>
       <DetailsPageHeading variant="h1">PROJECT DETAILS</DetailsPageHeading>
@@ -61,11 +65,12 @@ function LeftSection({ data }) {
               Save Project
               <Bookmark color="red" />
             </TransparentButton>
-
-            <SolidButton>
-              Send Proposal
-              <ArrowRightAlt sx={{ width: "25px", height: "25px" }} />
-            </SolidButton>
+            {(isIndustry || isAcademia) && (
+              <SolidButton>
+                Send Proposal
+                <ArrowRightAlt sx={{ width: "25px", height: "25px" }} />
+              </SolidButton>
+            )}
           </ButtonsRow>
           <StatusRow>
             {arr?.map((Com, i) => {

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { keys } from "../../config";
 import { dataProject } from "../../utils/ProjectsData";
+import { useSelector } from "react-redux";
 
 const Container = styled("div")(({ theme }) => ({
   display: "flex",
@@ -34,6 +35,8 @@ const ItemTwo = styled("div")(({ theme }) => ({
 }));
 function ProjectDetails() {
   const [projectData, setProjectData] = useState(null);
+   const profile = useSelector((state) => state.profile.profile);
+   const isAdmin = profile?.type === "admin" || profile?.type === "super";
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   useEffect(() => {

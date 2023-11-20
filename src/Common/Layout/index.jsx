@@ -146,9 +146,9 @@ function Index() {
   const navigate = useNavigate();
   const [MenuState, setMenuState] = useState(false);
   const profile = useSelector((state) => state.profile.profile);
+  const isAdmin = profile?.type === "admin" || profile?.type === "super";
   const isIndustry = profile?.type === "industry";
   const isAcademia = profile?.type === "academia";
-  const isAdmin = profile?.type === "admin" || profile?.type === "super";
   console.log(profile);
   const [open, setOpen] = useState(false);
   const [reference, setreference] = useState(null);
@@ -187,127 +187,130 @@ function Index() {
   }, []);
 
   return (
-      <Stack direction={"row"} sx={{  width: "100%" , paddingTop:"50px",}} className={"sadfasf"}>
-        <AppBar
-          sx={{
-            backgroundColor: "#fff",
-            borderBottom: 1,
-            borderColor: "divider",
-          }}
-          position="fixed"
-          open={open}
-        >
-          <Toolbar>
-            <NavbarContainer>
-              <IconButton sx={{ color: "#8D8D8D" }}>
-                <NotificationsIcon />
-              </IconButton>
-              <IconButton onClick={handleOpenMenu} sx={{ color: "#8D8D8D" }}>
-                <Avatar />
-              </IconButton>
-              <MenuMui
-                reference={reference}
-                handleCloseMenu={handleCloseMenu}
-              />
-            </NavbarContainer>
-          </Toolbar>
-        </AppBar>
-        <Drawer variant="permanent" open={open}>
-          <DrawerHeader>
-            {open ? (
-              <IconButton sx={{ color: "white" }} onClick={handleDrawerClose}>
-                <ChevronLeftIcon />
-              </IconButton>
-            ) : (
-              <IconButton
-                aria-label="open drawer"
-                onClick={handleDrawerOpen}
-                edge="start"
-                sx={{
-                  color: "white",
-                }}
-              >
-                <ChevronRightIcon />
-              </IconButton>
-            )}
-          </DrawerHeader>
-          <Container>
-            <Stack
-              justifyContent={"flex-start"}
-              alignItems={"flex-start"}
-              spacing={12}
+    <Stack
+      direction={"row"}
+      sx={{ width: "100%", paddingTop: "50px" }}
+      className={"sadfasf"}
+    >
+      <AppBar
+        sx={{
+          backgroundColor: "#fff",
+          borderBottom: 1,
+          borderColor: "divider",
+        }}
+        position="fixed"
+        open={open}
+      >
+        <Toolbar>
+          <NavbarContainer>
+            <IconButton sx={{ color: "#8D8D8D" }}>
+              <NotificationsIcon />
+            </IconButton>
+            <IconButton onClick={handleOpenMenu} sx={{ color: "#8D8D8D" }}>
+              <Avatar />
+            </IconButton>
+            <MenuMui reference={reference} handleCloseMenu={handleCloseMenu} />
+          </NavbarContainer>
+        </Toolbar>
+      </AppBar>
+      <Drawer variant="permanent" open={open}>
+        <DrawerHeader>
+          {open ? (
+            <IconButton sx={{ color: "white" }} onClick={handleDrawerClose}>
+              <ChevronLeftIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                color: "white",
+              }}
             >
-              <SectionLogo open={open}>
-                <LogoWrapper
-                  invert={false}
-                  width={open ? "200px" : "50px"}
-                  height={open ? "200px" : "50px"}
-                />
-              </SectionLogo>
-              <List
-                sx={{ width: "100%", maxWidth: 360 }}
-                component="nav"
-                aria-labelledby="nested-list-subheader"
+              <ChevronRightIcon />
+            </IconButton>
+          )}
+        </DrawerHeader>
+        <Container>
+          <Stack
+            justifyContent={"flex-start"}
+            alignItems={"flex-start"}
+            spacing={12}
+          >
+            <SectionLogo open={open}>
+              <LogoWrapper
+                invert={false}
+                width={open ? "200px" : "50px"}
+                height={open ? "200px" : "50px"}
+              />
+            </SectionLogo>
+            <List
+              sx={{ width: "100%", maxWidth: 360 }}
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+            >
+              <ListItemButton onClick={() => handlenavigate("projects")}>
+                <ListItemIcon>
+                  <BusinessCenterIcon sx={{ color: "#F1F1F1" }} />
+                </ListItemIcon>
+                <ListItemText primary="Projects" />
+              </ListItemButton>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Business sx={{ color: "#F1F1F1" }} />
+                </ListItemIcon>
+                <ListItemText primary="Listed Companies" />
+              </ListItemButton>
+              <ListItemButton>
+                <ListItemIcon>
+                  <DvrIcon sx={{ color: "#F1F1F1" }} />
+                </ListItemIcon>
+                <ListItemText primary="Resourse Management" />
+              </ListItemButton>
+              <ListItemButton
+                onClick={() => navigate("/directportal/dashboard/management")}
               >
-                <ListItemButton onClick={() => handlenavigate("projects")}>
-                  <ListItemIcon>
-                    <BusinessCenterIcon sx={{ color: "#F1F1F1" }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Projects" />
-                </ListItemButton>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <Business sx={{ color: "#F1F1F1" }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Listed Companies" />
-                </ListItemButton>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <DvrIcon sx={{ color: "#F1F1F1" }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Resourse Management" />
-                </ListItemButton>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <GroupsIcon sx={{ color: "#F1F1F1" }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Team " />
-                </ListItemButton>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <ForumIcon sx={{ color: "#F1F1F1" }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Forums" />
-                </ListItemButton>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <SatelliteAltIcon sx={{ color: "#F1F1F1" }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Communication" />
-                </ListItemButton>
-              </List>
-            </Stack>
-          </Container>
-        </Drawer>
-        <div
+                <ListItemIcon>
+                  <GroupsIcon sx={{ color: "#F1F1F1" }} />
+                </ListItemIcon>
+                <ListItemText primary="Team " />
+              </ListItemButton>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ForumIcon sx={{ color: "#F1F1F1" }} />
+                </ListItemIcon>
+                <ListItemText primary="Forums" />
+              </ListItemButton>
+              <ListItemButton>
+                <ListItemIcon>
+                  <SatelliteAltIcon sx={{ color: "#F1F1F1" }} />
+                </ListItemIcon>
+                <ListItemText primary="Communication" />
+              </ListItemButton>
+            </List>
+          </Stack>
+        </Container>
+      </Drawer>
+      <div
         className="layoutCommon"
-          component="main"
-          // style={{
-          //   flexGrow: 1,
-          //   p: 2,
-          //   "@media (max-width: 600px)": {
-          //     p: 0,
-          //   },
-          //   pt: 10,
-          // }}
-        >
-          <Grid container justifyContent={"center"} alignItems={"center"}>
-            <Grid item xs={11.6}>
-          <Outlet />
+        component="main"
+        // style={{
+        //   flexGrow: 1,
+        //   p: 2,
+        //   "@media (max-width: 600px)": {
+        //     p: 0,
+        //   },
+        //   pt: 10,
+        // }}
+      >
+        <Grid container justifyContent={"center"} alignItems={"center"}>
+          <Grid item xs={11.6}>
+            <Outlet />
           </Grid>
-          </Grid>
-        </div>
-      </Stack>
+        </Grid>
+      </div>
+    </Stack>
   );
 }
 
