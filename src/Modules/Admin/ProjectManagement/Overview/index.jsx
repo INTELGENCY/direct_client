@@ -174,12 +174,7 @@ const rowSubadmin = [
     role: "Web Admin",
     joinDate: "Nov 05, 2022",
   },
-  {
-    id: 4,
-    name: "Stark",
-    role: "",
-    joinDate: "Nov 05, 2022",
-  },
+
 ];
 const columnsTasks = [
   {
