@@ -178,7 +178,7 @@ const ProjectCards = ({ data }) => {
         subheader={
           <Ongoing>
             {data?.endDate === null
-              ? "Ongoing"
+              ? "coming soon"
               : new Date(data?.startDate).toDateString()}
           </Ongoing>
         }

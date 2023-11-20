@@ -13,7 +13,7 @@ import { keys } from "../../../config";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setProfile } from "../../../Store/Features/QalamSlice";
-// import MissionAndVision from "./MissionAndStatement";
+import MissionAndVision from "./MissionAndStatement";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -61,12 +61,13 @@ const LandingPage = () => {
         <meta name="description" content={landingMeta?.description} />
       </Helmet>
       <Banner />
+      {/* <MissionAndVision /> */}
+      <MissionAndVision />
       <Stats />
       <ProjectsCarousel />
       <TechnologyGrid />
       <MapComponentWrapper />
       {/* <TopResources /> */}
-      {/* <MissionAndVision /> */}
       <NewsEvent />
     </div>
   );

@@ -22,7 +22,7 @@ function ViewLists() {
   return (
     <Grid container gap={4} sx={{ mt: 8 }}>
       <Grid item xs={12}>
-        <MainHeadings text={"Sub-Admins"} />
+        <MainHeadings text={"Management Team"} />
       </Grid>
       <Grid item xs={12}>
         <Stack

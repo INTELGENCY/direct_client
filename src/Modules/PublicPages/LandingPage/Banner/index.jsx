@@ -1,10 +1,11 @@
-import { Grid, Typography, styled, Stack, Box } from "@mui/material";
+import { Grid, Typography, styled, Stack, Box, Avatar } from "@mui/material";
 import { data } from "./data";
 import Rightside from "./Rightside.jsx";
 import { useEffect, useRef, useState, forwardRef } from "react";
 import SimpleBar from "simplebar-react";
 import Spinner from "../../../../Common/Spinner";
 import { height } from "@mui/system";
+import { dataProject } from "../../../../utils/ProjectsData.jsx";
 
 const ImageStyled = styled("img")(({ theme }) => ({
   zIndex: -1,
@@ -23,7 +24,16 @@ const ImageStyled = styled("img")(({ theme }) => ({
     },
   },
 }));
-
+const Pstyled = styled(Typography)(({ theme }) => ({
+  display: "-webkit-box",
+  overflow: "hidden",
+  WebkitBoxOrient: "vertical",
+  WebkitLineClamp: 2,
+  textAlign: "left",
+  width: "30%",
+  // lineHeight: 1.6,
+  fontWeight: "400",
+}));
 const SimpleBarStyled = styled(SimpleBar)(({ theme }) => {
   return {
     zIndex: 1,
@@ -98,7 +108,27 @@ const BannerCarousel = () => {
     <Grid container>
       <GridColor item xs={12} md={12} lg={2.35} xl={2.5} height={height}>
         <SimpleBarStyled>
-          <Statement>
+          <Stack sx={{ mt: 4 }} gap={4} direction={"column"}>
+            <Typography variant="h3" color={"white"}>
+              Projects
+            </Typography>
+            <Stack gap={1} direction={"row"}>
+              {/* <Avatar variant="square" sx={{ borderRadius: "10px" }}></Avatar> */}
+              <Stack direction={"column"} gap={1}>
+                <Typography
+                  variant="h4"
+                  width={"30%"}
+                  noWrap
+                  fontWeight={700}
+                  color={"white"}
+                >
+                  {dataProject[0].title}
+                </Typography>
+                <Pstyled variant="body2">{dataProject[0].description}</Pstyled>
+              </Stack>
+            </Stack>
+          </Stack>
+          {/* <Statement>
             <h2>
               <span>Mission</span>
             </h2>
@@ -114,7 +144,7 @@ const BannerCarousel = () => {
             <Typography variant="body2">
               Pioneering Excellence in Defense Innovation and National Security
             </Typography>
-          </Statement>
+          </Statement> */}
         </SimpleBarStyled>
       </GridColor>
       <GridImage item xs={12} md={12} lg={7} xl={6.6} height={height}>
