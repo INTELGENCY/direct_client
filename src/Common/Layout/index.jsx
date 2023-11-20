@@ -148,7 +148,8 @@ function Index() {
   const profile = useSelector((state) => state.profile.profile);
   const isIndustry = profile?.type === "industry";
   const isAcademia = profile?.type === "academia";
-  const isAdmin = profile?.type === "admin";
+  const isAdmin = profile?.type === "admin" || profile?.type === "super";
+  console.log(profile);
   const [open, setOpen] = useState(false);
   const [reference, setreference] = useState(null);
   const handleOpenMenu = (e) => {
@@ -168,11 +169,12 @@ function Index() {
     setOpen(false);
   };
   const handlenavigate = (url) => {
+    console.log("handle click");
     if (isAcademia) {
       navigate(`/academia/projects`);
     }
     if (isAdmin) {
-      navigate(`/directportal/dashboard/projects`);
+      navigate(`/directportal/dashboard`);
     }
     if (isIndustry) {
       navigate(`/industry/projects`);
