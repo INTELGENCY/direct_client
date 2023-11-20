@@ -15,10 +15,11 @@ const ButtonDelete = styled(Button)(({ theme }) => ({
     backgroundColor: theme.palette.bg.normalRed,
   },
 }));
-function Cards() {
+function Cards({ dataCards, sectionName }) {
   return (
     <Card
       sx={{
+        m:1,
         pb: 6,
         pt: 7.5,
         pr: 4,
@@ -36,11 +37,13 @@ function Cards() {
           >
             <Avatar sx={{ width: "100px", height: "100px", mb: 1.5 }}></Avatar>
             <Typography textAlign={"center"} variant="h3" fontWeight={500}>
-              Abdullah Asif
+              {dataCards.name}
             </Typography>
-            <Typography variant="body1" color={"GrayText"}>
-              Project Mannager
-            </Typography>
+            {sectionName === "Management Team" && (
+              <Typography variant="body1" color={"GrayText"}>
+                {dataCards.admin}
+              </Typography>
+            )}
           </Stack>
         </Grid>
         <Grid item xs={12}>
@@ -56,10 +59,7 @@ function Cards() {
             <Button variant="contained" startIcon={<Face />}>
               Profile
             </Button>
-            <ButtonDelete
-              variant="contained"
-              startIcon={<Delete />}
-            >
+            <ButtonDelete variant="contained" startIcon={<Delete />}>
               Remove
             </ButtonDelete>
           </Stack>

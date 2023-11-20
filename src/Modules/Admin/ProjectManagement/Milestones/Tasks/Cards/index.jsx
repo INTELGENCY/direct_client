@@ -15,7 +15,7 @@ import ModalMui from "../../../../../../Common/ModalMui";
 import { useState } from "react";
 import ModalContent from "./ModalContent";
 
-function Cards() {
+function Cards({ dataCard, index }) {
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
@@ -43,16 +43,19 @@ function Cards() {
               variant="h5"
               fontWeight={600}
             >
-              Task's name comes here Task's name comes here
+              {dataCard.title}
             </Typography>
             <Stack direction="column">
               <Chip
                 color={"primary"}
                 sx={{
-                  backgroundColor: customTheme.palette.bg.parrotGreen,
+                  backgroundColor:
+                    dataCard.statusColor === "blue"
+                      ? customTheme.palette.bg.lightPurple
+                      : "customTheme.palette.bg.blue",
                   color: "white",
                 }}
-                label={"Complete"}
+                label={dataCard.status}
               />
             </Stack>
           </Stack>
@@ -64,7 +67,7 @@ function Cards() {
           <Stack direction={"row"} gap={1}>
             <Typography variant="body2">Task No.</Typography>
             <Typography variant="body2" fontWeight={600}>
-              10
+              {index + 1}
             </Typography>
           </Stack>
         </Grid>
@@ -72,7 +75,7 @@ function Cards() {
           <Stack direction={"row"} gap={1}>
             <Typography variant="body2">Attachments:</Typography>
             <Typography variant="body2" fontWeight={600}>
-              20
+              0
             </Typography>
           </Stack>
         </Grid>
@@ -80,7 +83,7 @@ function Cards() {
           <Stack direction={"row"} gap={1}>
             <Typography variant="body2">Start Date:</Typography>
             <Typography variant="body2" fontWeight={500}>
-              02/02/2002
+              {dataCard.startDate}
             </Typography>
           </Stack>
         </Grid>
@@ -88,7 +91,7 @@ function Cards() {
           <Stack direction={"row"} gap={1}>
             <Typography variant="body2">Due Date:</Typography>
             <Typography variant="body2" fontWeight={500}>
-              02/02/2004
+              {dataCard.endDate}
             </Typography>
           </Stack>
         </Grid>
@@ -98,9 +101,9 @@ function Cards() {
           </Typography>
         </Grid> */}
         <Grid item xs={12}>
-          <ProgressMui value={24} />
+          <ProgressMui value={dataCard.progress} />
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Button
             component={motion.div}
             sx={{ textTransform: "capitalize", letterSpacing: 0.5 }}
@@ -111,17 +114,19 @@ function Cards() {
           >
             View
           </Button>
-          <ModalMui
-            width={"70vw"}
-            height={"80vh"}
-            top={"10%"}
-            left={"15%"}
-            openModalMui={openModal}
-            handleCloseModalMui={handleCloseModal}
-            content={<ModalContent handleCloseModal={handleCloseModal} />}
-            noButtons
-          />
-        </Grid>
+          {openModal && (
+            <ModalMui
+              width={"70vw"}
+              height={"80vh"}
+              top={"10%"}
+              left={"15%"}
+              openModalMui={openModal}
+              handleCloseModalMui={handleCloseModal}
+              content={<ModalContent handleCloseModal={handleCloseModal} />}
+              noButtons
+            />
+          )}
+        </Grid> */}
       </Grid>
     </Card>
   );

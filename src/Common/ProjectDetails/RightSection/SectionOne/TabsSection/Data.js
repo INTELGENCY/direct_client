@@ -1,27 +1,22 @@
 export const ContentData = [
   {
-    content:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
+    content: "16 Nov, 2023 - 20 Nov, 2023",
     key: 1,
   },
   {
-    content:
-      "Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
+    file: "/pdf/Design & Development of a Smart Ball Based Surveil.pdf",
+    name: "Development of a Smart Ball.pdf",
     key: 2,
   },
   {
-    content:
-      "Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
+    file: "/pdf/Annexure-C (Budget Breakdown) Financial.pdf",
+    name: "Annexure-C (Budget Breakdown) Financial.pdf",
     key: 3,
   },
+
   {
     content:
-      "Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
+      "By accessing and utilizing the Smart Ball Based Surveillance System (BKV-1), users implicitly agree to the following terms and conditions. This system, integrating cutting-edge hardware and software, is exclusively intended for use by authorized law enforcement and security agencies. Users acknowledge the system's functionality for enhancing intelligence, surveillance, and reconnaissance missions, understanding that technological limitations may necessitate updates for optimization. Data security and privacy are paramount, and deploying agencies are responsible for adhering to legal and ethical standards. Operators maintain full control over the system's features, ensuring compliance with local laws. Users are advised to capture images when the ball is motionless to prevent blurriness. Wi-Fi connectivity and user interface accessibility are essential for seamless operation, with the deploying agency assuming all associated risks. Any future dedicated applications will be subject to additional terms. Modifications and updates may occur, and governing law is applicable to these terms and conditions. Violation may result in system access suspension and legal action.",
     key: 4,
-  },
-  {
-    content:
-      "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
-    key: 5,
   },
 ];

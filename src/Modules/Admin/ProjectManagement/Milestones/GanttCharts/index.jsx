@@ -1,7 +1,7 @@
 import { Card, Divider, Grid } from "@mui/material";
 import { Gantt } from "gantt-task-react";
 import ViewSwitcher from "../ViewSwitcher";
-import { initTasks } from "../Data";
+import { getStartEndDateForProject, initTasks } from "../Data";
 import { useState } from "react";
 import { customTheme } from "../../../../../Theme/theme";
 
@@ -26,6 +26,7 @@ function GanttCharts() {
 
     if (task?.project) {
       const [start, end] = getStartEndDateForProject(newTasks, task.project);
+      console.log(start,end);
       const project = newTasks?.find((t) => t.id === task.project);
 
       if (

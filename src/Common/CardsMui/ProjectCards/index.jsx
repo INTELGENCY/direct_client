@@ -76,7 +76,7 @@ const CardMediaStyled = styled(CardMedia)(({ theme }) => {
   return {
     background: "white",
     padding: "0px",
-    objectFit: "cover",
+    objectFit: "contain",
     margin: "0",
     borderRadius: "2px",
     [theme.breakpoints.up("md")]: {},
@@ -188,7 +188,8 @@ const ProjectCards = ({ data }) => {
           component="img"
           width={"100%"}
           height="190px"
-          image={keys.api + data?.image}
+          // image={keys.api + data?.image}
+          image={data?.image}
           onError={(e) => {
             e.currentTarget.src = placeholder;
           }}

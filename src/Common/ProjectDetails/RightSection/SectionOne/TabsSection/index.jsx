@@ -2,22 +2,26 @@ import {
   AccessTime,
   Analytics,
   AutoStories,
+  Description,
   Gavel,
   ScatterPlot,
 } from "@mui/icons-material";
 import {
+  Button,
+  Card,
   Grid,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Stack,
   Typography,
   styled,
 } from "@mui/material";
 import { useState } from "react";
 import { ContentData } from "./Data";
-
+import { customTheme } from "../../../../../Theme/theme";
 const TabsStyle = styled(Grid)(({ theme }) => ({}));
 const ListCustome = styled(List)(({ theme }) => ({
   width: "100%",
@@ -47,7 +51,7 @@ const ListItemCustom = styled(ListItem)(({ theme }) => ({
 }));
 const TabContent = styled("div")(({ theme }) => ({
   paddingInline: "20px",
-  paddingBlock: "10px",
+  paddingBlock: "20px",
   marginTop: "1rem",
   // border:"1px solid green",
   minHeight: "300px",
@@ -67,10 +71,10 @@ const d = [
     name: "Cost Guidelines",
     icon: <AutoStories />,
   },
-  {
-    name: "Funding Process",
-    icon: <Analytics />,
-  },
+  // {
+  //   name: "Funding Process",
+  //   icon: <Analytics />,
+  // },
   {
     name: "Terms & Qualifications",
     icon: <Gavel />,
@@ -99,13 +103,19 @@ function TabsSection({ data }) {
       <Grid item xs={12} sm={12} md={8.4} lg={8.4}>
         {ContentData.map(
           (e, i) =>
-            e.key === TabShow && (
+            e.key === TabShow &&
+            (e.file ? (
+              <TabContent key={i}>
+                <FilesContent name={e.name} url={e.file} />
+              </TabContent>
+            ) : (
               <TabContent key={i}>
                 <Typography color={"gray"} variant="body1">
-                  {data?.terms}
+                  {/* {data?.terms} */}
+                  {e.content}
                 </Typography>
               </TabContent>
-            )
+            ))
         )}
       </Grid>
     </Grid>
@@ -113,3 +123,29 @@ function TabsSection({ data }) {
 }
 
 export default TabsSection;
+
+const FilesContent = ({ url, name }) => {
+  return (
+    <Card
+      sx={{
+        p: 2,
+        boxShadow: customTheme.palette.boxShadows.boxShadowCardsLight,
+      }}
+    >
+      <Stack
+        sx={{ width: "100%" }}
+        gap={2}
+        direction={"column"}
+        alignItems={"flex-start"}
+      >
+        <Stack direction={"row"} gap={1}>
+          <Description />
+          <Typography variant="body1">{name}</Typography>
+        </Stack>
+        <Button href={url} variant={"contained"} size="small">
+          View
+        </Button>
+      </Stack>
+    </Card>
+  );
+};

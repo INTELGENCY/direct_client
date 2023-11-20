@@ -12,7 +12,32 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import CardSection from "./CardSections";
-
+const arrayMangement = [
+  {
+    name: "Ali",
+    admin: "Project Manager",
+  },
+  {
+    name: "Aman",
+    admin: "Web Admin",
+  },
+  {
+    name: "Abdullah",
+    admin: "Technical Evaluator",
+  },
+];
+const arrayIndustry = [
+  {
+    name: "M/S Octathorn",
+    admin: "Project Manager",
+  },
+];
+const arrayFundingAgency = [
+  {
+    name: "Defence",
+    admin: "Project Manager",
+  },
+];
 function Members() {
   const [age, setAge] = useState(10);
 
@@ -51,6 +76,7 @@ function Members() {
       </Grid>
       <Grid item xs={12}>
         <CardSection
+          arrayCards={arrayMangement}
           sectionName={"Management Team"}
           icons={
             <AdminPanelSettings
@@ -65,6 +91,7 @@ function Members() {
       </Grid>
       <Grid item xs={12}>
         <CardSection
+          arrayCards={arrayIndustry}
           sectionName={"Industry"}
           color={"#9c88ff"}
           icons={
@@ -79,6 +106,7 @@ function Members() {
       </Grid>
       <Grid item xs={12}>
         <CardSection
+          arrayCards={arrayFundingAgency}
           sectionName={"Funding Agency"}
           color={"#fa8231"}
           icons={

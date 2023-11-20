@@ -21,6 +21,7 @@ import {
 } from "@mui/icons-material";
 import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
 import { CardsData } from "./data";
+import AdminDownloadBtn from "../../../../Common/AdminDownloadBtn";
 const columnsFiles = [
   {
     field: "id",
@@ -32,7 +33,7 @@ const columnsFiles = [
   {
     field: "fileName",
     headerName: "File Name",
-    width: 200,
+    width: 450,
   },
   {
     field: "upload",
@@ -55,71 +56,66 @@ const columnsFiles = [
     align: "right",
     headerAlign: "right",
   },
+  {
+    field: "download",
+    headerName: "Download File",
+    width: 300,
+
+    align: "center",
+    headerAlign: "center",
+    renderCell: (param) => (
+      <>
+        <Button
+          variant="contained"
+          target="_blank"
+          href={param.row.download.content}
+        >
+          Download
+        </Button>
+      </>
+    ),
+  },
 ];
 
 const rowsFiles = [
   {
     id: 1,
-    fileName: "Snow",
+    fileName: "Design & Development of a Smart Ball Based Surveil",
     size: "45KBs",
-    upload: "Jon",
-    date: "Nov 10, 2022",
+    upload: "Ali",
+    type: "pdf",
+    date: "Nov 18, 2023",
+    download: {
+      type: "pdf",
+      fileName: "Design & Development of a Smart Ball Based Surveil",
+      content: "/pdf/Design & Development of a Smart Ball Based Surveil.pdf",
+    },
   },
   {
     id: 2,
-    fileName: "Lannister",
+    fileName: "Budget Breakdown",
     size: "45KBs",
-    upload: "Cersei",
-    date: "Nov 09, 2022",
+    upload: "Ali",
+    type: "pdf",
+    date: "Nov 18, 2023",
+    download: {
+      type: "pdf",
+      fileName: "Budget Breakdown",
+      content: "/pdf/Annexure-C (Budget Breakdown) Financial.pdf",
+    },
   },
   {
-    id: 3,
-    fileName: "Lannister",
-    size: "45KBs",
-    upload: "Jaime",
-    date: "Nov 08, 2022",
-  },
-  {
-    id: 4,
-    fileName: "Stark",
-    size: "45KBs",
-    upload: "Arya",
-    date: "Nov 7, 2022",
-  },
-  {
-    id: 5,
-    fileName: "Targaryen",
-    size: "45KBs",
-    upload: "Daenerys",
-    date: "Nov 06, 2022",
-  },
-  {
-    id: 6,
-    fileName: "Melisandre",
-    size: "45KBs",
-    upload: "Abdullah",
-    date: "Nov 05, 2022",
-  },
-  {
-    id: 7,
-    fileName: "Clifford",
-    size: "45KBs",
-    upload: "Ferrara",
-    date: "Nov 04, 2022",
-  },
-  {
-    id: 8,
-    fileName: "Frances",
-    size: "45KBs",
-    upload: "Rossini",
-    date: "Nov 03, 2022",
-  },
-  {
-    id: 9,
-    fileName: "Roxie",
-    size: "45KBs",
-    upload: "Harvey",
-    date: "Nov 02, 2022",
+    id: 2,
+    fileName: "Funds Utilization Report",
+    size: "523KBs",
+    upload: "Ali",
+    type: "pdf",
+    date: "Nov 20, 2023",
+    download: {
+      type: "pdf",
+      fileName: "Funds Utilization Report",
+      content: "/pdf/Annexure-Q (Funds Utilization Report ).pdf",
+    },
   },
 ];
 const columnsSubadmin = [
@@ -160,7 +156,12 @@ const columnsSubadmin = [
 ];
 
 const rowSubadmin = [
-  { id: 1, name: "Snow", role: "Project Manager", joinDate: "Nov 05, 2022" },
+  {
+    id: 1,
+    name: "Snow",
+    role: "Technical Evaluator",
+    joinDate: "Nov 05, 2022",
+  },
   {
     id: 2,
     name: "Lannister",
@@ -169,31 +170,16 @@ const rowSubadmin = [
   },
   {
     id: 3,
-    name: "Lannister",
-    role: "Project Manager",
-    joinDate: "Nov 05, 2022",
-  },
-  { id: 4, name: "Stark", role: "Project Manager", joinDate: "Nov 05, 2022" },
-  {
-    id: 5,
-    name: "Targaryen",
-    role: "Project Manager",
+    name: "Adam",
+    role: "Web Admin",
     joinDate: "Nov 05, 2022",
   },
   {
-    id: 6,
-    name: "Melisandre",
-    role: "Project Manager",
-    ajoinDate: "Nov 05, 2022",
-  },
-  {
-    id: 7,
-    name: "Clifford",
-    role: "Project Manager",
+    id: 4,
+    name: "Stark",
+    role: "",
     joinDate: "Nov 05, 2022",
   },
-  { id: 8, name: "Frances", role: "Project Manager", joinDate: "Nov 05, 2022" },
-  { id: 9, name: "Roxie", role: "Project Manager", joinDate: "Nov 05, 2022" },
 ];
 const columnsTasks = [
   {
@@ -243,79 +229,79 @@ const columnsTasks = [
     align: "right",
     headerAlign: "right",
   },
-  {
-    field: "detail",
-    headerName: "View Details",
+  // {
+  //   field: "detail",
+  //   headerName: "View Details",
 
-    align: "center",
-    headerAlign: "center",
-    renderCell: (params) => <Button variant={"contained"}>View</Button>,
-    width: 200,
-  },
+  //   align: "center",
+  //   headerAlign: "center",
+  //   renderCell: (params) => <Button variant={"contained"}>View</Button>,
+  //   width: 200,
+  // },
 ];
 
 const rowsTasks = [
   {
     id: 1,
-    taskName: "Snow Lannister Lannister Lannister Lannister",
-    progress: 89,
-    dueDate: "Nov 05, 2022",
+    taskName: "Project Planning and Research",
+    progress: 90,
+    dueDate: "December 4, 2023",
     detail: "",
   },
   {
     id: 2,
-    taskName: "Lannister",
-    progress: 9,
-    dueDate: "Nov 05, 2022",
+    taskName: "Hardware and Prototype Development",
+    progress: 50,
+    dueDate: "December 18, 2023",
     detail: "",
   },
   {
     id: 3,
-    taskName: "Lannister",
-    progress: 93,
-    dueDate: "Nov 05, 2022",
+    taskName: "Software Development",
+    progress: 60,
+    dueDate: "January 1, 2024",
     detail: "",
   },
   {
     id: 4,
-    taskName: "Stark",
-    progress: 82,
-    dueDate: "Nov 05, 2022",
+    taskName: "Prototype Testing and Refinement",
+    progress: 0,
+    dueDate: "January 15, 2024",
     detail: "",
   },
   {
     id: 5,
-    taskName: "Targaryen",
-    progress: 13,
-    dueDate: "Nov 05, 2022",
+    taskName: "Power Efficiency and Night Vision",
+    progress: 0,
+    dueDate: "February 12, 2024",
     detail: "",
   },
   {
     id: 6,
-    taskName: "Melisandre",
-    progress: 53,
-    dueDate: "Nov 05, 2022",
+    taskName: "Image Analytics and Finalization",
+    progress: 0,
+    dueDate: "February 26, 2024",
     detail: "",
   },
   {
     id: 7,
-    taskName: "Clifford",
-    progress: 23,
-    dueDate: "Nov 05, 2022",
+    taskName: "Deployment and Training",
+    progress: 0,
+    dueDate: "March 11, 2024",
     detail: "",
   },
   {
     id: 8,
-    taskName: "Frances",
-    progress: 56,
-    dueDate: "Nov 05, 2022",
+    taskName: "Future Application Development",
+    progress: 0,
+    dueDate: "March 25, 2024",
     detail: "",
   },
   {
     id: 9,
-    taskName: "Roxie",
-    progress: 76,
-    dueDate: "Nov 05, 2022",
+    taskName: "Final Documentation and Presentation",
+    progress: 0,
+    dueDate: "April 9, 2024",
     detail: "",
   },
 ];

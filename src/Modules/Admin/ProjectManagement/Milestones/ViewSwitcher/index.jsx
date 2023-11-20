@@ -24,7 +24,7 @@ function ViewSwitcher({ onViewModeChange, onViewListChange, isChecked }) {
         aria-label="outlined primary button group"
       >
         <StyledButtons onClick={() => onViewModeChange("Day")}>
-          Today
+          Days
         </StyledButtons>
         <StyledButtons onClick={() => onViewModeChange("Week")}>
           Week

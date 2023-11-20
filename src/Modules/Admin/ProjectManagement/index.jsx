@@ -16,7 +16,7 @@ function ProjectManagement() {
   return (
     <Grid container gap={4} sx={{ pt: 6, pb: 2 }}>
       <Grid item xs={12}>
-        <MainHeadings text={"Projects"} />
+        <MainHeadings text={"Project Management"} />
       </Grid>
       <Grid item xs={12}>
         <ProjectName value={value} handleChange={handleChange} />

@@ -8,7 +8,7 @@ function Cards({ cardsData }) {
       <Grid container gap={1}>
         {cardsData?.map((e, i) => (
           <>
-            <Grid key={i} item xs={12} sm={12} md={5.86} lg={2.85}>
+            <Grid key={i} item xs={12} sm={12} md={5.86} lg={3.85}>
               <ProjectCards admin data={e} />
             </Grid>
           </>

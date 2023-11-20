@@ -33,9 +33,9 @@ function SectionTwo() {
       <Grid item xs={12}>
         <Accordions />
       </Grid>
-      <LastGrid item xs={12}>
+      {/* <LastGrid item xs={12}>
         <Button variant="outlined">View All</Button>
-      </LastGrid>
+      </LastGrid> */}
     </Grid>
   );
 }
