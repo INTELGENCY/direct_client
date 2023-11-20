@@ -44,7 +44,7 @@ function Tasks() {
           </Stack>
         </Grid>
         {TasksProject.map((e, i) => (
-          <Grid item md={6} lg={4} xl={4}>
+          <Grid item md={6} lg={6} xl={4}>
             <Cards dataCard={e} index={i} key={i} />
           </Grid>
         ))}

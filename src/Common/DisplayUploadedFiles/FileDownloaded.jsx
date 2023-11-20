@@ -3,6 +3,7 @@ import FileSVG from "/assets/icons/icon-other.svg";
 import { CloudDownload } from "@mui/icons-material";
 import useWindowSize from "../Hooks/useWindowSize";
 function FileDownloaded({ realData }) {
+  console.log(realData);
   const handleDownload = (file) => {
     const blob = new Blob([file.content], { type: file.type });
     const url = window.URL.createObjectURL(blob);
@@ -44,21 +45,25 @@ function FileDownloaded({ realData }) {
                 </Typography>
               </Stack>
             </Stack>
-            <Button
-              variant="contained"
-              size="medium"
-              component="label"
-              sx={{
-                backgroundColor: "#5758BB",
-                "&:hover": {
+            <a href={realData.content} target="_blank">
+              <Button
+                variant="contained"
+                target="_blank"
+                href={realData.content}
+                component="label"
+                download={true}
+                sx={{
                   backgroundColor: "#5758BB",
-                },
-              }}
-              startIcon={<CloudDownload />}
-              onClick={() => handleDownload(realData)}
-            >
-              Download
-            </Button>
+                  "&:hover": {
+                    backgroundColor: "#5758BB",
+                  },
+                }}
+                startIcon={<CloudDownload />}
+                // onClick={() => handleDownload(realData)}
+              >
+                Download
+              </Button>
+            </a>
           </Stack>
         </Card>
       </Grid>

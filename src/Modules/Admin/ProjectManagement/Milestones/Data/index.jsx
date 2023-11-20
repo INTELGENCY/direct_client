@@ -2,8 +2,8 @@ export const initTasks = () => {
   const currentDate = new Date();
   const tasks = [
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2023, 11, 20),
+      end: new Date(2023, 12, 3),
       name: "Project Planning and Research",
       id: "ProjectPlanningandResearch",
       progress: 90,
@@ -11,8 +11,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2023, 12, 4),
+      end: new Date(2023, 12, 18),
       name: "Hardware and Prototype Development",
       id: "HardwareandPrototypeDevelopment",
       progress: 50,
@@ -20,8 +20,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2023, 12, 19),
+      end: new Date(2024, 1, 1),
       name: "Software Development",
       id: "SoftwareDevelopment",
       progress: 60,
@@ -29,8 +29,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2024, 1, 2),
+      end: new Date(2024, 1, 15),
       name: "Prototype Testing and Refinement",
       id: "PrototypeTestingandRefinement",
       progress: 0,
@@ -38,8 +38,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2024, 1, 16),
+      end: new Date(2024, 1, 29),
       name: "Power Efficiency and Night Vision",
       id: "PowerEfficiencyandNightVision",
       progress: 0,
@@ -47,8 +47,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2024, 1, 30),
+      end: new Date(2024, 2, 12),
       name: "Image Analytics and Finalization",
       id: "ImageAnalyticsandFinalization",
       progress: 0,
@@ -56,8 +56,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2024, 2, 13),
+      end: new Date(2024, 2, 26),
       name: "Future Development and Documentation",
       id: "FutureDevelopmentandDocumentation",
       progress: 0,
@@ -65,8 +65,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2024, 2, 27),
+      end: new Date(2024, 3, 11),
       name: "Deployment and Training",
       id: "DeploymentandTraining",
       progress: 0,
@@ -74,8 +74,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2024, 3, 12),
+      end: new Date(2024, 3, 25),
       name: "Future Application Development",
       id: "FutureApplicationDevelopment",
       progress: 0,
@@ -83,8 +83,8 @@ export const initTasks = () => {
       hideChildren: false,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(2024, 3, 26),
+      end: new Date(2024, 4, 9),
       name: "Final Documentation and Presentation",
       id: "Final DocumentationandPresentation",
       progress: 0,
@@ -170,17 +170,21 @@ export const initTasks = () => {
 };
 
 export const getStartEndDateForProject = (tasks, projectId) => {
-  const projectTasks = tasks.filter((t) => t.project === projectId);
-  let start = projectTasks[0].start;
-  let end = projectTasks[0].end;
+   const projectTasks = tasks.filter((t) => t.project === projectId);
+   
+  let start = new Date(projectTasks[0].start);
+  let end = new Date(projectTasks[0].end);
 
   for (let i = 0; i < projectTasks.length; i++) {
     const task = projectTasks[i];
-    if (start.getTime() > task.start.getTime()) {
-      start = task.start;
+    const taskStart = new Date(task.start);
+    const taskEnd = new Date(task.end);
+
+    if (start.getTime() > taskStart.getTime()) {
+      start = taskStart;
     }
-    if (end.getTime() < task.end.getTime()) {
-      end = task.end;
+    if (end.getTime() < taskEnd.getTime()) {
+      end = taskEnd;
     }
   }
   return [start, end];

@@ -65,7 +65,13 @@ const columnsFiles = [
     headerAlign: "center",
     renderCell: (param) => (
       <>
-        <AdminDownloadBtn file={param.row.download} />
+        <Button
+          variant="contained"
+          target="_blank"
+          href={param.row.download.content}
+        >
+          Download
+        </Button>
       </>
     ),
   },

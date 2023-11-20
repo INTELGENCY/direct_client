@@ -2,7 +2,7 @@ import { Grid, Paper } from "@mui/material";
 import IconsHeadings from "../../../Common/AnimationMui/IconHeadings";
 import { Route } from "@mui/icons-material";
 import TimelineMui from "../../../Common/TimelineMui";
-
+import { TasksProject } from "../../../utils/ProjectsData";
 function MilesStonesAdmin() {
   return (
     <Paper elevation={2} sx={{ p: 3 }}>
@@ -14,7 +14,9 @@ function MilesStonesAdmin() {
           />
         </Grid>
         <Grid item xs={12}>
-          <TimelineMui />
+          {TasksProject.map((e, i) => (
+            <TimelineMui timelineData={e} />
+          ))}
         </Grid>
       </Grid>
     </Paper>
@@ -22,4 +24,3 @@ function MilesStonesAdmin() {
 }
 
 export default MilesStonesAdmin;
-

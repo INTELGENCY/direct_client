@@ -103,8 +103,8 @@ function Cards({ dataCard, index }) {
         <Grid item xs={12}>
           <ProgressMui value={dataCard.progress} />
         </Grid>
-        <Grid item xs={12}>
-          {/* <Button
+        {/* <Grid item xs={12}>
+          <Button
             component={motion.div}
             sx={{ textTransform: "capitalize", letterSpacing: 0.5 }}
             whileTap={{ scale: 0.9 }}
@@ -114,17 +114,19 @@ function Cards({ dataCard, index }) {
           >
             View
           </Button>
-          <ModalMui
-            width={"70vw"}
-            height={"80vh"}
-            top={"10%"}
-            left={"15%"}
-            openModalMui={openModal}
-            handleCloseModalMui={handleCloseModal}
-            // content={<ModalContent handleCloseModal={handleCloseModal} />}
-            noButtons
-          /> */}
-        </Grid>
+          {openModal && (
+            <ModalMui
+              width={"70vw"}
+              height={"80vh"}
+              top={"10%"}
+              left={"15%"}
+              openModalMui={openModal}
+              handleCloseModalMui={handleCloseModal}
+              content={<ModalContent handleCloseModal={handleCloseModal} />}
+              noButtons
+            />
+          )}
+        </Grid> */}
       </Grid>
     </Card>
   );

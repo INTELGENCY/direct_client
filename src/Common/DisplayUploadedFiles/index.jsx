@@ -12,7 +12,7 @@ function DisplayUploadedFiles() {
     {
       type: "xml",
       content: "/ProjectDocument/Proposal submission.docx",
-      fileName: "submission.xml",
+      fileName: "submission.docx",
     },
   ];
   return (

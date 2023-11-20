@@ -52,7 +52,16 @@ export const columnsFiles = [
 
     align: "center",
     headerAlign: "center",
-    renderCell: (param) => <AdminDownloadBtn file={param.row.download} />,
+    renderCell: (param) => (
+      <Button
+        variant="contained"
+        target="_blank"
+        href={param.row?.url}
+        startIcon={<Download />}
+      >
+        Download
+      </Button>
+    ),
   },
 ];
 
@@ -64,11 +73,7 @@ export const rowsFiles = [
     upload: "Ali",
     type: "pdf",
     date: "Nov 18, 2023",
-    download: {
-      type: "pdf",
-      fileName: "Design & Development of a Smart Ball Based Surveil",
-      content: "/pdf/Design & Development of a Smart Ball Based Surveil.pdf",
-    },
+    url: "/pdf/Design & Development of a Smart Ball Based Surveil.pdf",
   },
   {
     id: 2,

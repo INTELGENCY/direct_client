@@ -173,7 +173,7 @@ function MilestoneTable() {
        headerAlign: "center",
 
        renderCell: (param) => (
-         <a href={param.row.approvelDoc}>
+         <a target="_blank" href={param.row.approvelDoc}>
            <Button
              component={motion.div}
              whileTap={{ scale: 0.9 }}
