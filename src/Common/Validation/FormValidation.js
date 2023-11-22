@@ -92,12 +92,12 @@ export const formSignupSchemaAcademia = yup.object().shape({
   //   .required("Sekect your Focus Area"),
 });
 
-export const AdminCreatePrrojectValidation = yup.object().shape({
+export const AdminCreateProjectValidation = yup.object().shape({
   title: yup
     .string("Enter your Project Title")
     .min(10, "Title should be atleast 10 charaters long")
     .required("Title is required"),
-  abstract: yup.string("Enter your Project Abstract"),
+  introduction: yup.string("Enter your Project Introduction"),
   description: yup
     .string("Enter your Project Description")
     .min(100, "Description of your Project should be hundred charaters long")

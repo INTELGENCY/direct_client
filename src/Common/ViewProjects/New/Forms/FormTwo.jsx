@@ -23,7 +23,7 @@ function FormTwo({
         columnGap={2}
       >
         <Grid item xs={12}>
-          <TypographyGrow variant={"h1"} text={"Secondary Details"} />
+          <TypographyGrow variant={"h1"} text={"Primary Details"} />
         </Grid>
         <Grid item xs={12} sm={5.9} md={2.9}>
           <InputFields

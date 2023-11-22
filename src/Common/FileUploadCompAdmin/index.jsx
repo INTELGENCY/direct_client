@@ -14,8 +14,8 @@ import {
 import FilesComp from "./FilesComp.jsx";
 import { TransitionGroup } from "react-transition-group";
 import { FieldArray } from "formik";
+import { customTheme } from "../../Theme/theme.jsx";
 function FileUploadCompAdmin({
-  arrayFiles,
   values,
   handleChange,
   setFieldValue,
@@ -23,7 +23,12 @@ function FileUploadCompAdmin({
   return (
     <FieldArray name={"uploadFiles"}>
       {({ push, remove }) => (
-        <Card sx={{ p: 3 }}>
+        <Card
+          sx={{
+            boxShadow: customTheme.palette.boxShadows.boxShadowTable,
+            p: 3,
+          }}
+        >
           <Stack
             direction={"row"}
             justifyContent={"flex-start"}
@@ -42,7 +47,7 @@ function FileUploadCompAdmin({
                   backgroundColor: "#008080",
                 },
               }}
-              startIcon={<Add />} 
+              startIcon={<Add />}
               variant="contained"
               component="label"
               onClick={() => push({ name: "", fileName: null })}

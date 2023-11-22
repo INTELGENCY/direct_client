@@ -13,7 +13,7 @@ import FormOne from "./Forms/FormOne.jsx";
 import FormThree from "./Forms/FormThree.jsx";
 import FormTwo from "./Forms/FormTwo.jsx";
 import { Formik } from "formik";
-import { AdminCreatePrrojectValidation } from "../../Validation/FormValidation.js";
+import { AdminCreateProjectValidation } from "../../Validation/FormValidation.js";
 import axios from "axios";
 import { keys } from "../../../config.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,12 +22,14 @@ import { LoadingButton } from "@mui/lab";
 import { Save } from "@mui/icons-material";
 import { setLoading } from "../../../Store/Features/loadingSlice.js";
 import FormFour from "./Forms/FormFour.jsx";
+import FormFive from "./Forms/FormFive.jsx";
 
 const steps = [
   "Initial Draft",
   "Primary Details",
   "Secondary Details",
-  "Secondary Details",
+  "Custom Fields",
+  "Proposal Submission Fields",
 ];
 const GridButtonsSteps = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -137,7 +139,7 @@ function New({ setValue }) {
     <Formik
       initialValues={{
         title: "",
-        abstract: "",
+        introduction: "",
         description: "",
         category: "",
         startDate: "",
@@ -166,7 +168,7 @@ function New({ setValue }) {
           { name: "Gantt Chart" },
         ],
       }}
-      validationSchema={AdminCreatePrrojectValidation}
+      validationSchema={AdminCreateProjectValidation}
       onSubmit={handleCreate}
     >
       {({
@@ -237,6 +239,16 @@ function New({ setValue }) {
                 )}
                 {activeStep === 3 && (
                   <FormFour
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleBlur={handleBlur}
+                    handleChange={handleChange}
+                    setFieldValue={setFieldValue}
+                  />
+                )}
+                {activeStep === 4 && (
+                  <FormFive
                     values={values}
                     errors={errors}
                     touched={touched}

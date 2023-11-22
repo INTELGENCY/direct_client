@@ -2,13 +2,7 @@ import React from "react";
 import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import { Grid } from "@mui/material";
 import InputFields from "../../../InputFields/InputFields";
-import FileUploadCompAdmin from "../../../FileUploadCompAdmin/index.jsx";
-const arrayFiles = [
-  "Letter Of Support",
-  "Declaration Certificate",
-  "Submited Budget",
-  "Anyother Document Signed by CA",
-];
+
 function FormThree({
   values,
   errors,
@@ -133,14 +127,6 @@ function FormThree({
             type={"text"}
             label={"Initiator Details"}
             placeholder={"Your Project Title"}
-          />
-        </Grid>
-        <Grid item xs={11.5}>
-          <FileUploadCompAdmin
-            values={values.uploadFiles}
-            arrayFiles={arrayFiles}
-            handleChange={handleChange}
-            setFieldValue={setFieldValue}
           />
         </Grid>
       </Grid>
