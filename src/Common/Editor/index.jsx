@@ -58,7 +58,7 @@ function Editor({
           <LabelForInput
             color="error"
             required={required ? true : false}
-            className="emailInputLabel"
+            // className="emailInputLabel"
           >
             {label}
           </LabelForInput>
