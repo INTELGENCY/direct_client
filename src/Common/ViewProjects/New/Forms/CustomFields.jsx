@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import FileUploadCompAdmin from "../../../FileUploadCompAdmin";
 
-function FormFour({
+function CustomFields({
   values,
   errors,
   touched,
@@ -26,4 +26,4 @@ function FormFour({
   );
 }
 
-export default FormFour;
+export default CustomFields;

@@ -9,9 +9,6 @@ import {
   styled,
 } from "@mui/material";
 import { useState } from "react";
-import FormOne from "./Forms/FormOne.jsx";
-import FormThree from "./Forms/FormThree.jsx";
-import FormTwo from "./Forms/FormTwo.jsx";
 import { Formik } from "formik";
 import { AdminCreateProjectValidation } from "../../Validation/FormValidation.js";
 import axios from "axios";
@@ -21,8 +18,11 @@ import { setAlert } from "../../../Store/Features/AlertSlice.js";
 import { LoadingButton } from "@mui/lab";
 import { Save } from "@mui/icons-material";
 import { setLoading } from "../../../Store/Features/loadingSlice.js";
-import FormFour from "./Forms/FormFour.jsx";
-import FormFive from "./Forms/FormFive.jsx";
+import ProposalSubmission from "./Forms/ProposalSubmission.jsx";
+import CustomFields from "./Forms/CustomFields.jsx";
+import InitialForm from "./Forms/InitialForm.jsx";
+import PrimaryForm from "./Forms/PrimaryForm.jsx";
+import SecondaryForm from "./Forms/SecondaryForm.jsx";
 
 const steps = [
   "Initial Draft",
@@ -208,7 +208,7 @@ function New({ setValue }) {
               </Grid>
               <Grid item xs={12}>
                 {activeStep === 0 && (
-                  <FormOne
+                  <InitialForm
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -218,7 +218,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 1 && (
-                  <FormTwo
+                  <PrimaryForm
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -228,7 +228,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 2 && (
-                  <FormThree
+                  <SecondaryForm
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -238,7 +238,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 3 && (
-                  <FormFour
+                  <CustomFields
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -248,7 +248,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 4 && (
-                  <FormFive
+                  <ProposalSubmission
                     values={values}
                     errors={errors}
                     touched={touched}

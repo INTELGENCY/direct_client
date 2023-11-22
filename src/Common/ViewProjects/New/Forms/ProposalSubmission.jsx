@@ -3,7 +3,7 @@ import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import ProposalValues from "./ProposalValues";
 import { DriveFolderUpload, TextSnippet } from "@mui/icons-material";
 
-function FormFive({
+function ProposalSubmission({
   values,
   errors,
   touched,
@@ -40,4 +40,4 @@ function FormFive({
   );
 }
 
-export default FormFive;
+export default ProposalSubmission;

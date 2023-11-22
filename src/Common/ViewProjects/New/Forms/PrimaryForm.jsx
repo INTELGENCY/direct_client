@@ -4,7 +4,7 @@ import InputFields from "../../../InputFields/InputFields";
 import dayjs from "dayjs";
 import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 
-function FormTwo({
+function PrimaryForm({
   values,
   errors,
   touched,
@@ -127,4 +127,4 @@ function FormTwo({
   );
 }
 
-export default FormTwo;
+export default PrimaryForm;

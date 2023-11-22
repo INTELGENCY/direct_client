@@ -3,7 +3,7 @@ import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import { Grid } from "@mui/material";
 import InputFields from "../../../InputFields/InputFields";
 
-function FormThree({
+function SecondaryForm({
   values,
   errors,
   touched,
@@ -134,4 +134,4 @@ function FormThree({
   );
 }
 
-export default FormThree;
+export default SecondaryForm;

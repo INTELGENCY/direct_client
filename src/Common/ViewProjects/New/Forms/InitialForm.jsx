@@ -38,7 +38,7 @@ const VisuallyHiddenInput = styled("input")`
   white-space: nowrap;
   width: 1px;
 `;
-function FormOne({
+function InitialForm({
   setFieldValue,
   values,
   errors,
@@ -117,4 +117,4 @@ function FormOne({
   );
 }
 
-export default FormOne;
+export default InitialForm;
