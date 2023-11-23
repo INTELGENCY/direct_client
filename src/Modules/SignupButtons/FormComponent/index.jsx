@@ -1,12 +1,14 @@
 import { Grid, Button, styled } from "@mui/material";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import {
   ACADEMIA,
   ACADEMIA_LOGIN,
+  ACADEMIA_PROFILE,
   ACADEMIA_SIGNUP,
   INDUSTRY,
   INDUSTRY_LOGIN,
+  INDUSTRY_PROFILE,
   INDUSTRY_SIGNUP,
   LOGIN_MAIN,
   SIGNUP_MAIN,
@@ -65,6 +67,7 @@ const InfoComponent = () => {
 };
 
 const FormComp = () => {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const isAcademia = pathname.includes("academia");
   const dispatch = useDispatch();
@@ -93,6 +96,11 @@ const FormComp = () => {
           })
         );
         dispatch(setProfile({ ...data?.userDetails, token: data?.token }));
+        if (isLogin) {
+          navigate(isAcademia ? ACADEMIA_PROFILE : INDUSTRY_PROFILE);
+        } else {
+          navigate(isAcademia ? ACADEMIA_LOGIN : INDUSTRY_LOGIN);
+        }
       } else {
         dispatch(
           setAlert({ status: "error", text: data?.result || "Can't Login" })

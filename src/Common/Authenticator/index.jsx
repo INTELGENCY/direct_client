@@ -7,7 +7,7 @@ const Authenticator = ({ Authenticating, academia, industry }) => {
   const { pathname } = useLocation();
   const profile = useSelector((state) => state.profile.profile);
   const isAdmin = ["super", "admin", "subadmin"];
-
+  console.log(profile);
   useEffect(() => {
     if (profile?.email) {
       if (Authenticating) {
