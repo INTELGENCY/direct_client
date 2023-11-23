@@ -23,6 +23,7 @@ import { SignupForm } from "../../../Common/Forms/SignupForm";
 import { BackArrowButtonComp } from "../../../Common/MUI";
 import { setAlert } from "../../../Store/Features/AlertSlice";
 import axios from "axios";
+import { keys } from "../../../config";
 const FormComponent = () => {
   return (
     <div>
