@@ -9,6 +9,9 @@ import Authenticator from "../../Common/Authenticator";
 import Projects from "../CommonPages/Projects";
 import ProjectDetails from "../../Common/ProjectDetails";
 import Profile from "./Profile";
+import PropjectsProposals from "./ProjectsProposals";
+import ProposalLists from "./ProposalLists";
+import RateProposal from "./RateProposal";
 
 function index() {
   return (
@@ -22,8 +25,9 @@ function index() {
         <Route path="/" element={<LayoutCommon />}>
           <Route index path="/createprofile" element={<CreateProfile />} />
           <Route index path="/profile" element={<Profile />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projectdetails/:id" element={<ProjectDetails />} />
+          <Route path="/projects" element={<PropjectsProposals />} />
+          <Route path="/proposallists" element={<ProposalLists />} />
+          <Route path="/rateproposal" element={<RateProposal />} />
           <Route />
         </Route>
       </Route>

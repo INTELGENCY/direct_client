@@ -2,7 +2,8 @@ import { Cloud } from "@mui/icons-material";
 import { Fab, Grid, Paper, Stack, Typography } from "@mui/material";
 import IconsHeadings from "../AnimationMui/IconHeadings";
 import FileDownloaded from "./FileDownloaded";
-function DisplayUploadedFiles() {
+import RatingMui from "../RatingMui";
+function DisplayUploadedFiles({ ratingAdd }) {
   const files = [
     // {
     //   type: "pdf",
@@ -19,14 +20,17 @@ function DisplayUploadedFiles() {
     <Paper elevation={2} sx={{ p: 3 }}>
       <Grid container gap={2} sx={{ height: "100%" }}>
         <Grid item xs={12}>
-          <IconsHeadings
-            text={"Uploaded Files"}
-            icons={<Cloud sx={{ color: "#252B42" }} />}
-          />
+          <Stack direction={"row"} justifyContent={"space-between"}>
+            <IconsHeadings
+              text={"Uploaded Files"}
+              icons={<Cloud sx={{ color: "#252B42" }} />}
+            />
+            {ratingAdd && <RatingMui />}
+          </Stack>
         </Grid>
         {files.map((e, i) => (
           <Grid item xs={12}>
-            <FileDownloaded key={i} realData={e}  />
+            <FileDownloaded key={i} realData={e} />
           </Grid>
         ))}
       </Grid>

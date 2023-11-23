@@ -19,6 +19,7 @@ function FileUploadCompAdmin({
   values,
   handleChange,
   setFieldValue,
+  hideAddMore,
 }) {
   return (
     <FieldArray name={"uploadFiles"}>
@@ -39,27 +40,30 @@ function FileUploadCompAdmin({
               <Cloud sx={{ color: "#252B42" }} />
             </Fab>
             <Typography variant="h3">Upload Your Files</Typography>
-            <Button
-              sx={{
-                marginLeft: "auto",
-                backgroundColor: "#008080",
-                "&:hover": {
+            {hideAddMore ? null : (
+              <Button
+                sx={{
+                  marginLeft: "auto",
                   backgroundColor: "#008080",
-                },
-              }}
-              startIcon={<Add />}
-              variant="contained"
-              component="label"
-              onClick={() => push({ name: "", fileName: null })}
-            >
-              Add More
-            </Button>
+                  "&:hover": {
+                    backgroundColor: "#008080",
+                  },
+                }}
+                startIcon={<Add />}
+                variant="contained"
+                component="label"
+                onClick={() => push({ name: "", fileName: null })}
+              >
+                Add More
+              </Button>
+            )}
           </Stack>
           {values?.map((e, i) => (
             <TransitionGroup>
               <Collapse in>
                 <div>
                   <FilesComp
+                    hideAddMore={hideAddMore}
                     handleChange={handleChange}
                     index={i}
                     key={i}

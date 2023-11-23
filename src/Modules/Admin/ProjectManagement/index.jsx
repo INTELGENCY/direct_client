@@ -9,7 +9,6 @@ import Members from "./Members";
 import UploadedFiles from "./UploadedFiles";
 function ProjectManagement() {
   const [value, setValue] = useState(0);
-  console.log(value);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
