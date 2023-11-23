@@ -9,11 +9,8 @@ import {
   styled,
 } from "@mui/material";
 import { useState } from "react";
-import FormOne from "./Forms/FormOne.jsx";
-import FormThree from "./Forms/FormThree.jsx";
-import FormTwo from "./Forms/FormTwo.jsx";
 import { Formik } from "formik";
-import { AdminCreatePrrojectValidation } from "../../Validation/FormValidation.js";
+import { AdminCreateProjectValidation } from "../../Validation/FormValidation.js";
 import axios from "axios";
 import { keys } from "../../../config.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,13 +18,20 @@ import { setAlert } from "../../../Store/Features/AlertSlice.js";
 import { LoadingButton } from "@mui/lab";
 import { Save } from "@mui/icons-material";
 import { setLoading } from "../../../Store/Features/loadingSlice.js";
-import FormFour from "./Forms/FormFour.jsx";
+import ProposalSubmission from "./Forms/ProposalSubmission.jsx";
+import CustomFields from "./Forms/CustomFields.jsx";
+import InitialForm from "./Forms/InitialForm.jsx";
+import PrimaryForm from "./Forms/PrimaryForm.jsx";
+import SecondaryForm from "./Forms/SecondaryForm.jsx";
+import DesignCharactersitics from "./Forms/DesignCharactersitics/index.jsx";
 
 const steps = [
   "Initial Draft",
   "Primary Details",
   "Secondary Details",
-  "Secondary Details",
+  "Custom Fields",
+  "Proposal Submission Fields",
+  "Design Charactersitics",
 ];
 const GridButtonsSteps = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -137,7 +141,7 @@ function New({ setValue }) {
     <Formik
       initialValues={{
         title: "",
-        abstract: "",
+        introduction: "",
         description: "",
         category: "",
         startDate: "",
@@ -156,8 +160,12 @@ function New({ setValue }) {
           { name: "Objectives" },
           { name: "Description" },
           { name: "Methodologies" },
-          { name: "Expected Outcomes" },
-          { name: "Additional Comments" },
+          { name: "Testings" },
+          { name: "Specifications" },
+          { name: "Risk Analysis" },
+          { name: "Project Timelines" },
+          { name: "Instrumentation Requirements" },
+          { name: "Financial Proposal" },
         ],
         proposalfile: [
           { name: "Budget" },
@@ -166,7 +174,7 @@ function New({ setValue }) {
           { name: "Gantt Chart" },
         ],
       }}
-      validationSchema={AdminCreatePrrojectValidation}
+      validationSchema={AdminCreateProjectValidation}
       onSubmit={handleCreate}
     >
       {({
@@ -206,7 +214,7 @@ function New({ setValue }) {
               </Grid>
               <Grid item xs={12}>
                 {activeStep === 0 && (
-                  <FormOne
+                  <InitialForm
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -216,7 +224,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 1 && (
-                  <FormTwo
+                  <PrimaryForm
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -226,7 +234,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 2 && (
-                  <FormThree
+                  <SecondaryForm
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -236,7 +244,27 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 3 && (
-                  <FormFour
+                  <CustomFields
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleBlur={handleBlur}
+                    handleChange={handleChange}
+                    setFieldValue={setFieldValue}
+                  />
+                )}
+                {activeStep === 4 && (
+                  <ProposalSubmission
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleBlur={handleBlur}
+                    handleChange={handleChange}
+                    setFieldValue={setFieldValue}
+                  />
+                )}
+                {activeStep === 5 && (
+                  <DesignCharactersitics
                     values={values}
                     errors={errors}
                     touched={touched}

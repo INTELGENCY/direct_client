@@ -38,7 +38,7 @@ const VisuallyHiddenInput = styled("input")`
   white-space: nowrap;
   width: 1px;
 `;
-function FormOne({
+function InitialForm({
   setFieldValue,
   values,
   errors,
@@ -68,14 +68,14 @@ function FormOne({
         <InputFields
           type={"textbox"}
           rows={3}
-          label={"Project Abstract"}
-          placeholder={"Your Project Abstract"}
-          name={"abstract"}
+          label={"Project Introduction"}
+          placeholder={"Your Project Introduction"}
+          name={"introduction"}
           onBlur={handleBlur}
           onChange={handleChange}
-          value={values?.abstract}
-          error={!!touched.abstract && !!errors.abstract}
-          helperText={touched.abstract && errors.abstract}
+          value={values?.introduction}
+          error={!!touched.introduction && !!errors.introduction}
+          helperText={touched.introduction && errors.introduction}
         />
       </Grid>
       {/* <Grid item xs={12}>
@@ -117,4 +117,4 @@ function FormOne({
   );
 }
 
-export default FormOne;
+export default InitialForm;

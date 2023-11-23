@@ -36,7 +36,7 @@ const TabsCustom = styled(TabList)(({ theme }) => ({
     color: "green !important",
   },
 }));
-const TabCustom = styled(Tab)(({ theme }) => ({ 
+const TabCustom = styled(Tab)(({ theme }) => ({
   border: "1px solid #E9E9EB",
   "& .Mui-selected": {
     background: "#F5F8FF",
@@ -62,7 +62,7 @@ function ViewProjects() {
         <TabContext sx={{ paddingBlock: "none", width: "100%" }} value={value}>
           <Box>
             <TabsCustom onChange={handleChange}>
-              <TabCustom label="Existing Projects" value="1" />
+              <TabCustom label="General Purpose Projects" value="1" />
               <TabCustom label="Draft" value="2" />
               <TabCustom label="Create New Projects" value="3" />
             </TabsCustom>
@@ -71,7 +71,7 @@ function ViewProjects() {
             <All />
           </TabPanelCustome>
           <TabPanelCustome value="2">
-            <Draft /> 
+            <Draft />
           </TabPanelCustome>
           <TabPanelCustome value="3">
             <New setValue={setValue} />

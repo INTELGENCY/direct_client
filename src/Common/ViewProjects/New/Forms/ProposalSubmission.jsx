@@ -3,7 +3,7 @@ import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import ProposalValues from "./ProposalValues";
 import { DriveFolderUpload, TextSnippet } from "@mui/icons-material";
 
-function FormFour({
+function ProposalSubmission({
   values,
   errors,
   touched,
@@ -40,4 +40,4 @@ function FormFour({
   );
 }
 
-export default FormFour;
+export default ProposalSubmission;

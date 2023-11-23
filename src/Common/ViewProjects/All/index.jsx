@@ -78,7 +78,7 @@ const TabListCustome = styled(TabList)(({ theme }) => ({
   },
 }));
 const TabData = [
-  "Requirements from User / USD / GSR ",
+  "Requirements from User / USR / GSR ",
   "Call for Proposals",
   "Pre-Award Formalities",
   "Award For Contract",
