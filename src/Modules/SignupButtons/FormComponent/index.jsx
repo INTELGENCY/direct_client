@@ -78,11 +78,9 @@ const FormComp = () => {
     try {
       setIsLoadng(true);
       dispatch(setAlert({ status: null, text: null }));
-      const path = isAcademia
-        ? ACADEMIA
-        : INDUSTRY + "/" + isLogin
-        ? "signin"
-        : "signup";
+      const type = isAcademia ? ACADEMIA : INDUSTRY;
+      const type2 = isLogin ? "signin" : "signup";
+      const path = type + "/" + type2;
 
       const res = await axios.post(keys.api + path, values);
       const data = res.data;
