@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import InputsNumber from "./InputsNumber";
 
 const Container = styled("div")(({ theme }) => ({
-  height:"100%",
+  height: "100%",
   [theme.breakpoints.down("sm")]: {},
 }));
 const OtpHeadings = styled(Typography)(({ theme }) => ({
@@ -34,10 +34,7 @@ const FlexBoxColumn = styled("div")(({ theme }) => ({
   alignItems: "center",
   gap: "3rem",
 }));
-const LoginText = styled("span")(({ theme }) => ({
-  color: "#666565",
-  marginBottom: "20px",
-}));
+
 const SubmitBtn = styled(Button)(({ theme }) => ({
   paddingBlock: "12px",
   fontSize: "1.1rem",
@@ -49,12 +46,7 @@ const SubmitBtn = styled(Button)(({ theme }) => ({
     backgroundColor: "#098E6E",
   },
 }));
-const LoginLink = styled(Link)(({ theme }) => ({
-  color: "#075B2B",
-  fontWeight: "600",
-  fontSize: "16px",
-  cursor: "pointer",
-}));
+
 function Sectiontwo() {
   return (
     <Container>

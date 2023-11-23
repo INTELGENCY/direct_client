@@ -73,7 +73,10 @@ function SectionEmail({ setIsLoadng }) {
         dispatch(
           setAlert({ status: "success", text: data?.result || "OTP Verified" })
         );
-        navigate("/academia/login");
+        dispatch(
+          setAlert({ status: "success", text: "Next Step in progress" })
+        );
+        // navigate("/academia/login");
       } else {
         dispatch(
           setAlert({
