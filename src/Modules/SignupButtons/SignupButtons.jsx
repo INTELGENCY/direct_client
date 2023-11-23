@@ -4,12 +4,7 @@ import { BackArrowButtonComp, GridMDNone } from "../../Common/MUI/index.jsx";
 import { Helmet } from "react-helmet";
 import { loginMeta, signupMeta } from "../../utils/seocontent.jsx";
 import { useLocation, Link } from "react-router-dom";
-import {
-  INDUSTRY_LOGIN,
-  INDUSTRY_SIGNUP,
-  LOGIN_MAIN,
-  SIGNUP_MAIN,
-} from "../../utils/routes.jsx";
+import { LOGIN_MAIN, SIGNUP_MAIN } from "../../utils/routes.jsx";
 import FormComponent from "./FormComponent/index.jsx";
 
 function SignupButtons() {
@@ -44,7 +39,7 @@ function SignupButtons() {
             container
             className="container"
             height={"100%"}
-            alignItems={"center"}
+            alignItems={"start"}
           >
             {clicked ? (
               <FormComponent />
@@ -54,9 +49,10 @@ function SignupButtons() {
                   rowGap={3}
                   container
                   justifyContent={"center"}
-                  alignItems={"center"}
+                  alignItems={"flex-start"}
+                  // alignItems={"center"}
                 >
-                  <Grid item xs={11}>
+                  <Grid item xs={11} style={{ marginBottom: "50px" }}>
                     <BackArrowButtonComp route={"/"} />
                   </Grid>
                   <Grid item md={8} sm={9} xs={12}>

@@ -50,7 +50,8 @@ export const TruncatedComponent = (props) => {
 export const BackArrowButtonComp = ({ route }) => {
   const ButtonBack = styled(Button)(({ theme }) => ({
     color: "#949494",
-    marginTop: "-100px",
+    marginTop: "20px",
+    marginBottom: "120px",
   }));
   const navigate = useNavigate();
   return (

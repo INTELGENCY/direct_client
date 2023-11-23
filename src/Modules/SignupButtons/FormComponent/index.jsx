@@ -3,15 +3,17 @@ import { useLocation, Link, useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import {
   ACADEMIA,
-  ACADEMIA_LOGIN,
-  ACADEMIA_PROJECTS,
-  ACADEMIA_SIGNUP,
   INDUSTRY,
-  INDUSTRY_LOGIN,
-  INDUSTRY_PROJECTS,
-  INDUSTRY_SIGNUP,
   LOGIN_MAIN,
   SIGNUP_MAIN,
+  INDUSTRY_LOGIN,
+  ACADEMIA_LOGIN,
+  INDUSTRY_SIGNUP,
+  ACADEMIA_SIGNUP,
+  INDUSTRY_PROJECTS,
+  ACADEMIA_PROJECTS,
+  ACADEMIA_RESETPASS,
+  INDUSTRY_RESETPASS,
 } from "../../../utils/routes";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
@@ -45,7 +47,13 @@ const InfoComponent = () => {
   const name = isAcademia ? "Academia" : "Industry";
   const sentence = !isLogin ? "Signup at " + name : "Login to " + name;
   return (
-    <Grid container justifyContent={"center"} className={"signupSectionOne"}>
+    <Grid
+      container
+      justifyContent={"center"}
+      alignItems={"flex-start"}
+      className={"signupSectionOne"}
+      style={{ marginTop: "0px" }}
+    >
       <Grid item xs={11}>
         <BackArrowButtonComp route={isLogin ? LOGIN_MAIN : SIGNUP_MAIN} />
       </Grid>
@@ -72,13 +80,9 @@ const FormComp = () => {
   const isAcademia = pathname.includes("academia");
   const dispatch = useDispatch();
   const isLogin = pathname.includes("login");
-  const routeIsLogin = isAcademia ? ACADEMIA_LOGIN : INDUSTRY_LOGIN;
-  const routeIsSIGNUP = isAcademia ? ACADEMIA_SIGNUP : INDUSTRY_SIGNUP;
-  const route = isLogin ? routeIsLogin : routeIsSIGNUP;
 
   const [isLoading, setIsLoadng] = useState(false);
   const handlePost = async (values) => {
-    console.log(values);
     try {
       setIsLoadng(true);
       dispatch(setAlert({ status: null, text: null }));
@@ -133,6 +137,11 @@ const FormComp = () => {
     object.lastName = "";
     object.phone = "";
   }
+
+  const linkSignup = isAcademia ? ACADEMIA_SIGNUP : INDUSTRY_SIGNUP;
+  const linkLogin = isAcademia ? ACADEMIA_LOGIN : INDUSTRY_LOGIN;
+  const linkresetPass = isAcademia ? ACADEMIA_RESETPASS : INDUSTRY_RESETPASS;
+
   return (
     <Formik
       initialValues={object}
@@ -174,17 +183,23 @@ const FormComp = () => {
                   />
                 )}
               </Grid>
-              <Grid item xs={12}>
-                <Grid container justifyContent={"center"} alignItems={"center"}>
-                  <Grid item xs={6}>
-                    <FlexBox>
-                      <LoginLink onClick={() => navigate("/otp")}>
-                        Forgot Password?
-                      </LoginLink>
-                    </FlexBox>
+              {isLogin ? (
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                  >
+                    <Grid item xs={6}>
+                      <FlexBox>
+                        <LoginLink to={linkresetPass}>
+                          Forgot Password?
+                        </LoginLink>
+                      </FlexBox>
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
+              ) : null}
               <Grid item xs={11}>
                 <Grid container justifyContent={"center"} alignItems={"center"}>
                   <Grid item xs={8}>
@@ -199,9 +214,12 @@ const FormComp = () => {
               <Grid item xs={7}>
                 <FlexBox>
                   <LoginText>
-                    Don't have an account?{" "}
-                    <LoginLink onClick={() => navigate(route)}>
-                      Signup
+                    {isLogin
+                      ? "Already have an account"
+                      : "Don't have an account"}
+                    ?{" "}
+                    <LoginLink to={isLogin ? linkSignup : linkLogin}>
+                      {isLogin ? "Signup" : "Login"}
                     </LoginLink>
                   </LoginText>
                 </FlexBox>
