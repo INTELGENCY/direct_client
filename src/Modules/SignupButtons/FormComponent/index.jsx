@@ -176,7 +176,7 @@ const FormComp = () => {
                   <Grid item xs={8}>
                     <FlexBox>
                       <SignupBtn fullWidth type="submit" variant="contained">
-                        Login to Account
+                        {isLogin ? " Login to Account" : "Signup your account"}
                       </SignupBtn>
                     </FlexBox>
                   </Grid>
