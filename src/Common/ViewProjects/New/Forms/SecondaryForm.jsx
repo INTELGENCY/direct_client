@@ -13,7 +13,12 @@ function SecondaryForm({
 }) {
   return (
     <div>
-      <Grid container justifyContent={"center"} alignItems={"center"} gap={3}>
+      <Grid
+        container
+        justifyContent={"center"}
+        alignItems={"center"}
+        gap={3}
+      >
         <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
           <TypographyGrow variant={"h1"} text={"Secondary Details"} />
         </Grid>
@@ -28,105 +33,63 @@ function SecondaryForm({
           <InputFields
             type={"text"}
             label={"Research"}
-            placeholder={"Your Project Title"}
+            placeholder={"Researc"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Application Field"}
-            placeholder={"Your Project Title"}
-          />
-        </Grid>
-        <Grid item xs={5.6}>
-          <InputFields
-            type={"text"}
-            label={"Submission Date"}
-            placeholder={"Your Project Title"}
+            placeholder={"Your Application Field"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Overhead Amount"}
-            placeholder={"Your Project Title"}
+            placeholder={"Overhead Amount"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Duration"}
-            placeholder={"Your Project Title"}
+            placeholder={"Your Project's Duration"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Nust Share"}
-            placeholder={"Your Project Title"}
+            placeholder={"Nust Share in Project"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Funding Agency"}
-            placeholder={"Your Project Title"}
-          />
-        </Grid>
-        <Grid item xs={5.6}>
-          <InputFields
-            type={"text"}
-            label={"Funding Scheme"}
-            placeholder={"Your Project Title"}
-          />
-        </Grid>
-        <Grid item xs={5.6}>
-          <InputFields
-            type={"text"}
-            label={"Payment Mode"}
-            placeholder={"Your Project Title"}
-          />
-        </Grid>
-        <Grid item xs={5.6}>
-          <InputFields
-            type={"text"}
-            label={"Industry Share"}
-            placeholder={"Your Project Title"}
+            placeholder={"Write Funding Agency Name"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Funding From Agency"}
-            placeholder={"Your Project Title"}
-          />
-        </Grid>
-        <Grid item xs={5.6}>
-          <InputFields
-            type={"text"}
-            label={"Project Type"}
-            placeholder={"Your Project Title"}
-          />
-        </Grid>
-        <Grid item xs={5.6}>
-          <InputFields
-            type={"text"}
-            label={"Payment Mode"}
-            placeholder={"Your Project Title"}
+            placeholder={"Write Funding From Agency"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Other ORG Share"}
-            placeholder={"Your Project Title"}
+            placeholder={"Write share of other organization"}
           />
         </Grid>
         <Grid item xs={5.6}>
           <InputFields
             type={"text"}
             label={"Initiator Details"}
-            placeholder={"Your Project Title"}
+            placeholder={"Write initiator name"}
           />
         </Grid>
       </Grid>

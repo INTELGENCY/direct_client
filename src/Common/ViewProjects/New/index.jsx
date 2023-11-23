@@ -23,6 +23,7 @@ import CustomFields from "./Forms/CustomFields.jsx";
 import InitialForm from "./Forms/InitialForm.jsx";
 import PrimaryForm from "./Forms/PrimaryForm.jsx";
 import SecondaryForm from "./Forms/SecondaryForm.jsx";
+import DesignCharactersitics from "./Forms/DesignCharactersitics/index.jsx";
 
 const steps = [
   "Initial Draft",
@@ -30,6 +31,7 @@ const steps = [
   "Secondary Details",
   "Custom Fields",
   "Proposal Submission Fields",
+  "Design Charactersitics",
 ];
 const GridButtonsSteps = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -158,8 +160,12 @@ function New({ setValue }) {
           { name: "Objectives" },
           { name: "Description" },
           { name: "Methodologies" },
-          { name: "Expected Outcomes" },
-          { name: "Additional Comments" },
+          { name: "Testings" },
+          { name: "Specifications" },
+          { name: "Risk Analysis" },
+          { name: "Project Timelines" },
+          { name: "Instrumentation Requirements" },
+          { name: "Financial Proposal" },
         ],
         proposalfile: [
           { name: "Budget" },
@@ -249,6 +255,16 @@ function New({ setValue }) {
                 )}
                 {activeStep === 4 && (
                   <ProposalSubmission
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleBlur={handleBlur}
+                    handleChange={handleChange}
+                    setFieldValue={setFieldValue}
+                  />
+                )}
+                {activeStep === 5 && (
+                  <DesignCharactersitics
                     values={values}
                     errors={errors}
                     touched={touched}
