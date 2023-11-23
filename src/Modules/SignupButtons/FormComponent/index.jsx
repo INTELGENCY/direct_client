@@ -4,11 +4,11 @@ import { Formik } from "formik";
 import {
   ACADEMIA,
   ACADEMIA_LOGIN,
-  ACADEMIA_PROFILE,
+  ACADEMIA_PROJECTS,
   ACADEMIA_SIGNUP,
   INDUSTRY,
   INDUSTRY_LOGIN,
-  INDUSTRY_PROFILE,
+  INDUSTRY_PROJECTS,
   INDUSTRY_SIGNUP,
   LOGIN_MAIN,
   SIGNUP_MAIN,
@@ -97,7 +97,7 @@ const FormComp = () => {
         );
         dispatch(setProfile({ ...data?.userDetails, token: data?.token }));
         if (isLogin) {
-          navigate(isAcademia ? ACADEMIA_PROFILE : INDUSTRY_PROFILE);
+          navigate(isAcademia ? ACADEMIA_PROJECTS : INDUSTRY_PROJECTS);
         } else {
           navigate(isAcademia ? ACADEMIA_LOGIN : INDUSTRY_LOGIN);
         }
