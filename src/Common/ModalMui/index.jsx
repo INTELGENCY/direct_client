@@ -25,6 +25,7 @@ function ModalMui({
     boxShadow: 24,
     p: 4,
     borderRadius: "7px",
+    marginBottom: 4,
   };
   return (
     <div>

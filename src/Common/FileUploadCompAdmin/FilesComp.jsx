@@ -25,7 +25,7 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
-function FilesComp({ arrayFiles, remove, index, handleChange }) {
+function FilesComp({ arrayFiles, remove, index, handleChange, hideAddMore }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -94,12 +94,14 @@ function FilesComp({ arrayFiles, remove, index, handleChange }) {
                 <VisuallyHiddenInput type="file" />
                 Upload
               </Button>
-              <IconButton
-                onClick={() => remove(index)}
-                sx={{ color: "#ff7675" }}
-              >
-                <Delete />
-              </IconButton>
+              {hideAddMore ? null : (
+                <IconButton
+                  onClick={() => remove(index)}
+                  sx={{ color: "#ff7675" }}
+                >
+                  <Delete />
+                </IconButton>
+              )}
             </Stack>
           </Stack>
         </Card>

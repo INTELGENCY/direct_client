@@ -11,6 +11,7 @@ function IconsHeadings({
   paddingTop,
   paddingLeft,
   handleClickButton,
+  variantHeadings,
 }) {
   return (
     <Stack
@@ -27,7 +28,10 @@ function IconsHeadings({
       <Fab disabled size="small" aria-label="upload">
         {icons}
       </Fab>
-      <Typography variant="h3" fontWeight={600}>
+      <Typography
+        variant={variantHeadings ? variantHeadings : "h3"}
+        fontWeight={600}
+      >
         {text}
       </Typography>
       {helpOutline && (

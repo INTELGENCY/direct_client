@@ -89,7 +89,7 @@ function SelectFields({
               </div>
             )}
           >
-            {array.map((e, i) => (
+            {array?.map((e, i) => (
               <MenuItem
                 sx={{
                   display: "flex",
@@ -126,7 +126,7 @@ function SelectFields({
             helperText={helperText}
             placeholder="i am select"
           >
-            {array.map((e, i) => (
+            {array?.map((e, i) => (
               <MenuItem  value={i} key={i}>
                 {e}
               </MenuItem>
