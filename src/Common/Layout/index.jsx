@@ -180,11 +180,6 @@ function Index() {
       navigate(`/industry/projects`);
     }
   };
-  useLayoutEffect(() => {
-    if (pathname.includes("profile")) {
-      // handlenavigate();
-    }
-  }, []);
 
   return (
     <Stack

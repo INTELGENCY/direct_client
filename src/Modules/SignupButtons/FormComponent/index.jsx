@@ -98,6 +98,7 @@ const FormComp = () => {
         dispatch(setProfile({ ...data?.userDetails, token: data?.token }));
         if (isLogin) {
           navigate(isAcademia ? ACADEMIA_PROJECTS : INDUSTRY_PROJECTS);
+          console.log(ACADEMIA_PROJECTS, INDUSTRY_PROJECTS);
         } else {
           navigate(isAcademia ? ACADEMIA_LOGIN : INDUSTRY_LOGIN);
         }

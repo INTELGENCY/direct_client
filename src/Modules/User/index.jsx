@@ -16,7 +16,7 @@ import AddProposal from "./AddProposal";
 const UserModule = () => {
   return (
     <Routes>
-      <Route path="/" element={<Authenticator industry />}>
+      <Route path="/" element={<Authenticator industry={true} />}>
         <Route path="/" element={<Layout />}>
           <Route path="/createprofile" element={<Profile />} />
           <Route path="/profile" element={<ProfilePage />} />
