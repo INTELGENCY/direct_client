@@ -58,7 +58,7 @@ const SStack = styled(Stack)(({ theme }) => ({
   },
 }));
 
-function RightsideProjects({ data, last }) {
+function RightsideProjects({ data, last, len }) {
   return (
     <Grid container>
       <Grid item xs={12} lg={12}>
@@ -89,12 +89,14 @@ function RightsideProjects({ data, last }) {
       ) : null}
       {data?.type !== "pdf" ? (
         <Grid item xs={12}>
-          {last ? (
+          {last && !len ? (
             <FlexEnd>
               <MoreBtn endIcon={<ArrowForwardIcon />}>READ MORE...</MoreBtn>
             </FlexEnd>
           ) : (
-            <Divider sx={{ backgroundColor: "white", marginTop: "25px" }} />
+            !len && (
+              <Divider sx={{ backgroundColor: "white", marginTop: "25px" }} />
+            )
           )}
         </Grid>
       ) : null}

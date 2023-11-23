@@ -4,9 +4,9 @@ import LogoWrapper from "../Logo";
 const LoginComponentImage = () => {
   return (
     <Stack direction={"column"} className="container">
-      <LogoWrapper width={"250px"} height={"250"} />
-      <h1>
-        Development, Innovation, and Research for Evolving <br /> Cutting-edge
+      <LogoWrapper width={"220px"} height={"220"} />
+      <h1 style={{ fontSize: "1.4rem", maxWidth: "85%" }}>
+        Development, Innovation, and Research for Evolving Cutting-edge
         Technologies
       </h1>
     </Stack>

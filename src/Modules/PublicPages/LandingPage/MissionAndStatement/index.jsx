@@ -33,7 +33,7 @@ const ImageStyled = styled("img")(({ theme }) => {
 });
 const MissionAndVision = () => {
   return (
-    <SectionContainer>
+    <SectionContainer style={{ paddingBottom: "6rem" }}>
       <ImageoneStyled alt="design" src={imag1} />
       <ImagetwoStyled alt="design" src={imag2} />
       <StackStyled justifyContent={"center"} alignItems={"center"}>

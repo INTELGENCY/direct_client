@@ -8,6 +8,7 @@ import ComingSoon from "../../Common/ComingSoon";
 
 import ProjectDetails from "./ProjectDetails";
 import Objective from "./About/Objective";
+import SignupButtons from "../SignupButtons";
 
 const PublicPages = () => {
   return (
@@ -18,6 +19,7 @@ const PublicPages = () => {
         <Route index path="/about/objectives" element={<Objective />} />
         <Route path="*" element={<ComingSoon />} />
       </Route>
+      <Route index path="/*" element={<SignupButtons />} />
     </Routes>
   );
 };

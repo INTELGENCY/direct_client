@@ -6,6 +6,7 @@ import SimpleBar from "simplebar-react";
 import Spinner from "../../../../Common/Spinner";
 import { height } from "@mui/system";
 import { dataProject } from "../../../../utils/ProjectsData.jsx";
+import RightsideProjects from "./RightsideProjects.jsx";
 
 const ImageStyled = styled("img")(({ theme }) => ({
   zIndex: -1,
@@ -24,16 +25,7 @@ const ImageStyled = styled("img")(({ theme }) => ({
     },
   },
 }));
-const Pstyled = styled(Typography)(({ theme }) => ({
-  display: "-webkit-box",
-  overflow: "hidden",
-  WebkitBoxOrient: "vertical",
-  WebkitLineClamp: 2,
-  textAlign: "left",
-  width: "30%",
-  // lineHeight: 1.6,
-  fontWeight: "400",
-}));
+
 const SimpleBarStyled = styled(SimpleBar)(({ theme }) => {
   return {
     zIndex: 1,
@@ -112,21 +104,16 @@ const BannerCarousel = () => {
             <Typography variant="h3" color={"white"}>
               Projects
             </Typography>
-            <Stack gap={1} direction={"row"}>
-              {/* <Avatar variant="square" sx={{ borderRadius: "10px" }}></Avatar> */}
-              <Stack direction={"column"} gap={1}>
-                <Typography
-                  variant="h4"
-                  width={"30%"}
-                  noWrap
-                  fontWeight={700}
-                  color={"white"}
-                >
-                  {dataProject[0].title}
-                </Typography>
-                <Pstyled variant="body2">{dataProject[0].description}</Pstyled>
-              </Stack>
-            </Stack>
+
+            {dataProject?.map((d, ind) => {
+              return (
+                <RightsideProjects
+                  data={d}
+                  key={ind}
+                  len={dataProject.length === ind + 1}
+                />
+              );
+            })}
           </Stack>
           {/* <Statement>
             <h2>
