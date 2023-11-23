@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { ACADEMIA, INDUSTRY } from "../../utils/routes";
 
 const Authenticator = ({ Authenticating, academia, industry }) => {
   const navigate = useNavigate();
@@ -15,11 +16,11 @@ const Authenticator = ({ Authenticating, academia, industry }) => {
       }
       if (isAdmin.includes(profile?.type)) {
         return navigate("/");
-      } else if (profile?.type === "academia") {
+      } else if (profile?.type === ACADEMIA) {
         if (!academia) {
           navigate("/");
         }
-      } else if (profile?.type === "industry") {
+      } else if (profile?.type === INDUSTRY) {
         if (!industry) {
           navigate("/");
         }

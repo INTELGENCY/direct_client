@@ -85,8 +85,11 @@ const FormComp = () => {
       const type = isAcademia ? ACADEMIA : INDUSTRY;
       const type2 = isLogin ? "signin" : "signup";
       const path = type + "/" + type2;
-
-      const res = await axios.post(keys.api + path, values);
+      const obj = { ...values };
+      if (!isLogin) {
+        obj["type"] = isAcademia ? ACADEMIA : INDUSTRY;
+      }
+      const res = await axios.post(keys.api + path, obj);
       const data = res.data;
       if (res.status === 200) {
         dispatch(
