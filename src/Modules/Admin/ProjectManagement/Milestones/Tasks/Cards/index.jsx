@@ -103,7 +103,7 @@ function Cards({ dataCard, index }) {
         <Grid item xs={12}>
           <ProgressMui value={dataCard.progress} />
         </Grid>
-        {/* <Grid item xs={12}>
+        <Grid item xs={12}>
           <Button
             component={motion.div}
             sx={{ textTransform: "capitalize", letterSpacing: 0.5 }}
@@ -126,7 +126,7 @@ function Cards({ dataCard, index }) {
               noButtons
             />
           )}
-        </Grid> */}
+        </Grid>
       </Grid>
     </Card>
   );
