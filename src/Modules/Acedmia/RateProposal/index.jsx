@@ -10,7 +10,15 @@ import {
 } from "@mui/material";
 import MainHeadings from "../../../Common/AnimationMui/MainHeadings";
 import IconsHeadings from "../../../Common/AnimationMui/IconHeadings";
-import { Description } from "@mui/icons-material";
+import {
+  Analytics,
+  BugReport,
+  Build,
+  Description,
+  Equalizer,
+  Language,
+  Start,
+} from "@mui/icons-material";
 import DisplayUploadedFiles from "../../../Common/DisplayUploadedFiles";
 import MilesStonesAdmin from "../../Admin/ViewProposals/MilesStonesAdmin";
 import { useState } from "react";
@@ -31,28 +39,55 @@ function RateProposal() {
       <Grid item xs={12}>
         <MainHeadings text={"View/Rate Proposal"} />
       </Grid>
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
-            <IconsHeadings
-              text={"Objectives"}
-              icons={<Language sx={{ color: "#252B42" }} />}
-            />
+            <Stack direction={"row"} justifyContent={"space-between"}>
+              <IconsHeadings
+                text={"Introduction"}
+                icons={<Start sx={{ color: "#252B42" }} />}
+              />
+              <RatingMui />
+            </Stack>
             <Typography textAlign={"justify"} variant="body1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              The proposed solution consists of a software and hardware pipeline
+              for a throwable ball shaped imaging device, that would be able to
+              capture the high resolution imagery data using multiple RGB
+              cameras and transmit that data to a base-station. At basestation,
+              the artificial intelligence algorithm will be applied to the
+              imagery data for detecting the person of interest. Using throwable
+              imagery devices for surveillance application will allow law
+              enforcement forces to effectively locate, observe and engage a
+              range of targets in their intelligence, surveillance and
+              reconnaissance (ISR) missions.
             </Typography>
           </Stack>
         </Paper>
-      </Grid> */}
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <Stack direction={"row"} justifyContent={"space-between"}>
+              <IconsHeadings
+                text={"Objectives"}
+                icons={<Language sx={{ color: "#252B42" }} />}
+              />
+              <RatingMui />
+            </Stack>
+            <Typography textAlign={"justify"} variant="body1">
+              The primary objectives of the National Project Collaboration
+              Platform are to foster innovation, collaboration, and impactful
+              contributions to national-level projects. The platform aims to
+              connect skilled individuals and teams with project creators,
+              facilitating the seamless exchange of ideas and expertise. It
+              strives to provide a centralized space for project posting,
+              application, and collaboration, with a focus on enhancing
+              efficiency, transparency, and the overall success of national
+              projects.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
       <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
@@ -101,86 +136,108 @@ function RateProposal() {
           </Stack>
         </Paper>
       </Grid>
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
-            <IconsHeadings
-              text={"Expected Outcomes"}
-              icons={<Equalizer sx={{ color: "#252B42" }} />}
-            />
+            <Stack direction={"row"} justifyContent={"space-between"}>
+              <IconsHeadings
+                text={"Methodologies"}
+                icons={<Equalizer sx={{ color: "#252B42" }} />}
+              />
+
+              <RatingMui />
+            </Stack>
             <Typography textAlign={"justify"} variant="body1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              The platform employs agile methodologies to ensure adaptability
+              and responsiveness to evolving project needs. Projects are divided
+              into manageable milestones, promoting incremental progress and
+              effective collaboration. The use of modern project management
+              tools and communication platforms enhances coordination among
+              project stakeholders. Additionally, an iterative development
+              approach allows for continuous improvement based on user feedback
+              and evolving project requirements.
             </Typography>
           </Stack>
         </Paper>
-      </Grid> */}
-      {/* <Grid item xs={12}>
+      </Grid>
+      <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
-            <IconsHeadings
-              text={"Methodologies"}
-              icons={<CloudUpload sx={{ color: "#252B42" }} />}
-            />
+            <Stack direction={"row"} justifyContent={"space-between"}>
+              <IconsHeadings
+                text={"Testing Specifications"}
+                icons={<BugReport sx={{ color: "#252B42" }} />}
+              />
+              <RatingMui />
+            </Stack>
             <Typography textAlign={"justify"} variant="body1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              Stringent testing protocols are implemented to ensure the
+              reliability and security of the platform. Rigorous unit testing,
+              integration testing, and user acceptance testing are conducted to
+              identify and rectify potential issues. Security measures include
+              encryption protocols, secure data storage, and vulnerability
+              assessments. Performance testing is employed to guarantee optimal
+              responsiveness and scalability as the platform grows to
+              accommodate a diverse range of national projects.
             </Typography>
           </Stack>
         </Paper>
-      </Grid> */}
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <Stack direction={"row"} justifyContent={"space-between"}>
+              <IconsHeadings
+                text={"Risk Analysis"}
+                icons={<Analytics sx={{ color: "#252B42" }} />}
+              />
+              <RatingMui />
+            </Stack>
+            <Typography textAlign={"justify"} variant="body1">
+              A comprehensive risk analysis is undertaken to identify, assess,
+              and mitigate potential challenges that may arise during the
+              project lifecycle. Risks related to data security, scalability,
+              and user engagement are systematically evaluated. Mitigation
+              strategies are implemented to address identified risks, and
+              contingency plans are developed to minimize the impact of
+              unforeseen events. Regular risk assessments are conducted to adapt
+              to the evolving landscape and ensure the platform's resilience.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <Stack direction={"row"} justifyContent={"space-between"}>
+              <IconsHeadings
+                text={"Instrumental Requirements"}
+                icons={<Build sx={{ color: "#252B42" }} />}
+              />
+              <RatingMui />
+            </Stack>
+            <Typography textAlign={"justify"} variant="body1">
+              The platform's instrumental requirements encompass a robust and
+              scalable infrastructure to support concurrent users and diverse
+              project types. Secure authentication mechanisms, data storage
+              solutions, and real-time communication tools are integral
+              components. Additionally, the platform incorporates user-friendly
+              interfaces, ensuring accessibility for individuals with varying
+              technical backgrounds. Compatibility with multiple devices and
+              browsers enhances the user experience, promoting widespread
+              participation.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+
       <Grid item xs={12}>
         <MilesStonesAdmin ratingAdd />
       </Grid>
       <Grid item xs={12}>
         <DisplayUploadedFiles ratingAdd />
       </Grid>
-      {/* <Grid item xs={12}>
-        <Paper elevation={2} sx={{ p: 3 }}>
-          <Grid container gap={2} sx={{ height: "100%" }}>
-            <Grid item xs={12}>
-              <IconsHeadings
-                text={"Accept Proposal"}
-                icons={<Approval sx={{ color: "#252B42" }} />}
-              />
-            </Grid>
-            {arrayFiles.map((e, i) => (
-              <Grid item xs={12}>
-                <FilesComp arrayFiles={e} />
-              </Grid>
-            ))}
-            <Grid item xs={12}>
-              <Button onClick={handleClickOpen} variant="contained">
-                Accept
-              </Button>
-            </Grid>
-            <DialogMui
-              title={"Proposal Accepted!!!"}
-              BodyText={
-                "I’m thrilled to share that our proposal has been accepted! This is a significant step forward for us. Thank you all for your hard work and contributions to making this happen. Let’s move ahead together and create something incredible."
-              }
-              handleClose={handleClose}
-              open={DialogState}
-            />
-          </Grid>
-        </Paper> */}
-      {/* </Grid> */}
+
       <Grid item xs={12}>
         <Button onClick={handleOpenModal} variant="contained">
           Save
@@ -188,10 +245,10 @@ function RateProposal() {
       </Grid>
       {openModal && (
         <ModalMui
-          top={"5%"}
-          left={"20%"}
-          height={"70vh"}
-          width={"60vw"}
+          top={"10%"}
+          left={"15%"}
+          height={"75vh"}
+          width={"70vw"}
           openModalMui={openModal}
           handleCloseModalMui={handleCloseModal}
           content={<ModalContent handleCloseModal={handleCloseModal} />}
@@ -207,27 +264,38 @@ const ModalContent = ({ handleCloseModal }) => {
   const navigate = useNavigate();
 
   return (
-    <Grid sx={{ overflow: "auto", height: "100%", pt:1, pl:1, pr:1 }} container gap={2}>
-      {/* <Grid item xs={12}>
-        <ProjectName />
-      </Grid> */}
+    <Grid
+      sx={{ overflow: "auto", height: "100%", pt: 1, pl: 1, pr: 1 }}
+      container
+      alignItems={"flex-start"}
+      justifyContent={"flex-start"}
+      gap={2}
+    >
       <Grid item sx={{ mb: 1 }} xs={12}>
-        <Typography variant="h2">Review</Typography>
+        <Typography textAlign={'center'} variant="h2">Proposal Feedback</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Divider></Divider>
       </Grid>
       <Grid item sx={{ mb: 1 }} xs={12}>
         <Typography variant="body1" fontWeight={600}>
-          Review
+          Rating
         </Typography>
       </Grid>
       <Grid sx={{ mt: -2, mb: 2 }} item xs={12}>
-        <Rating
-          name="half-rating-read"
-          defaultValue={4.5}
-          precision={0.5}
-          readOnly
-        />
+        <Stack alignItems={"center"} direction={"row"} gap={1}>
+          <Rating
+            name="half-rating-read"
+            defaultValue={4.2}
+            precision={0.1}
+            readOnly
+          />
+          <Typography fontWeight={600} color={"text.grey"} variant="body2">
+            (4.2)
+          </Typography>
+        </Stack>
       </Grid>
-      <Grid item sx={{ mb: 1 }} xs={12}>
+      <Grid item sx={{ mb: 0 }} xs={12}>
         <Typography variant="body1" fontWeight={600}>
           Description
         </Typography>

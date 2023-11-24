@@ -16,6 +16,7 @@ import { useState } from "react";
 import ModalContent from "./ModalContent";
 
 function Cards({ dataCard, index }) {
+  console.log(dataCard);
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
@@ -122,7 +123,12 @@ function Cards({ dataCard, index }) {
               left={"15%"}
               openModalMui={openModal}
               handleCloseModalMui={handleCloseModal}
-              content={<ModalContent handleCloseModal={handleCloseModal} />}
+              content={
+                <ModalContent
+                  dataCard={dataCard}
+                  handleCloseModal={handleCloseModal}
+                />
+              }
               noButtons
             />
           )}

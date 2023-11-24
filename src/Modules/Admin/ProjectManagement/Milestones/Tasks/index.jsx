@@ -2,7 +2,7 @@ import { Card, Grid, MenuItem, Select, Stack } from "@mui/material";
 import Cards from "./Cards";
 import { customTheme } from "../../../../../Theme/theme";
 import IconsHeadings from "../../../../../Common/AnimationMui/IconHeadings";
-import { AttachFile } from "@mui/icons-material";
+import { AttachFile, Route } from "@mui/icons-material";
 import { TasksProject } from "../../../../../utils/ProjectsData";
 function Tasks() {
   const arraySelect = [
@@ -31,8 +31,8 @@ function Tasks() {
             justifyContent={"space-between"}
           >
             <IconsHeadings
-              text="Tasks"
-              icons={<AttachFile sx={{ color: "bg.darkBlue" }} />}
+              text="Milestones"
+              icons={<Route sx={{ color: "bg.darkBlue" }} />}
             />
             <Select defaultValue={0}>
               {arraySelect?.map((e, i) => (
@@ -54,4 +54,3 @@ function Tasks() {
 }
 
 export default Tasks;
-

@@ -14,8 +14,8 @@ import { columnsFiles, rowsFiles } from "../../../UploadedFiles/data";
 import TabsCommon from "../../../../../../Common/TabsCommon";
 import TabFeedbackModal from "./TabFeedbackModal";
 import TabRemarksModal from "./TabRemarksModal";
-const arrayTabs = ["Feedback", "Remarks"];
-function ModalContent({ handleCloseModal }) {
+const arrayTabs = ["Milestone Details", "Remarks"];
+function ModalContent({ dataCard, handleCloseModal }) {
   const [Tabs, setTabs] = useState(0);
   const handleChange = (event, newValue) => {
     setTabs(newValue);
@@ -25,7 +25,7 @@ function ModalContent({ handleCloseModal }) {
       <Grid item sx={{ mb: 0 }} xs={12}>
         <Stack direction={"row"} justifyContent={"space-between"}>
           <Stack direction={"row"} alignItems={"center"} gap={1}>
-            <Typography variant="h2">Task Heading</Typography>
+            <Typography variant="h2">{dataCard.title}</Typography>
             <Typography variant="body2" fontWeight={500}>
               (Task Number 2)
             </Typography>
@@ -42,7 +42,7 @@ function ModalContent({ handleCloseModal }) {
           arrayTabs={arrayTabs}
         />
       </Grid>
-      {Tabs === 0 && <TabFeedbackModal />}
+      {Tabs === 0 && <TabFeedbackModal dataCard={dataCard} />}
       {Tabs === 1 && <TabRemarksModal />}
     </Grid>
   );

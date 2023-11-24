@@ -3,12 +3,17 @@ import MainHeadings from "../../../Common/AnimationMui/MainHeadings";
 import DisplayUploadedFiles from "../../../Common/DisplayUploadedFiles";
 import IconsHeadings from "../../../Common/AnimationMui/IconHeadings";
 import {
+  Analytics,
   Approval,
   ApprovalRounded,
+  BugReport,
+  Build,
   CloudUpload,
   Description,
   Equalizer,
   Language,
+  Start,
+  TextSnippet,
 } from "@mui/icons-material";
 import MilesStonesAdmin from "./MilesStonesAdmin";
 import FileDownloaded from "../../../Common/DisplayUploadedFiles/FileDownloaded";
@@ -31,7 +36,29 @@ function ViewProposals() {
       <Grid item xs={12}>
         <MainHeadings text={"Proposal-Cloud Migration"} />
       </Grid>
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"Introduction"}
+              icons={<Start sx={{ color: "#252B42" }} />}
+            />
+            <Typography textAlign={"justify"} variant="body1">
+              The proposed solution consists of a software and hardware pipeline
+              for a throwable ball shaped imaging device, that would be able to
+              capture the high resolution imagery data using multiple RGB
+              cameras and transmit that data to a base-station. At basestation,
+              the artificial intelligence algorithm will be applied to the
+              imagery data for detecting the person of interest. Using throwable
+              imagery devices for surveillance application will allow law
+              enforcement forces to effectively locate, observe and engage a
+              range of targets in their intelligence, surveillance and
+              reconnaissance (ISR) missions.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
             <IconsHeadings
@@ -39,20 +66,19 @@ function ViewProposals() {
               icons={<Language sx={{ color: "#252B42" }} />}
             />
             <Typography textAlign={"justify"} variant="body1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              The primary objectives of the National Project Collaboration
+              Platform are to foster innovation, collaboration, and impactful
+              contributions to national-level projects. The platform aims to
+              connect skilled individuals and teams with project creators,
+              facilitating the seamless exchange of ideas and expertise. It
+              strives to provide a centralized space for project posting,
+              application, and collaboration, with a focus on enhancing
+              efficiency, transparency, and the overall success of national
+              projects.
             </Typography>
           </Stack>
         </Paper>
-      </Grid> */}
+      </Grid>
       <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
@@ -98,50 +124,87 @@ function ViewProposals() {
           </Stack>
         </Paper>
       </Grid>
-      {/* <Grid item xs={12}>
-        <Paper elevation={1} sx={{ p: 3 }}>
-          <Stack direction={"column"} gap={2}>
-            <IconsHeadings
-              text={"Expected Outcomes"}
-              icons={<Equalizer sx={{ color: "#252B42" }} />}
-            />
-            <Typography textAlign={"justify"} variant="body1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </Typography>
-          </Stack>
-        </Paper>
-      </Grid> */}
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
             <IconsHeadings
               text={"Methodologies"}
-              icons={<CloudUpload sx={{ color: "#252B42" }} />}
+              icons={<Equalizer sx={{ color: "#252B42" }} />}
             />
             <Typography textAlign={"justify"} variant="body1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              The platform employs agile methodologies to ensure adaptability
+              and responsiveness to evolving project needs. Projects are divided
+              into manageable milestones, promoting incremental progress and
+              effective collaboration. The use of modern project management
+              tools and communication platforms enhances coordination among
+              project stakeholders. Additionally, an iterative development
+              approach allows for continuous improvement based on user feedback
+              and evolving project requirements.
             </Typography>
           </Stack>
         </Paper>
-      </Grid> */}
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"Testing Specifications"}
+              icons={<BugReport sx={{ color: "#252B42" }} />}
+            />
+            <Typography textAlign={"justify"} variant="body1">
+              Stringent testing protocols are implemented to ensure the
+              reliability and security of the platform. Rigorous unit testing,
+              integration testing, and user acceptance testing are conducted to
+              identify and rectify potential issues. Security measures include
+              encryption protocols, secure data storage, and vulnerability
+              assessments. Performance testing is employed to guarantee optimal
+              responsiveness and scalability as the platform grows to
+              accommodate a diverse range of national projects.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"Risk Analysis"}
+              icons={<Analytics sx={{ color: "#252B42" }} />}
+            />
+            <Typography textAlign={"justify"} variant="body1">
+              A comprehensive risk analysis is undertaken to identify, assess,
+              and mitigate potential challenges that may arise during the
+              project lifecycle. Risks related to data security, scalability,
+              and user engagement are systematically evaluated. Mitigation
+              strategies are implemented to address identified risks, and
+              contingency plans are developed to minimize the impact of
+              unforeseen events. Regular risk assessments are conducted to adapt
+              to the evolving landscape and ensure the platform's resilience.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"Instrumental Requirements"}
+              icons={<Build sx={{ color: "#252B42" }} />}
+            />
+            <Typography textAlign={"justify"} variant="body1">
+              The platform's instrumental requirements encompass a robust and
+              scalable infrastructure to support concurrent users and diverse
+              project types. Secure authentication mechanisms, data storage
+              solutions, and real-time communication tools are integral
+              components. Additionally, the platform incorporates user-friendly
+              interfaces, ensuring accessibility for individuals with varying
+              technical backgrounds. Compatibility with multiple devices and
+              browsers enhances the user experience, promoting widespread
+              participation.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
       <Grid item xs={12}>
         <MilesStonesAdmin />
       </Grid>

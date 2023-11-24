@@ -24,7 +24,12 @@ function ProposalLists() {
       </Grid>
       {value === 0 && (
         <Grid item xs={12}>
-          <Card sx={{ p: 2 }}>
+          <Card
+            sx={{
+              p: 2,
+              boxShadow: customTheme.palette.boxShadows.boxShadowTable,
+            }}
+          >
             <Stack gap={3} direction={"column"}>
               <IconsHeadings
                 text={"Description"}

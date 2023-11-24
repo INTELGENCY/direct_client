@@ -11,28 +11,42 @@ import ViewLists from "./SubAdmin/ViewLists/index.jsx";
 import ProposalList from "./ProposalList/index.jsx";
 import ProjectManagement from "./ProjectManagement";
 import PublishReq from "./PublishReq/index.jsx";
+import { Helmet } from "react-helmet";
+import { landingMeta } from "../../utils/seocontent.jsx";
 function index() {
   return (
-    <Routes>
-      <Route path="/" element={<Authenticator admin />}>
-        <Route path="/dashboard" element={<LayoutCommon />}>
-          <Route index element={<Project />} />
-          <Route path="/dashboard/viewproposal" element={<ViewProposals />} />
-          <Route
-            path="/dashboard/projectdetails/:id"
-            element={<ProjectDetails />}
-          />
-          <Route path="/dashboard/management" element={<ViewLists />} />
-          <Route path="/dashboard/proposallist" element={<ProposalList />} />
-          <Route path="/dashboard/publishrequirements" element={<PublishReq />} />
-          <Route path="/dashboard/projectmanagement" element={<ProjectManagement />} />
+    <>
+      <Helmet>
+        <title>{landingMeta?.title}</title>
+        <meta name="description" content={landingMeta?.description} />
+      </Helmet>
+      <Routes>
+        <Route path="/" element={<Authenticator admin />}>
+          <Route path="/dashboard" element={<LayoutCommon />}>
+            <Route index element={<Project />} />
+            <Route path="/dashboard/viewproposal" element={<ViewProposals />} />
+            <Route
+              path="/dashboard/projectdetails/:id"
+              element={<ProjectDetails />}
+            />
+            <Route path="/dashboard/management" element={<ViewLists />} />
+            <Route path="/dashboard/proposallist" element={<ProposalList />} />
+            <Route
+              path="/dashboard/publishrequirements"
+              element={<PublishReq />}
+            />
+            <Route
+              path="/dashboard/projectmanagement"
+              element={<ProjectManagement />}
+            />
+          </Route>
         </Route>
-      </Route>
-      <Route path="/admin" element={<Authenticator Authenticating />}>
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/resetpassword" element={<Otp />} />
-      </Route>
-    </Routes>
+        <Route path="/admin" element={<Authenticator Authenticating />}>
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/resetpassword" element={<Otp />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

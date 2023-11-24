@@ -20,7 +20,7 @@ function ProposalTable() {
     {
       id: 1,
       companyName: "M/S Octathorn",
-      submissionDate: "11/3/2024",
+      submissionDate: "11th April 2024",
       researcherName: "Abdullah Asif",
     },
   ];
@@ -54,7 +54,7 @@ function ProposalTable() {
     },
     {
       field: "feedbackResearcher",
-      headerName: "Feedback From Researcher",
+      headerName: "Feedback From Reviewer",
       width: 300,
 
       renderCell: (params) => (
