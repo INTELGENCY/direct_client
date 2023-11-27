@@ -62,7 +62,7 @@ function ViewProjects() {
         <TabContext sx={{ paddingBlock: "none", width: "100%" }} value={value}>
           <Box>
             <TabsCustom onChange={handleChange}>
-              <TabCustom label="General Purpose Projects" value="1" />
+              <TabCustom label="Projects" value="1" />
               <TabCustom label="Draft" value="2" />
               <TabCustom label="Create New Projects" value="3" />
             </TabsCustom>

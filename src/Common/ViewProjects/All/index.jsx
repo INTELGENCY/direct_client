@@ -78,6 +78,7 @@ const TabListCustome = styled(TabList)(({ theme }) => ({
   },
 }));
 const TabData = [
+  "Classified Projects",
   "Requirements from User / USR / GSR ",
   "Call for Proposals",
   "Pre-Award Formalities",
@@ -166,23 +167,46 @@ function All() {
               )}
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={2}>
-              <ProposalsList />
+              {dataProject.length !== 0 ? (
+                <Cards cardsData={dataProject} />
+              ) : (
+                <Grid container gap={1}>
+                  {Array(4)
+                    .fill(null)
+                    .map((e, i) => (
+                      <Grid
+                        key={i}
+                        item
+                        xs={12}
+                        sm={12}
+                        md={5.86}
+                        lg={3.85}
+                        xl={2.86}
+                      >
+                        <Skeletons />
+                      </Grid>
+                    ))}
+                </Grid>
+              )}
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={3}>
-              <PreAwardFormalities />
+              <ProposalsList />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={4}>
-              <AwardOfContract />
+              <PreAwardFormalities />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={5}>
-              <MilestoneTable />
+              <AwardOfContract />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={6}>
+              <MilestoneTable />
+            </TabPanel>
+            <TabPanel sx={{ paddingInline: "0px" }} value={7}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
                 Comming Soon!
               </Typography>
             </TabPanel>
-            <TabPanel sx={{ paddingInline: "0px" }} value={7}>
+            <TabPanel sx={{ paddingInline: "0px" }} value={8}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
                 Comming Soon!
               </Typography>
