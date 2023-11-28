@@ -14,9 +14,11 @@ import { motion } from "framer-motion";
 import ModalMui from "../../../../../../Common/ModalMui";
 import { useState } from "react";
 import ModalContent from "./ModalContent";
+import { useNavigate } from "react-router-dom";
 
 function Cards({ dataCard, index }) {
   console.log(dataCard);
+  const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
@@ -111,7 +113,10 @@ function Cards({ dataCard, index }) {
             whileTap={{ scale: 0.9 }}
             variant="contained"
             size="small"
-            onClick={handleOpenModal}
+            // onClick={handleOpenModal}
+            onClick={() =>
+              navigate(`/directportal/dashboard/milestone/` + dataCard.id)
+            }
           >
             View
           </Button>
