@@ -13,6 +13,7 @@ import ProjectManagement from "./ProjectManagement";
 import PublishReq from "./PublishReq/index.jsx";
 import { Helmet } from "react-helmet";
 import { landingMeta } from "../../utils/seocontent.jsx";
+import ViewMilestone from "./ViewMilestone/index.jsx";
 function index() {
   return (
     <>
@@ -30,6 +31,7 @@ function index() {
               element={<ProjectDetails />}
             />
             <Route path="/dashboard/management" element={<ViewLists />} />
+            <Route path="/dashboard/milestone/:id" element={<ViewMilestone />} />
             <Route path="/dashboard/proposallist" element={<ProposalList />} />
             <Route
               path="/dashboard/publishrequirements"

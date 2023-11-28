@@ -17,6 +17,7 @@ export const dataProject = [
 
 export const TasksProject = [
   {
+    id: 1,
     title: "Project Planning and Research",
     progress: 90,
     startDate: "November 20, 2023",
@@ -50,6 +51,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 2,
     title: "Hardware and Prototype Development",
     progress: 50,
     startDate: "December 5, 2023",
@@ -83,6 +85,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 3,
     title: "Software Development",
     progress: 60,
     startDate: "December 19, 2023",
@@ -116,6 +119,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 4,
     title: "Prototype Testing and Refinement",
     progress: 0,
     startDate: "January 2, 2024",
@@ -149,6 +153,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 5,
     title: "Power Efficiency and Night Vision",
     progress: 0,
     startDate: "January 16, 2024",
@@ -175,6 +180,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 6,
     title: "Image Analytics and Finalization",
     progress: 0,
     startDate: "January 30, 2024",
@@ -201,6 +207,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 7,
     title: "Future Development and Documentation",
     progress: 0,
     startDate: "February 13, 2024",
@@ -227,6 +234,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 8,
     title: "Deployment and Training",
     progress: 0,
     startDate: "February 27, 2024",
@@ -253,6 +261,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 9,
     title: "Future Application Development",
     progress: 0,
     startDate: "March 12, 2024",
@@ -279,6 +288,7 @@ export const TasksProject = [
     ],
   },
   {
+    id: 10,
     title: "Final Documentation and Presentation",
     progress: 0,
     startDate: "March 26, 2024",
