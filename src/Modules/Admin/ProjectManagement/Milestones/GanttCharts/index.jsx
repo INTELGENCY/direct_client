@@ -24,6 +24,7 @@ function GanttCharts() {
     }
     let newTasks = tasks?.map((t) => (t.id === task.id ? task : t));
 
+    
     if (task?.project) {
       const [start, end] = getStartEndDateForProject(newTasks, task.project);
       console.log(start,end);

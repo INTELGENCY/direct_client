@@ -171,7 +171,7 @@ export const initTasks = () => {
 
 export const getStartEndDateForProject = (tasks, projectId) => {
    const projectTasks = tasks.filter((t) => t.project === projectId);
-   
+
   let start = new Date(projectTasks[0].start);
   let end = new Date(projectTasks[0].end);
 
