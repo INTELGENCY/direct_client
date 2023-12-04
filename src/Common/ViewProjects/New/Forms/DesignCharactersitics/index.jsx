@@ -32,7 +32,7 @@ function DesignCharactersitics({
   return (
     <Grid container justifyContent={"center"} alignItems={"center"} gap={3}>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
-        <TypographyGrow variant={"h1"} text={"Design Characteristics"} />
+        <TypographyGrow variant={"h1"} text={"Technical Information"} />
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects

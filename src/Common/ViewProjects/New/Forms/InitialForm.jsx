@@ -47,9 +47,20 @@ function InitialForm({
   handleChange,
 }) {
   return (
-    <Grid container justifyContent={"center"} alignItems={"center"} gap={3}>
+    <Grid
+      container
+      justifyContent={"space-between"}
+      alignItems={"center"}
+      rowGap={3}
+    >
       {/* {console.log(values, "values")} */}
-      <TypographyGrow variant={"h1"} text={"Initial Details"} />
+      <Grid item xs={12}>
+        <TypographyGrow
+          align={"center"}
+          variant={"h1"}
+          text={"Breif Introduction"}
+        />
+      </Grid>
       <Grid item xs={12}>
         <InputFields
           required
@@ -64,37 +75,91 @@ function InitialForm({
           helperText={touched.title && errors.title}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={5.9}>
         <InputFields
-          type={"textbox"}
-          rows={3}
-          label={"Project Introduction"}
-          placeholder={"Your Project Introduction"}
-          name={"introduction"}
+          type={"text"}
+          label={"Funding Agency"}
+          placeholder={"Write Funding Agency Name"}
+          name={"title"}
           onBlur={handleBlur}
           onChange={handleChange}
-          value={values?.introduction}
-          error={!!touched.introduction && !!errors.introduction}
-          helperText={touched.introduction && errors.introduction}
         />
       </Grid>
-      {/* <Grid item xs={12}>
+      <Grid item xs={5.9}>
         <InputFields
-          required
-          type={"textbox"}
-          rows={3}
-          label={"Project Description"}
-          placeholder={"Your Project Description"}
-          name={"description"}
+          type={"text"}
+          label={"Funding Scheme"}
+          placeholder={"Write About Funding Scheme"}
+          name={"title"}
           onBlur={handleBlur}
           onChange={handleChange}
-          value={values?.description}
-          error={!!touched.description && !!errors.description}
-          helperText={touched.description && errors.description}
         />
-      </Grid> */}
+      </Grid>
+      <Grid item xs={5.9}>
+        <InputFields
+          type={"text"}
+          label={"Initiator Details"}
+          placeholder={"Write About Initiator Details"}
+          name={"title"}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid item xs={5.9}>
+        <InputFields
+          type={"text"}
+          label={"Application Field"}
+          placeholder={"Write About Application Field"}
+          name={"title"}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid item xs={5.9}>
+        <InputFields
+          type={"text"}
+          label={"Research"}
+          placeholder={"Write About Research"}
+          name={"title"}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid item xs={5.9}>
+        <InputFields
+          type={"text"}
+          label={"Overhead Amount"}
+          placeholder={"What is Overhead Amount of this project"}
+          name={"title"}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid item xs={5.9}>
+        <InputFields
+          type={"text"}
+          label={"Proposed Cost"}
+          placeholder={"Write About Proposed Cost"}
+          name={"title"}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Grid>
+      <Grid item xs={5.9}>
+        <InputFields
+          type={"text"}
+          label={"Approved Cost"}
+          placeholder={"Write About Approved Cost"}
+          name={"title"}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Grid>
       <Grid item xs={12}>
-        <Editor label={"Project Description"} required={true} />
+        <Editor label={"Objectives"} />
+      </Grid>
+      <Grid item xs={12}>
+        <Editor label={"Deliverables"} />
       </Grid>
       <GridUpload item xs={12}>
         <ButtonUpload
@@ -103,7 +168,7 @@ function InitialForm({
           startIcon={<CloudUpload />}
           href="#file-upload"
         >
-          Upload a file
+          Upload a picture
           <VisuallyHiddenInput
             name={"image"}
             onChange={(e) => setFieldValue(e.target.files[0])}
@@ -111,7 +176,7 @@ function InitialForm({
             type="file"
           />
         </ButtonUpload>
-        <TextUpload>Attached Project Picture</TextUpload>
+        <TextUpload>Attach a Project Picture</TextUpload>
       </GridUpload>
     </Grid>
   );

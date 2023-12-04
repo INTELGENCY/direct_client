@@ -26,12 +26,11 @@ import SecondaryForm from "./Forms/SecondaryForm.jsx";
 import DesignCharactersitics from "./Forms/DesignCharactersitics/index.jsx";
 
 const steps = [
-  "Initial Draft",
-  "Primary Details",
-  "Secondary Details",
-  "Custom Fields",
-  "Proposal Submission Fields",
-  "Design Charactersitics",
+  "Breif Introduction",
+  "Background",
+  "Technical Information",
+  "Customizable Fields",
+  "Project's Proposal Fields",
 ];
 const GridButtonsSteps = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -157,14 +156,16 @@ function New({ setValue }) {
           { name: "Anyother Document Signed by CA", file: null },
         ],
         proposalText: [
+          { name: "Introduction" },
           { name: "Objectives" },
-          { name: "Description" },
           { name: "Methodologies" },
           { name: "Testings" },
           { name: "Specifications" },
           { name: "Risk Analysis" },
+          { name: "HR Requirements" },
+          { name: "Insturmental Requirements" },
           { name: "Project Timelines" },
-          { name: "Instrumentation Requirements" },
+          { name: " Deliverables" },
           { name: "Financial Proposal" },
         ],
         proposalfile: [
@@ -234,7 +235,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 2 && (
-                  <SecondaryForm
+                  <DesignCharactersitics
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -264,7 +265,7 @@ function New({ setValue }) {
                   />
                 )}
                 {activeStep === 5 && (
-                  <DesignCharactersitics
+                  <SecondaryForm
                     values={values}
                     errors={errors}
                     touched={touched}
