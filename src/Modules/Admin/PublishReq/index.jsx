@@ -12,13 +12,13 @@ function PublishReq() {
         <ProjectName />
       </Grid>
       <Grid item xs={12}>
-        <PublishSearch title={"Choose Researcher"} />
+        <PublishSearch title={"Choose Researcher"} filters dateTitle={"Review Submission Date"} />
       </Grid>
       <Grid item xs={12}>
         <Divider></Divider>
       </Grid>
       <Grid item xs={12}>
-        <PublishSearch title={"Choose Industry"} />
+        <PublishSearch title={"Choose Industry"} dateTitle={"Proposal Submission Date"} />
       </Grid>
       <Grid item xs={12}>
         <Divider></Divider>
