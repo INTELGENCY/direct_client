@@ -17,7 +17,7 @@ function CustomFields({
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <FileUploadCompAdmin
-          values={values.uploadFiles}
+          values={values}
           handleChange={handleChange}
           setFieldValue={setFieldValue}
         />

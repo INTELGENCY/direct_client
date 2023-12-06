@@ -1,6 +1,6 @@
 import { Share } from "@mui/icons-material";
 import { Avatar, Card, Grid, Stack, Typography, styled } from "@mui/material";
-import { dataProject } from "../../../../utils/ProjectsData";
+import { dataProject } from "../../../utils/ProjectsData";
 const AvatarUpload = styled(Avatar)(({ theme }) => ({
   width: "170px",
   height: "170px",
@@ -14,7 +14,7 @@ const Pstyled = styled(Typography)(({ theme }) => ({
   // lineHeight: 1.6,
   fontWeight: "400",
 }));
-function ProjectName() {
+function ProjectNameWithoutTabs() {
   console.log(dataProject, "dataProject");
   return (
     // <Card sx={{ p: 2 }}>
@@ -47,4 +47,4 @@ function ProjectName() {
   );
 }
 
-export default ProjectName;
+export default ProjectNameWithoutTabs;
