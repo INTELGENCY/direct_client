@@ -27,18 +27,25 @@ const namesList = [
 function SearchbarFilter({ filters }) {
   const [searchText, setSearchText] = useState("");
   const [filteredNames, setFilteredNames] = useState([]);
-
+  const [selectedNames, setSelectedNames] = useState([]);
   const handleSearch = (event) => {
     console.log(event.target.value, "event");
-    const query = event.target.value.toLowerCase();
+    const query = event.target.value
     setSearchText(query);
 
     const filtered = namesList?.filter((name) =>
-      name.name.toLowerCase().includes(query)
+      name.name.toLowerCase().includes(query.toLowerCase())
     );
 
     setFilteredNames(filtered);
   };
+   const handleSelect = (value) => {
+      if (!selectedNames.includes(value)) {
+        setSelectedNames([...selectedNames, value]);
+      }
+     setSearchText(value);
+     setFilteredNames([]);
+   };
   const variants = {
     open: {
       opacity: 1,
@@ -63,6 +70,7 @@ function SearchbarFilter({ filters }) {
         />
         {searchText !== "" && (
           <Paper
+            elevation={6}
             variants={variants}
             component={motion.div}
             initial={"close"}
@@ -76,6 +84,7 @@ function SearchbarFilter({ filters }) {
                   component={motion.div}
                   key={i}
                   value={i}
+                  onClick={() => handleSelect(name.name)}
                 >
                   <DisplayUsers dataUsers={name} />
                 </MenuItem>

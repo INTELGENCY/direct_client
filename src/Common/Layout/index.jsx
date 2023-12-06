@@ -251,11 +251,13 @@ function Index() {
                 </ListItemIcon>
                 <ListItemText primary="Projects" />
               </ListItemButton>
-              <ListItemButton>
+              <ListItemButton
+                onClick={() => navigate("/directportal/dashboard/requirements")}
+              >
                 <ListItemIcon>
                   <Business sx={{ color: "#F1F1F1" }} />
                 </ListItemIcon>
-                <ListItemText primary="Listed Companies" />
+                <ListItemText primary="User Requirements" />
               </ListItemButton>
               <ListItemButton>
                 <ListItemIcon>

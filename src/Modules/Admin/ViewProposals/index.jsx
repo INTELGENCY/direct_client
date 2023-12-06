@@ -16,12 +16,7 @@ import {
   TextSnippet,
 } from "@mui/icons-material";
 import MilesStonesAdmin from "./MilesStonesAdmin";
-import FileDownloaded from "../../../Common/DisplayUploadedFiles/FileDownloaded";
-import FileUploadComp from "../../../Common/FileUploadComp";
-import FilesComp from "../../../Common/FileUploadComp/FilesComp";
-import DialogMui from "../../../Common/DialogMui/DialogMui";
 import { useState } from "react";
-const arrayFiles = ["Pre-Award Formalities", "Award of Contract"];
 function ViewProposals() {
   const [DialogState, setDialogState] = useState(false);
   const handleClickOpen = () => {
