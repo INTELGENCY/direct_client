@@ -16,6 +16,7 @@ import { landingMeta } from "../../utils/seocontent.jsx";
 import ViewMilestone from "./ViewMilestone/index.jsx";
 import RequirementsFromUser from "./RequirementsFromUser/index.jsx";
 import WorkFlowDetails from "./WorkFlowDetails/index.jsx";
+import EditProject from "./EditProject/index.jsx";
 function index() {
   return (
     <>
@@ -35,6 +36,7 @@ function index() {
             <Route path="/dashboard/management" element={<ViewLists />} />
             <Route path="/dashboard/milestone/:id" element={<ViewMilestone />} />
             <Route path="/dashboard/details" element={<WorkFlowDetails />} />
+            <Route path="/dashboard/edit" element={<EditProject />} />
             <Route path="/dashboard/requirements" element={<RequirementsFromUser />} />
             <Route path="/dashboard/proposallist" element={<ProposalList />} />
             <Route

@@ -107,6 +107,7 @@ const ProjectCards = ({ data }) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
+    navigate("/directportal/dashboard/edit");
     setAnchorEl(null);
   };
 
