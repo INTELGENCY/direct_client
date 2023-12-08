@@ -1,12 +1,28 @@
 import { FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
 import SelectFields from "../../../SelectFields";
 
-const arrayFields = ["Artificial Inteligence", "Data Sciences", "Manfacturer"];
-function Filters({ researcher }) {
+const arrayFields = [
+  "None",
+  "Artificial Inteligence",
+  "Data Sciences",
+  "Manfacturer",
+];
+function Filters({
+  researcher,
+  handleRadioChange,
+  selectedValue,
+  selectedValueField,
+  handleValueFieldChange,
+}) {
   return (
     <Grid container gap={2}>
       <Grid item xs={12}>
-        <SelectFields array={arrayFields} label={"Select Field"} />
+        <SelectFields
+          value={selectedValueField}
+          onChange={handleValueFieldChange}
+          array={arrayFields}
+          label={"Select Field"}
+        />
       </Grid>
 
       <Grid item xs={12}>
@@ -14,6 +30,8 @@ function Filters({ researcher }) {
           row
           aria-labelledby="demo-row-radio-buttons-group-label"
           name="row-radio-buttons-group"
+          value={selectedValue}
+          onChange={handleRadioChange}
         >
           <FormControlLabel
             value="byName"
