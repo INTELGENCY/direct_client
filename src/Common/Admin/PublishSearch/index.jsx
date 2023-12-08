@@ -3,7 +3,7 @@ import InputFields from "../../InputFields/InputFields";
 import Editor from "../../../Common/Editor";
 import Filters from "./Filters";
 import SearchbarFilter from "./SearchbarFilter";
-function PublishSearch({ title, dateTitle, filters }) {
+function PublishSearch({ title, dateTitle, researcher }) {
   return (
     <Grid container gap={2}>
       <Grid item xs={12}>
@@ -12,7 +12,7 @@ function PublishSearch({ title, dateTitle, filters }) {
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <SearchbarFilter filters={filters} />
+        <SearchbarFilter researcher={researcher} />
       </Grid>
       <Grid item xs={12}>
         <Editor label={"Description"} />

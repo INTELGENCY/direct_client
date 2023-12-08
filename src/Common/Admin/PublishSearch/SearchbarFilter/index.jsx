@@ -24,13 +24,13 @@ const namesList = [
   { name: "Abdul Aziz", field: "Data Sciences", institute: "Rapidev" },
   { name: "Ali", field: "Game Developer", institute: "Rapidev Games" },
 ];
-function SearchbarFilter({ filters }) {
+function SearchbarFilter({ researcher }) {
   const [searchText, setSearchText] = useState("");
   const [filteredNames, setFilteredNames] = useState([]);
   const [selectedNames, setSelectedNames] = useState([]);
   const handleSearch = (event) => {
     console.log(event.target.value, "event");
-    const query = event.target.value
+    const query = event.target.value;
     setSearchText(query);
 
     const filtered = namesList?.filter((name) =>
@@ -39,13 +39,13 @@ function SearchbarFilter({ filters }) {
 
     setFilteredNames(filtered);
   };
-   const handleSelect = (value) => {
-      if (!selectedNames.includes(value)) {
-        setSelectedNames([...selectedNames, value]);
-      }
-     setSearchText(value);
-     setFilteredNames([]);
-   };
+  const handleSelect = (value) => {
+    if (!selectedNames.includes(value)) {
+      setSelectedNames([...selectedNames, value]);
+    }
+    setSearchText(value);
+    setFilteredNames([]);
+  };
   const variants = {
     open: {
       opacity: 1,
@@ -58,7 +58,7 @@ function SearchbarFilter({ filters }) {
   return (
     <Grid container gap={2}>
       <Grid item xs={12}>
-        <Filters filters={filters} />
+        <Filters researcher={researcher} />
       </Grid>
       <Grid item xs={12}>
         {/* <Grow in> */}

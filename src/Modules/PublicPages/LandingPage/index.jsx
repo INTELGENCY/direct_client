@@ -62,11 +62,11 @@ const LandingPage = () => {
       </Helmet>
       <Banner />
       {/* <MissionAndVision /> */}
+      <MissionAndVision />
       <Stats />
       <ProjectsCarousel />
       <TechnologyGrid />
       <MapComponentWrapper />
-      <MissionAndVision />
       {/* <TopResources /> */}
       <NewsEvent />
     </div>

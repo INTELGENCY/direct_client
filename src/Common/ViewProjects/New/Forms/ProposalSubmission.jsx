@@ -4,8 +4,10 @@ import ProposalValues from "./ProposalValues";
 import { DriveFolderUpload, TextSnippet } from "@mui/icons-material";
 
 function ProposalSubmission({
+  valuestesting,
   valuesProposalText,
   valuesProposalfile,
+  valuesfinancialProposal,
   errors,
   touched,
   handleBlur,
@@ -25,6 +27,26 @@ function ProposalSubmission({
           setFieldValue={setFieldValue}
           heading={"Proposal Text's Fields"}
           icons={<TextSnippet sx={{ color: "#252B42" }} />}
+        />
+      </Grid>
+      <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
+        <ProposalValues
+          icons={<DriveFolderUpload sx={{ color: "#252B42" }} />}
+          section={"testing"}
+          setFieldValue={setFieldValue}
+          heading={"Testing"}
+          handleChange={handleChange}
+          values={valuestesting}
+        />
+      </Grid>
+      <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
+        <ProposalValues
+          icons={<DriveFolderUpload sx={{ color: "#252B42" }} />}
+          section={"financialProposal"}
+          setFieldValue={setFieldValue}
+          heading={"Financial Proposal"}
+          handleChange={handleChange}
+          values={valuesfinancialProposal}
         />
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
