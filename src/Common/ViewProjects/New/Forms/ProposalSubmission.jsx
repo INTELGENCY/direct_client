@@ -4,7 +4,8 @@ import ProposalValues from "./ProposalValues";
 import { DriveFolderUpload, TextSnippet } from "@mui/icons-material";
 
 function ProposalSubmission({
-  values,
+  valuesProposalText,
+  valuesProposalfile,
   errors,
   touched,
   handleBlur,
@@ -18,7 +19,7 @@ function ProposalSubmission({
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <ProposalValues
-          values={values.proposalText}
+          values={valuesProposalText}
           section={"proposalText"}
           handleChange={handleChange}
           setFieldValue={setFieldValue}
@@ -33,7 +34,7 @@ function ProposalSubmission({
           setFieldValue={setFieldValue}
           heading={"Fields for Proposal Documents"}
           handleChange={handleChange}
-          values={values.proposalfile}
+          values={valuesProposalfile}
         />
       </Grid>
     </Grid>

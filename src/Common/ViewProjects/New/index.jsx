@@ -246,7 +246,7 @@ function New({ setValue }) {
                 )}
                 {activeStep === 3 && (
                   <CustomFields
-                    values={values}
+                    values={values.uploadFiles}
                     errors={errors}
                     touched={touched}
                     handleBlur={handleBlur}
@@ -256,7 +256,8 @@ function New({ setValue }) {
                 )}
                 {activeStep === 4 && (
                   <ProposalSubmission
-                    values={values}
+                    valuesProposalText={values.proposalText}
+                    valuesProposalfile={values.proposalfile}
                     errors={errors}
                     touched={touched}
                     handleBlur={handleBlur}

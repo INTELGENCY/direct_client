@@ -36,6 +36,7 @@ function ProposalsList() {
           placement="bottom-start"
           TransitionComponent={Fade}
           TransitionProps={{ timeout: 400 }}
+          onClick={() => navigate("/directportal/dashboard/details")}
         >
           <Typography paddingRight={3} noWrap variant="body2">
             {params.row.ProjectNames}
