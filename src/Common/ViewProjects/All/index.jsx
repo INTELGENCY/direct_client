@@ -84,8 +84,8 @@ const TabData = [
   "Call for Proposals",
   "Submission of Technical and Financial Proposals",
   "Pre-Award Formalities",
-  "Award For Contract",
-  "Final Contract",
+  "Awarded",
+  "Contracted",
   "Milestones",
 ];
 function All() {

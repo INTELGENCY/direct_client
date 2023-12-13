@@ -1,8 +1,8 @@
-import { Button, Grid, Grow, Typography, styled } from "@mui/material";
+import { Button, Grid, styled } from "@mui/material";
 import React from "react";
+import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import InputFields from "../../../InputFields/InputFields";
 import { CloudUpload } from "@mui/icons-material";
-import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import Editor from "../../../Editor";
 const GridUpload = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -38,28 +38,11 @@ const VisuallyHiddenInput = styled("input")`
   white-space: nowrap;
   width: 1px;
 `;
-function InitialForm({
-  setFieldValue,
-  values,
-  errors,
-  touched,
-  handleBlur,
-  handleChange,
-}) {
+function BreifIntro() {
   return (
-    <Grid
-      container
-      justifyContent={"space-between"}
-      alignItems={"center"}
-      rowGap={3}
-    >
-      {/* {console.log(values, "values")} */}
+    <Grid container justifyContent={"space-between"} rowGap={4}>
       <Grid item xs={12}>
-        <TypographyGrow
-          align={"center"}
-          variant={"h1"}
-          text={"Breif Introduction"}
-        />
+        <TypographyGrow variant={"h2"} text={"Breif Introduction"} />
       </Grid>
       <Grid item xs={12}>
         <InputFields
@@ -68,11 +51,11 @@ function InitialForm({
           label={"Project Title"}
           placeholder={"Your Project Title"}
           name={"title"}
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={values?.title}
-          error={!!touched.title && !!errors.title}
-          helperText={touched.title && errors.title}
+          //   onBlur={handleBlur}
+          //   onChange={handleChange}
+          //   value={values?.title}
+          //   error={!!touched.title && !!errors.title}
+          //   helperText={touched.title && errors.title}
         />
       </Grid>
       <Grid item xs={12}>
@@ -81,8 +64,8 @@ function InitialForm({
           label={"Funding Agency"}
           placeholder={"Write Funding Agency Name"}
           name={"title"}
-          onBlur={handleBlur}
-          onChange={handleChange}
+          //   onBlur={handleBlur}
+          //   onChange={handleChange}
         />
       </Grid>
       <Grid item xs={5.9}>
@@ -91,8 +74,8 @@ function InitialForm({
           label={"Funding Scheme"}
           placeholder={"Write About Funding Scheme"}
           name={"title"}
-          onBlur={handleBlur}
-          onChange={handleChange}
+          //   onBlur={handleBlur}
+          //   onChange={handleChange}
         />
       </Grid>
       <Grid item xs={5.9}>
@@ -101,8 +84,8 @@ function InitialForm({
           label={"Initiator Details"}
           placeholder={"Write About Initiator Details"}
           name={"title"}
-          onBlur={handleBlur}
-          onChange={handleChange}
+          //   onBlur={handleBlur}
+          //   onChange={handleChange}
         />
       </Grid>
       <Grid item xs={5.9}>
@@ -111,8 +94,8 @@ function InitialForm({
           label={"Application Field"}
           placeholder={"Write About Application Field"}
           name={"title"}
-          onBlur={handleBlur}
-          onChange={handleChange}
+          //   onBlur={handleBlur}
+          //   onChange={handleChange}
         />
       </Grid>
       <Grid item xs={5.9}>
@@ -121,8 +104,8 @@ function InitialForm({
           label={"Research"}
           placeholder={"Write About Research"}
           name={"title"}
-          onBlur={handleBlur}
-          onChange={handleChange}
+          //   onBlur={handleBlur}
+          //   onChange={handleChange}
         />
       </Grid>
       <Grid item xs={12}>
@@ -141,7 +124,7 @@ function InitialForm({
           Upload a picture
           <VisuallyHiddenInput
             name={"image"}
-            onChange={(e) => setFieldValue(e.target.files[0])}
+            // onChange={(e) => setFieldValue(e.target.files[0])}
             // value={values?.image}
             type="file"
           />
@@ -152,4 +135,4 @@ function InitialForm({
   );
 }
 
-export default InitialForm;
+export default BreifIntro;
