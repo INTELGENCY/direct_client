@@ -1,33 +1,50 @@
 import { FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
 import SelectFields from "../../../SelectFields";
 
-const arrayFields = ["Artificial Inteligence", "Data Sciences", "Manfacturer"];
-function Filters({ filters }) {
+const arrayFields = [
+  "None",
+  "Artificial Inteligence",
+  "Data Sciences",
+  "Manfacturer",
+];
+function Filters({
+  researcher,
+  handleRadioChange,
+  selectedValue,
+  selectedValueField,
+  handleValueFieldChange,
+}) {
   return (
     <Grid container gap={2}>
       <Grid item xs={12}>
-        <SelectFields array={arrayFields} label={"Select Field"} />
+        <SelectFields
+          value={selectedValueField}
+          onChange={handleValueFieldChange}
+          array={arrayFields}
+          label={"Select Field"}
+        />
       </Grid>
-      {filters && (
-        <Grid item xs={12}>
-          <RadioGroup
-            row
-            aria-labelledby="demo-row-radio-buttons-group-label"
-            name="row-radio-buttons-group"
-          >
-            <FormControlLabel
-              value="byName"
-              control={<Radio />}
-              label="By Name"
-            />
-            <FormControlLabel
-              value="byInstitute"
-              control={<Radio />}
-              label="By Institute"
-            />
-          </RadioGroup>
-        </Grid>
-      )}
+
+      <Grid item xs={12}>
+        <RadioGroup
+          row
+          aria-labelledby="demo-row-radio-buttons-group-label"
+          name="row-radio-buttons-group"
+          value={selectedValue}
+          onChange={handleRadioChange}
+        >
+          <FormControlLabel
+            value="byName"
+            control={<Radio />}
+            label="By Name"
+          />
+          <FormControlLabel
+            value={"byInstitute"}
+            control={<Radio />}
+            label={researcher ? "By Institute" : "Company"}
+          />
+        </RadioGroup>
+      </Grid>
     </Grid>
   );
 }

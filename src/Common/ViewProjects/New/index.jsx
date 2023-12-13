@@ -149,6 +149,8 @@ function New({ setValue }) {
         terms: "",
         customise: "",
         specification: "",
+        testing: [{ name: "", file: null }],
+        financialProposal: [{ name: "", file: null }],
         uploadFiles: [
           { name: "Letter Of Support", file: null },
           { name: "Declaration Certificate", file: null },
@@ -258,6 +260,8 @@ function New({ setValue }) {
                   <ProposalSubmission
                     valuesProposalText={values.proposalText}
                     valuesProposalfile={values.proposalfile}
+                    valuestesting={values.testing}
+                    valuesfinancialProposal={values.financialProposal}
                     errors={errors}
                     touched={touched}
                     handleBlur={handleBlur}

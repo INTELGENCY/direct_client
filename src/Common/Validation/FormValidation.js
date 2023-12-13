@@ -146,6 +146,16 @@ export const AdminCreateProjectValidation = yup.object().shape({
       name: yup.string(),
     })
   ),
+  testing: yup.array().of(
+    yup.object().shape({
+      name: yup.string(),
+    })
+  ),
+  financialProposal: yup.array().of(
+    yup.object().shape({
+      name: yup.string(),
+    })
+  ),
 });
 // Signup schema
 const MAX_FILE_SIZE = 1024000; //100KB

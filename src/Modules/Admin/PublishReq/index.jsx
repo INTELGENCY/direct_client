@@ -32,7 +32,7 @@ function PublishReq() {
           <Grid item xs={12}>
             <PublishSearch
               title={"Choose Researcher"}
-              filters
+              researcher={true}
               dateTitle={"Review Submission Date"}
             />
           </Grid>
@@ -42,6 +42,7 @@ function PublishReq() {
           <Grid item xs={12}>
             <PublishSearch
               title={"Choose Industry"}
+              researcher={false}
               dateTitle={"Proposal Submission Date"}
             />
           </Grid>
