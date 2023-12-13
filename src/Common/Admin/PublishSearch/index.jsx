@@ -1,9 +1,10 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 import InputFields from "../../InputFields/InputFields";
 import Editor from "../../../Common/Editor";
 import Filters from "./Filters";
 import SearchbarFilter from "./SearchbarFilter";
-function PublishSearch({ title, dateTitle, researcher }) {
+import { motion } from "framer-motion";
+function PublishSearch({ title, dateTitle, researcher, noTextBox,handleCloseModal }) {
   return (
     <Grid container gap={2}>
       <Grid item xs={12}>
@@ -14,12 +15,48 @@ function PublishSearch({ title, dateTitle, researcher }) {
       <Grid item xs={12}>
         <SearchbarFilter researcher={researcher} />
       </Grid>
-      <Grid item xs={12}>
-        <Editor label={"Description"} />
-      </Grid>
-      <Grid item xs={6}>
-        <InputFields type={"date"} label={dateTitle} />
-      </Grid>
+      {noTextBox === false && (
+        <Grid item xs={12}>
+          <Editor label={"Description"} />
+        </Grid>
+      )}
+      {noTextBox === false && (
+        <Grid item xs={6}>
+          <InputFields type={"date"} label={dateTitle} />
+        </Grid>
+      )}
+      {handleCloseModal && (
+        <Grid item sx={{ mt: 2 }} xs={12}>
+          <Stack
+            gap={1}
+            direction={"row"}
+            justifyContent={"flex-end"}
+            alignItems={"center"}
+          >
+            <Button
+              component={motion.div}
+              whileTap={{ scale: 0.9 }}
+              onClick={handleCloseModal}
+              sx={{
+                backgroundColor: "bg.slightlyLightRed",
+                "&:hover": {
+                  backgroundColor: "bg.normalRed",
+                },
+              }}
+              variant="contained"
+            >
+              Cancel
+            </Button>
+            <Button
+              component={motion.div}
+              whileTap={{ scale: 0.9 }}
+              variant="contained"
+            >
+              Assign
+            </Button>
+          </Stack>
+        </Grid>
+      )}
     </Grid>
   );
 }

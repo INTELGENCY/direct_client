@@ -23,6 +23,7 @@ import ModalMui from "../../../../Common/ModalMui";
 import InputFields from "../../../../Common/InputFields/InputFields";
 import SelectFields from "../../../../Common/SelectFields";
 import ProposalFeedBack from "./ProposalFeedBack";
+import PublishSearch from "../../../../Common/Admin/PublishSearch";
 const rows = [
   {
     id: 1,
@@ -83,25 +84,33 @@ function Proposals() {
             />
           </>
         ) : (
-          <Stack direction={'row'} gap={2} alignItems={"center"}>
+          <Stack direction={"row"} gap={2} alignItems={"center"}>
             {params.row.researcherName}
-            
-              <Button
-                onClick={handleOpenModal}
-                component={motion.div}
-                whileTap={{ scale: 0.9 }}
-                variant="contained"
-                endIcon={<ShareOutlined />}
-              >
-                Assign
-              </Button>
-              <ModalMui
-                top={"35%"}
-                left={"35%"}
-                openModalMui={openModal}
-                handleCloseModalMui={handleCloseModal}
-                content={<ModalContent handleCloseModal={handleCloseModal} />}
-              />
+
+            <Button
+              onClick={handleOpenModal}
+              component={motion.div}
+              whileTap={{ scale: 0.9 }}
+              variant="contained"
+              endIcon={<ShareOutlined />}
+            >
+              Assign
+            </Button>
+            <ModalMui
+              top={"35%"}
+              left={"35%"}
+              openModalMui={openModal}
+              handleCloseModalMui={handleCloseModal}
+              content={
+                <PublishSearch
+                  noTextBox
+                  title={"Choose Reviewer"}
+                  researcher={true}
+                  dateTitle={"Review Submission Date"}
+                  handleCloseModal={handleCloseModal}
+                />
+              }
+            />
           </Stack>
         ),
     },

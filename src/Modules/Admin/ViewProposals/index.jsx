@@ -3,6 +3,7 @@ import MainHeadings from "../../../Common/AnimationMui/MainHeadings";
 import DisplayUploadedFiles from "../../../Common/DisplayUploadedFiles";
 import IconsHeadings from "../../../Common/AnimationMui/IconHeadings";
 import {
+  AccountBalance,
   Analytics,
   Approval,
   ApprovalRounded,
@@ -26,6 +27,59 @@ function ViewProposals() {
   const handleClose = () => {
     setDialogState(false);
   };
+  const FinancialProposalsArray = [
+    {
+      label: "HR Costs",
+      value: "234,000",
+    },
+
+    {
+      label: "Materials",
+      value: "234,500",
+    },
+    {
+      label: "Infrastructure",
+      value: "523,000",
+    },
+    {
+      label: "Estimated Tax",
+      value: "400,500",
+    },
+    {
+      label: "Total Budget",
+      value: "1,000,000",
+    },
+    // {
+    //   title: "Personal Costs",
+    //   children: [
+    //     {
+    //       label: "HR Costs",
+    //       value: "234,000",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Material and Equipment Cost",
+    //   children: [
+    //     {
+    //       label: "Materials",
+    //       value: "234,500",
+    //     },
+    //     {
+    //       label: "Infrastructure",
+    //       value: "523,000",
+    //     },
+    //     {
+    //       label: "Estimated Tax",
+    //       value: "400,500",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Total Budget",
+    //   value: "1,000,000",
+    // },
+  ];
   return (
     <Grid container sx={{ pt: 6, pb: 2, pl: 2, pr: 2 }} gap={4}>
       <Grid item xs={12}>
@@ -74,11 +128,52 @@ function ViewProposals() {
           </Stack>
         </Paper>
       </Grid>
+
       <Grid item xs={12}>
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
             <IconsHeadings
-              text={"Description"}
+              text={"Methodologies"}
+              icons={<Equalizer sx={{ color: "#252B42" }} />}
+            />
+            <Typography textAlign={"justify"} variant="body1">
+              The platform employs agile methodologies to ensure adaptability
+              and responsiveness to evolving project needs. Projects are divided
+              into manageable milestones, promoting incremental progress and
+              effective collaboration. The use of modern project management
+              tools and communication platforms enhances coordination among
+              project stakeholders. Additionally, an iterative development
+              approach allows for continuous improvement based on user feedback
+              and evolving project requirements.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"Testing"}
+              icons={<BugReport sx={{ color: "#252B42" }} />}
+            />
+            <Typography textAlign={"justify"} variant="body1">
+              Stringent testing protocols are implemented to ensure the
+              reliability and security of the platform. Rigorous unit testing,
+              integration testing, and user acceptance testing are conducted to
+              identify and rectify potential issues. Security measures include
+              encryption protocols, secure data storage, and vulnerability
+              assessments. Performance testing is employed to guarantee optimal
+              responsiveness and scalability as the platform grows to
+              accommodate a diverse range of national projects.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"Specifications"}
               icons={<Description sx={{ color: "#252B42" }} />}
             />
             <Typography textAlign={"justify"} variant="body1">
@@ -123,46 +218,6 @@ function ViewProposals() {
         <Paper elevation={1} sx={{ p: 3 }}>
           <Stack direction={"column"} gap={2}>
             <IconsHeadings
-              text={"Methodologies"}
-              icons={<Equalizer sx={{ color: "#252B42" }} />}
-            />
-            <Typography textAlign={"justify"} variant="body1">
-              The platform employs agile methodologies to ensure adaptability
-              and responsiveness to evolving project needs. Projects are divided
-              into manageable milestones, promoting incremental progress and
-              effective collaboration. The use of modern project management
-              tools and communication platforms enhances coordination among
-              project stakeholders. Additionally, an iterative development
-              approach allows for continuous improvement based on user feedback
-              and evolving project requirements.
-            </Typography>
-          </Stack>
-        </Paper>
-      </Grid>
-      <Grid item xs={12}>
-        <Paper elevation={1} sx={{ p: 3 }}>
-          <Stack direction={"column"} gap={2}>
-            <IconsHeadings
-              text={"Testing Specifications"}
-              icons={<BugReport sx={{ color: "#252B42" }} />}
-            />
-            <Typography textAlign={"justify"} variant="body1">
-              Stringent testing protocols are implemented to ensure the
-              reliability and security of the platform. Rigorous unit testing,
-              integration testing, and user acceptance testing are conducted to
-              identify and rectify potential issues. Security measures include
-              encryption protocols, secure data storage, and vulnerability
-              assessments. Performance testing is employed to guarantee optimal
-              responsiveness and scalability as the platform grows to
-              accommodate a diverse range of national projects.
-            </Typography>
-          </Stack>
-        </Paper>
-      </Grid>
-      <Grid item xs={12}>
-        <Paper elevation={1} sx={{ p: 3 }}>
-          <Stack direction={"column"} gap={2}>
-            <IconsHeadings
               text={"Risk Analysis"}
               icons={<Analytics sx={{ color: "#252B42" }} />}
             />
@@ -175,6 +230,51 @@ function ViewProposals() {
               contingency plans are developed to minimize the impact of
               unforeseen events. Regular risk assessments are conducted to adapt
               to the evolving landscape and ensure the platform's resilience.
+            </Typography>
+          </Stack>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"HR Requirements"}
+              icons={<Description sx={{ color: "#252B42" }} />}
+            />
+            <Typography textAlign={"justify"} variant="body1">
+              The proposed project involves the development of a throwable
+              ball-shaped imaging system for capturing motion-blur-free,
+              panoramic images in areas that are difficult to access. The system
+              incorporates an Inertial Sensor Module (IMU) with accelerometers
+              and gyroscopes to identify the optimal time for the ball to be
+              dropped, ensuring stable equilibrium during image capture. The
+              technology aims to enhance situational awareness in scenarios such
+              as covert operations on the modern battlefield. The core
+              components include a spherical imaging system with a 360⁰ Field of
+              View (FOV), achieved by employing multiple open-source cameras
+              like Arducam, OV7670, OV2640, or high-end industrial cameras such
+              as uEye+ iDS, GmbH, Germany. The challenge lies in camera
+              selection based on specifications like resolution, aperture, frame
+              rate, shutter speed, and transfer speed. Mechanical stabilization,
+              using gyro stabilization or gimbal, is proposed to minimize
+              movement inside the rotating ball. To address the simultaneous
+              image capture challenge, the proposal suggests using a
+              microprocessor with a multi-threaded application or an FPGA for a
+              customized hardware solution. The conceptual schematic outlines
+              the functioning and transfer protocol of the 360-degree panoramic
+              image capturing system. Images captured by the cameras will be
+              transferred to an end device (PC or smartphone) via Wi-Fi over a
+              TCP connection. The ball will act as a TCP server, creating an
+              access point for the host device. Power efficiency is a critical
+              consideration due to the significant number of cameras, and the
+              project will develop an image stitching algorithm to create a
+              seamless 360⁰ view. The software challenge includes creating an
+              immersive 360⁰ view on smartphones. The project also highlights
+              the need for a compact, lightweight, rugged, shockproof, thermal,
+              and water-resistant mechanical enclosure. Night vision
+              capabilities, using infrared LEDs, are considered, building on
+              past experience with a similar system containing Arducam connected
+              to a Node MCU.
             </Typography>
           </Stack>
         </Paper>
@@ -202,6 +302,28 @@ function ViewProposals() {
       </Grid>
       <Grid item xs={12}>
         <MilesStonesAdmin />
+      </Grid>
+      <Grid item xs={12}>
+        <Paper elevation={1} sx={{ p: 3 }}>
+          <Stack direction={"column"} gap={2}>
+            <IconsHeadings
+              text={"Financial Proposal"}
+              icons={<AccountBalance sx={{ color: "#252B42" }} />}
+            />
+            <Grid container sx={{mt:2}} rowGap={2}>
+              {FinancialProposalsArray.map((e) => (
+                <Grid item xs={3}>
+                  <Stack direction={"row"} alignItems={"center"} gap={1}>
+                    <Typography variant="h6" fontWeight={500}>
+                      {e.label}:
+                    </Typography>
+                    <Typography variant="body2">{e.value}</Typography>
+                  </Stack>
+                </Grid>
+              ))}
+            </Grid>
+          </Stack>
+        </Paper>
       </Grid>
       <Grid item xs={12}>
         <DisplayUploadedFiles />

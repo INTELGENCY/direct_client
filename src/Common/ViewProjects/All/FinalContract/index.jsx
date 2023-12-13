@@ -209,8 +209,8 @@ function FinalContract() {
       align: "center",
     },
     {
-      field: "Upload Contract",
-      headerName: "View Proposal",
+      field: "UploadContract",
+      headerName: "Upload Proposal",
       width: 150,
       align: "center",
       headerAlign: "center",
@@ -221,7 +221,7 @@ function FinalContract() {
           whileTap={{ scale: 0.9 }}
           variant="contained"
           color="primary"
-          startIcon={<Upload/>}
+          startIcon={<Upload />}
         >
           Upload
         </Button>
