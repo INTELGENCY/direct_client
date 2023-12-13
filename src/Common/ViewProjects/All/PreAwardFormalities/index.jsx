@@ -95,17 +95,6 @@ function PreAwardFormalities() {
       headerAlign: "center",
     },
     {
-      field: "ProjectStatus",
-      headerName: "Project Status",
-      width: 200,
-      align: "center",
-      headerAlign: "center",
-
-      renderCell: (param) => (
-        <Chip color="success" clickable label={param.row.ProjectStatus} />
-      ),
-    },
-    {
       field: "Proposals",
       headerName: "No. of Proposals",
       width: 150,

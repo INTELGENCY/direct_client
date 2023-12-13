@@ -110,17 +110,6 @@ function AwardOfContract() {
       headerAlign: "center",
     },
     {
-      field: "ProjectStatus",
-      headerName: "Project Status",
-      width: 200,
-      align: "center",
-      headerAlign: "center",
-
-      renderCell: (param) => (
-        <Chip color="success" clickable label={param.row.ProjectStatus} />
-      ),
-    },
-    {
       field: "feedbackResearcher",
       headerName: "Feedback From Researcher",
       width: 300,
@@ -159,7 +148,7 @@ function AwardOfContract() {
 
       renderCell: (param) => (
         <Chip
-          color="success"
+          color={"success"}
           clickable
           label={param.row.approveByFundingAgency}
         />
@@ -218,7 +207,6 @@ function AwardOfContract() {
       Initiator: "Dr Amer Sohail Kashif",
       StartDate: "11/16/2023",
       EndDate: "11/3/2024",
-      ProjectStatus: "ongoing",
       Proposals: "1",
       ProposalsHighRating: "1/1",
       fundingAgency: "Defence",

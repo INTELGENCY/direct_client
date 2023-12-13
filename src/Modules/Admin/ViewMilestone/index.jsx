@@ -34,21 +34,20 @@ function ViewMilestone() {
     >
       <Grid item sx={{ mb: 0 }} xs={12}>
         <Stack direction={"row"} gap={2} alignItems={"center"}>
-          <Typography variant="h2">{dataProject.title}</Typography>
-          <Typography variant="body2" fontWeight={500}>
+          <Typography sx={{m:2}} variant="h1">{dataProject.title}</Typography>
+          <Typography variant="h3" fontWeight={500}>
             (Task Number {id} )
           </Typography>
         </Stack>
       </Grid>
-      <Grid sx={{ mt: 2 }}>
+      {/* <Grid sx={{ mt: 2 }}>
         <TabsCommon
           handleChange={handleChange}
           value={Tabs}
           arrayTabs={arrayTabs}
         />
-      </Grid>
-      {Tabs === 0 && <TabFeedbackModal dataCard={dataProject} />}
-      {Tabs === 1 && <TabRemarksModal />}
+      </Grid> */}
+      <TabFeedbackModal dataCard={dataProject} />
       {/* {Tabs === 2 && <TabChat />} */}
     </Grid>
   );
