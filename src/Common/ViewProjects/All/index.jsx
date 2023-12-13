@@ -24,6 +24,7 @@ import MilestoneTable from "./MillestoneTable";
 import { dataProject } from "../../../utils/ProjectsData";
 import TabsMui from "../Draft/SubComponents/TabsMui";
 import TabsCommon from "../../TabsCommon";
+import FinalContract from "./FinalContract";
 const TabCustome = styled(Tab)(({ theme }) => ({
   border: "1px solid #E9E9EB",
   "& .Mui-selected": {
@@ -80,7 +81,6 @@ const TabListCustome = styled(TabList)(({ theme }) => ({
   },
 }));
 const TabData = [
-  "Requirements from User / USR / GSR ",
   "Call for Proposals",
   "Submission of Technical and Financial Proposals",
   "Pre-Award Formalities",
@@ -179,44 +179,24 @@ function All() {
               )}
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={2}>
-              {dataProject.length !== 0 ? (
-                <Cards cardsData={dataProject} />
-              ) : (
-                <Grid container gap={1}>
-                  {Array(4)
-                    .fill(null)
-                    .map((e, i) => (
-                      <Grid
-                        key={i}
-                        item
-                        xs={12}
-                        sm={12}
-                        md={5.86}
-                        lg={3.85}
-                        xl={2.86}
-                      >
-                        <Skeletons />
-                      </Grid>
-                    ))}
-                </Grid>
-              )}
-            </TabPanel>
-            <TabPanel sx={{ paddingInline: "0px" }} value={3}>
               <ProposalsList />
             </TabPanel>
-            <TabPanel sx={{ paddingInline: "0px" }} value={4}>
+            <TabPanel sx={{ paddingInline: "0px" }} value={3}>
               <PreAwardFormalities />
             </TabPanel>
-            <TabPanel sx={{ paddingInline: "0px" }} value={5}>
+            <TabPanel sx={{ paddingInline: "0px" }} value={4}>
               <AwardOfContract />
             </TabPanel>
+            <TabPanel sx={{ paddingInline: "0px" }} value={5}>
+              <FinalContract />
+            </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={6}>
+              <MilestoneTable />
+            </TabPanel>
+            <TabPanel sx={{ paddingInline: "0px" }} value={7}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
                 Comming Soon!
               </Typography>
-            </TabPanel>
-            <TabPanel sx={{ paddingInline: "0px" }} value={7}>
-              <MilestoneTable />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={8}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
