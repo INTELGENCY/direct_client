@@ -1,7 +1,7 @@
 import { Card, Grid } from "@mui/material";
 import MainHeadings from "../../../Common/AnimationMui/MainHeadings";
 import Section from "./Section";
-import { BubbleChart, Flare, History } from "@mui/icons-material";
+import { BubbleChart, DoneAll, Flare } from "@mui/icons-material";
 import { customTheme } from "../../../Theme/theme";
 import ProjectNameWithoutTabs from "../../../Common/Admin/ProjectNameWithoutTabs";
 
@@ -24,9 +24,9 @@ function WorkFlowDetails() {
       </Grid>
       <Grid item xs={12}>
         <Section
-          title={"Past"}
+          title={"Completed"}
           icon={
-            <History
+            <DoneAll
               sx={{ color: customTheme.palette.bg.darkBlue, fontSize: "30px" }}
             />
           }
@@ -34,7 +34,7 @@ function WorkFlowDetails() {
       </Grid>
       <Grid item xs={12}>
         <Section
-          title={"Current"}
+          title={"Ongoing"}
           icon={
             <BubbleChart
               sx={{ color: customTheme.palette.bg.darkBlue, fontSize: "30px" }}

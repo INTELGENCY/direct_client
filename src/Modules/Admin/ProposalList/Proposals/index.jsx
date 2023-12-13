@@ -60,7 +60,7 @@ function Proposals() {
     {
       field: "researcherName",
       headerName: "Assigned to",
-      width: 250,
+      width: 300,
       renderCell: (params) =>
         params.row.researcherName === "" ||
         params.row.researcherName === undefined ? (
@@ -83,7 +83,26 @@ function Proposals() {
             />
           </>
         ) : (
-          params.row.researcherName
+          <Stack direction={'row'} gap={2} alignItems={"center"}>
+            {params.row.researcherName}
+            
+              <Button
+                onClick={handleOpenModal}
+                component={motion.div}
+                whileTap={{ scale: 0.9 }}
+                variant="contained"
+                endIcon={<ShareOutlined />}
+              >
+                Assign
+              </Button>
+              <ModalMui
+                top={"35%"}
+                left={"35%"}
+                openModalMui={openModal}
+                handleCloseModalMui={handleCloseModal}
+                content={<ModalContent handleCloseModal={handleCloseModal} />}
+              />
+          </Stack>
         ),
     },
     {
