@@ -260,6 +260,8 @@ function InputFields({
         <TextField
           type="search"
           fullWidth
+          value={value}
+          onChange={onChange}
           placeholder="Search..."
           InputProps={{
             endAdornment: (

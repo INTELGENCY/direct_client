@@ -22,6 +22,8 @@ import PreAwardFormalities from "./PreAwardFormalities";
 import AwardOfContract from "./AwardOfContract";
 import MilestoneTable from "./MillestoneTable";
 import { dataProject } from "../../../utils/ProjectsData";
+import TabsMui from "../Draft/SubComponents/TabsMui";
+import TabsCommon from "../../TabsCommon";
 const TabCustome = styled(Tab)(({ theme }) => ({
   border: "1px solid #E9E9EB",
   "& .Mui-selected": {
@@ -78,17 +80,22 @@ const TabListCustome = styled(TabList)(({ theme }) => ({
   },
 }));
 const TabData = [
-  "Classified Projects",
   "Requirements from User / USR / GSR ",
   "Call for Proposals",
+  "Submission of Technical and Financial Proposals",
   "Pre-Award Formalities",
   "Award For Contract",
+  "Final Contract",
   "Milestones",
 ];
 function All() {
   const [value, setValue] = useState(1);
   const [postsAll, setPostsAll] = useState([]);
-  console.log(postsAll, "PostsAll");
+  const [Tabs, setTabs] = useState(0);
+  const handleChangeTabs = (event, newValue) => {
+    setTabs(newValue);
+  };
+  const arrayTabs = ["Classified Projects", "Non-Classified Projects"];
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
@@ -109,6 +116,11 @@ function All() {
   return (
     <>
       <Grid container rowGap={3} sx={{ maxWidth: "100%" }}>
+        <TabsCommon
+          arrayTabs={arrayTabs}
+          handleChange={handleChangeTabs}
+          value={Tabs}
+        />
         <GridCustom item xs={12}>
           <TextField
             color="success"
@@ -199,12 +211,12 @@ function All() {
               <AwardOfContract />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={6}>
-              <MilestoneTable />
-            </TabPanel>
-            <TabPanel sx={{ paddingInline: "0px" }} value={7}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
                 Comming Soon!
               </Typography>
+            </TabPanel>
+            <TabPanel sx={{ paddingInline: "0px" }} value={7}>
+              <MilestoneTable />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={8}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
