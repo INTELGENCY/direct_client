@@ -210,7 +210,7 @@ function FinalContract() {
     },
     {
       field: "UploadContract",
-      headerName: "Upload Proposal",
+      headerName: "Upload Contract",
       width: 150,
       align: "center",
       headerAlign: "center",
