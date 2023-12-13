@@ -14,7 +14,7 @@ import DataGrids from "../../../TableMui/DataGrids";
 import { useNavigate } from "react-router-dom";
 import { customTheme } from "../../../../Theme/theme";
 import IconsHeadings from "../../../AnimationMui/IconHeadings";
-import { EmojiEvents, Star } from "@mui/icons-material";
+import { EmojiEvents, Star, Upload } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import url from "/pdf/approval of project by funding agency.pdf";
 function FinalContract() {
@@ -204,6 +204,26 @@ function FinalContract() {
           color="primary"
         >
           View
+        </Button>
+      ),
+      align: "center",
+    },
+    {
+      field: "Upload Contract",
+      headerName: "View Proposal",
+      width: 150,
+      align: "center",
+      headerAlign: "center",
+
+      renderCell: (param) => (
+        <Button
+          component={motion.div}
+          whileTap={{ scale: 0.9 }}
+          variant="contained"
+          color="primary"
+          startIcon={<Upload/>}
+        >
+          Upload
         </Button>
       ),
       align: "center",
