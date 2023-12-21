@@ -42,7 +42,7 @@ function BreifIntro() {
   return (
     <Grid container justifyContent={"space-between"} rowGap={4}>
       <Grid item xs={12}>
-        <TypographyGrow variant={"h2"} text={"Breif Introduction"} />
+        <TypographyGrow variant={"h2"} text={"Brief Introduction"} />
       </Grid>
       <Grid item xs={12}>
         <InputFields

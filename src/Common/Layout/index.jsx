@@ -24,14 +24,44 @@ import {
   styled,
   Menu,
   MenuItem,
+  Collapse,
 } from "@mui/material";
 import LogoWrapper from "../Logo";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Business } from "@mui/icons-material";
+import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
 import MenuMui from "../MenuMUI";
+import { adminNavigationList } from "./data";
 
 const drawerWidth = 300;
+const ListStyled = styled(List)(({ theme }) => ({
+  "& .MuiListItemButton-root": {
+    paddingLeft: 40,
+    paddingRight: 18,
+  },
+  "& .MuiListItemIcon-root": {
+    minWidth: 0,
+    marginRight: 20,
+  },
+  "& .MuiSvgIcon-root": {
+    fontSize: 20,
+    color: "#9e9e9e",
+  },
+}));
+const SubListStyled = styled(List)(({ theme }) => ({
+  "& .MuiListItemButton-root": {
+    paddingLeft: 60,
+    paddingRight: 18,
+  },
+  "& .MuiListItemIcon-root": {
+    minWidth: 0,
+    marginRight: 20,
+  },
+  "& .MuiSvgIcon-root": {
+    fontSize: 18,
+    color: "#cccccc",
+  },
+}));
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -67,7 +97,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
-  backgroundColor: theme.palette.bg.black,
+  backgroundColor: theme.palette.bg.secondDarkBlue,
   ...theme.mixins.toolbar,
 }));
 
@@ -125,9 +155,9 @@ const Container = styled("div")(({ theme }) => ({
   paddingLeft: "5px",
   paddingRight: "10px",
   paddingBlock: "20px",
-  backgroundColor: theme.palette.bg.black,
+  backgroundColor: theme.palette.bg.secondDarkBlue,
   color: "#fff",
-}));
+}));   
 
 const SectionLogo = styled("div")(({ open }) => ({
   display: "flex",
@@ -145,6 +175,8 @@ function Index() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [MenuState, setMenuState] = useState(false);
+  const [subListItem, setSubListOpen] = useState(false);
+  const [listItem, setListOpen] = useState(false);
   const profile = useSelector((state) => state.profile.profile);
   const isAdmin = profile?.type === "admin" || profile?.type === "super";
   const isIndustry = profile?.type === "industry";
@@ -166,6 +198,7 @@ function Index() {
   };
 
   const handleDrawerClose = () => {
+    setListOpen(false);
     setOpen(false);
   };
   const handlenavigate = (url) => {
@@ -179,6 +212,14 @@ function Index() {
     if (isIndustry) {
       navigate(`/industry/projects`);
     }
+  };
+  // List item open and close
+
+  const handleClickListItem = () => {
+    setListOpen(!listItem);
+  };
+  const handleClickSubListItem = () => {
+    setSubListOpen(!subListItem);
   };
 
   return (
@@ -245,46 +286,98 @@ function Index() {
               component="nav"
               aria-labelledby="nested-list-subheader"
             >
-              <ListItemButton onClick={() => handlenavigate("projects")}>
-                <ListItemIcon>
-                  <BusinessCenterIcon sx={{ color: "#F1F1F1" }} />
-                </ListItemIcon>
-                <ListItemText primary="Projects" />
-              </ListItemButton>
-              <ListItemButton
-                onClick={() => navigate("/directportal/dashboard/requirements")}
-              >
-                <ListItemIcon>
-                  <Business sx={{ color: "#F1F1F1" }} />
-                </ListItemIcon>
-                <ListItemText primary="User Requirements" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <DvrIcon sx={{ color: "#F1F1F1" }} />
-                </ListItemIcon>
-                <ListItemText primary="Resourse Management" />
-              </ListItemButton>
-              <ListItemButton
-                onClick={() => navigate("/directportal/dashboard/management")}
-              >
-                <ListItemIcon>
-                  <GroupsIcon sx={{ color: "#F1F1F1" }} />
-                </ListItemIcon>
-                <ListItemText primary="Team " />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <ForumIcon sx={{ color: "#F1F1F1" }} />
-                </ListItemIcon>
-                <ListItemText primary="Forums" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <SatelliteAltIcon sx={{ color: "#F1F1F1" }} />
-                </ListItemIcon>
-                <ListItemText primary="Communication" />
-              </ListItemButton>
+              {adminNavigationList?.map((e, i) =>
+                e.type === "Children" ? (
+                  <>
+                    <ListItemButton
+                      key={i}
+                      onClick={() => {
+                        handleClickListItem();
+                        handlenavigate("projects");
+                      }}
+                    >
+                      <ListItemIcon>{e?.icon}</ListItemIcon>
+                      <ListItemText primary={e.title} />
+                      {listItem ? <ExpandLess /> : <ExpandMore />}
+                    </ListItemButton>
+                    <Collapse in={listItem} timeout="auto" unmountOnExit>
+                      <ListStyled component="div" disablePadding>
+                        {e?.children?.map((eSub, i) =>
+                          eSub?.type === "Children" ? (
+                            <>
+                              <ListItemButton
+                                onClick={() => {
+                                  handleClickSubListItem();
+                                }}
+                                key={i}
+                                sx={{ pl: 4 }}
+                              >
+                                <ListItemIcon>{eSub?.icon}</ListItemIcon>
+                                <ListItemText
+                                  sx={{
+                                    color: "#9e9e9e",
+                                  }}
+                                  primaryTypographyProps={{
+                                    fontSize: 16,
+                                    fontWeight: "medium",
+                                  }}
+                                  primary={eSub?.title}
+                                />
+                                {subListItem ? <ExpandLess /> : <ExpandMore />}
+                              </ListItemButton>
+                              <Collapse
+                                in={subListItem}
+                                timeout="auto"
+                                unmountOnExit
+                              >
+                                <SubListStyled component="div" disablePadding>
+                                  {eSub?.children?.map((eve, ikeys) => (
+                                    <ListItemButton key={ikeys} sx={{ pl: 4 }}>
+                                      <ListItemIcon>{eve?.icon}</ListItemIcon>
+                                      <ListItemText
+                                        sx={{
+                                          color: "#9e9e9e",
+                                        }}
+                                        primaryTypographyProps={{
+                                          fontSize: 14,
+                                          fontWeight: "medium",
+                                        }}
+                                        primary={eve?.title}
+                                      />
+                                    </ListItemButton>
+                                  ))}
+                                </SubListStyled>
+                              </Collapse>
+                            </>
+                          ) : (
+                            <ListItemButton key={i} sx={{ pl: 4 }}>
+                              <ListItemIcon>{eSub?.icon}</ListItemIcon>
+                              <ListItemText
+                                sx={{
+                                  color: "#9e9e9e",
+                                }}
+                                primaryTypographyProps={{
+                                  fontSize: 16,
+                                  fontWeight: "medium",
+                                }}
+                                primary={eSub?.title}
+                              />
+                            </ListItemButton>
+                          )
+                        )}
+                      </ListStyled>
+                    </Collapse>
+                  </>
+                ) : (
+                  <ListItemButton
+                    key={i}
+                    onClick={() => handlenavigate("projects")}
+                  >
+                    <ListItemIcon>{e?.icon}</ListItemIcon>
+                    <ListItemText primary={e.title} />
+                  </ListItemButton>
+                )
+              )}
             </List>
           </Stack>
         </Container>

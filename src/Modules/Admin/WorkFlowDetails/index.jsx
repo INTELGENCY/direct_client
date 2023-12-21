@@ -15,7 +15,7 @@ function WorkFlowDetails() {
         <Card
           sx={{
             p: 2,
-            boxShadow: customTheme.palette.boxShadows.boxShadowTable,
+            boxShadow: customTheme.palette.boxShadows.boxShadowCards,
             borderRadius: "10px",
           }}
         >

@@ -1,10 +1,28 @@
-import { Grow, Typography } from "@mui/material";
-function TypographyGrow({ text, variant, timeout = 750, align }) {
+import { Grow, Stack, Typography } from "@mui/material";
+import TooltipMui from "../TooltipMui";
+function TypographyGrow({
+  text,
+  variant,
+  timeout = 750,
+  align,
+  width,
+  lineHeight,
+  tooltipIcon,
+  tooltipText,
+}) {
   return (
     <Grow in timeout={timeout}>
-      <Typography textAlign={align ? align : "center"} variant={variant}>
-        {text}
-      </Typography>
+      <Stack component={"div"} direction={"row"} alignItems={"center"}>
+        <Typography
+          lineHeight={lineHeight ? lineHeight : 1}
+          width={width ? width : "100%"}
+          textAlign={align ? align : "center"}
+          variant={variant}
+        >
+          {text}
+        </Typography>
+        {tooltipIcon && <TooltipMui text={tooltipText} icon={tooltipIcon} />}
+      </Stack>
     </Grow>
   );
 }

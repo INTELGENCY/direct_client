@@ -1,28 +1,24 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
-  Box,
   Grid,
   IconButton,
   InputAdornment,
   Tab,
-  Tabs,
   TextField,
   Typography,
   styled,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import Cards from "../Cards";
-import { BackHand, FilterList, Forward, Search } from "@mui/icons-material";
+import {  FilterList, Search } from "@mui/icons-material";
 import axios from "axios";
 import { keys } from "../../../config";
 import Skeletons from "../../Skeletons";
-import DataGrids from "../../TableMui/DataGrids";
 import ProposalsList from "./ProposalsList";
 import PreAwardFormalities from "./PreAwardFormalities";
 import AwardOfContract from "./AwardOfContract";
 import MilestoneTable from "./MillestoneTable";
 import { dataProject } from "../../../utils/ProjectsData";
-import TabsMui from "../Draft/SubComponents/TabsMui";
 import TabsCommon from "../../TabsCommon";
 import FinalContract from "./FinalContract";
 const TabCustome = styled(Tab)(({ theme }) => ({
@@ -86,7 +82,8 @@ const TabData = [
   "Pre-Award Formalities",
   "Awarded",
   "Contracted",
-  "Milestones",
+  "Projects in Progress",
+  "Projects Completed",
 ];
 function All() {
   const [value, setValue] = useState(1);

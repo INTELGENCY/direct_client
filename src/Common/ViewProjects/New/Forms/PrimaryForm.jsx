@@ -1,6 +1,5 @@
-import { Grid, Grow, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import React, { useState } from "react";
-import InputFields from "../../../InputFields/InputFields";
 import dayjs from "dayjs";
 import TypographyGrow from "../../../AnimationMui/TypographyGrow";
 import Editor from "../../../Editor";
@@ -13,7 +12,6 @@ function PrimaryForm({
   handleChange,
   setFieldValue,
 }) {
-  const [value, setValue] = useState(dayjs("2022-04-17"));
   return (
     <div>
       <Grid
@@ -28,13 +26,22 @@ function PrimaryForm({
         </Grid>
 
         <Grid item xs={12}>
-          <Editor label={"Description"} />
+          <Editor
+            tooltipText={`Briefly explain what the project seeks to achieve and its overall boundaries`}
+            label={"Detail Description"}
+          />
         </Grid>
         <Grid item xs={12}>
-          <Editor label={"Methodology"} />
+          <Editor
+            tooltipText={`Briefly describe the research methods used (e.g., simulations, surveys, field tests, end product etc.)`}
+            label={"Methodology"}
+          />
         </Grid>
         <Grid item xs={12}>
-          <Editor label={"Reference"} />
+          <Editor
+            tooltipText={`Enter the letter or reference number, meeting, or visit that resulted in the project proposal.`}
+            label={"References"}
+          />
         </Grid>
       </Grid>
     </div>

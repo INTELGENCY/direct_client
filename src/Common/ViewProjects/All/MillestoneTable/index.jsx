@@ -275,7 +275,7 @@ function MilestoneTable() {
             paddingBottom={2}
             icons={<Route sx={{ color: "bg.darkBlue" }} />}
           />
-          <DataGrids dataRow={rows} dataColumn={columns} />
+          <DataGrids dataRow={rows} toolBarGrid dataColumn={columns} />
         </Card>
       </Grid>
     </Grid>

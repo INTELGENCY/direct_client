@@ -1,5 +1,6 @@
-import { Add, HelpOutline } from "@mui/icons-material";
+import { Quiz } from "@mui/icons-material";
 import { Button, Fab, Grow, Stack, Tooltip, Typography } from "@mui/material";
+import TooltipMui from "../TooltipMui";
 
 function IconsHeadings({
   text,
@@ -35,9 +36,10 @@ function IconsHeadings({
         {text}
       </Typography>
       {helpOutline && (
-        <Tooltip arrow TransitionComponent={Grow} title={helpOutline}>
-          <HelpOutline sx={{ color: "GrayText", cursor: "pointer" }} />
-        </Tooltip>
+        <TooltipMui
+          icon={<Quiz sx={{ color: "bg.darkBlue", cursor: "pointer" }} />}
+          text={helpOutline}
+        />
       )}
       {button && (
         <Button

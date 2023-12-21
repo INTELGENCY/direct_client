@@ -1,7 +1,9 @@
-import { FormLabel, Grid, styled } from "@mui/material";
+import { FormLabel, Grid, Stack, styled } from "@mui/material";
 import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import TooltipMui from "../AnimationMui/TooltipMui";
+import { Quiz } from "@mui/icons-material";
 
 const LabelForInput = styled(FormLabel)(({ theme }) => ({
   color: "black",
@@ -17,6 +19,7 @@ function Editor({
   setValue,
   required,
   label,
+  tooltipText,
 }) {
   const modules = {
     toolbar: [
@@ -55,13 +58,21 @@ function Editor({
     <div>
       <Grid container>
         <Grid item xs={12}>
-          <LabelForInput
-            color="error"
-            required={required ? true : false}
-            // className="emailInputLabel"
-          >
-            {label}
-          </LabelForInput>
+          <Stack gap={1} direction={"row"}>
+            <LabelForInput
+              color="error"
+              required={required ? true : false}
+              // className="emailInputLabel"
+            >
+              {label}
+            </LabelForInput>
+            {tooltipText && (
+              <TooltipMui
+                text={tooltipText}
+                icon={<Quiz sx={{ color: "bg.darkBlue", cursor: "pointer" }} />}
+              />
+            )}
+          </Stack>
         </Grid>
         <Grid item xs={12}>
           <ReactQuill

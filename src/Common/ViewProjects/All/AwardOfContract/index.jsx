@@ -231,7 +231,7 @@ function AwardOfContract() {
             paddingBottom={2}
             icons={<EmojiEvents sx={{ color: "bg.darkBlue" }} />}
           />
-          <DataGrids dataRow={rows} dataColumn={columns} />
+          <DataGrids dataRow={rows} toolBarGrid dataColumn={columns} />
         </Card>
       </Grid>
     </Grid>

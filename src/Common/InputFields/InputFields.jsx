@@ -3,17 +3,15 @@ import {
   Grid,
   IconButton,
   InputAdornment,
+  Stack,
   TextField,
 } from "@mui/material";
-import { VisibilityOff, Visibility, Search } from "@mui/icons-material";
+import { VisibilityOff, Visibility, Search, Quiz } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
-import {
-  DateField,
-  DatePicker,
-  LocalizationProvider,
-} from "@mui/x-date-pickers";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import TooltipMui from "../AnimationMui/TooltipMui";
 const LabelForInput = styled(FormLabel)(({ theme }) => ({
   color: "black",
   fontSize: "1.1rem",
@@ -21,6 +19,7 @@ const LabelForInput = styled(FormLabel)(({ theme }) => ({
     color: "red",
   },
 }));
+
 function InputFields({
   name,
   type,
@@ -35,6 +34,7 @@ function InputFields({
   value,
   disable,
   variant,
+  tooltipText
 }) {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -45,13 +45,23 @@ function InputFields({
   return (
     <Grid container rowGap={1}>
       <Grid item xs={12}>
-        <LabelForInput
-          color="error"
-          required={required ? true : false}
-          className="emailInputLabel"
-        >
-          {label}
-        </LabelForInput>
+        <Stack alignItems={"center"} direction={"row"} gap={1}>
+          <LabelForInput
+            color="error"
+            required={required ? true : false}
+            className="emailInputLabel"
+          >
+            {label}
+          </LabelForInput>
+          {tooltipText && (
+            <TooltipMui
+              text={tooltipText}
+              icon={
+                <Quiz sx={{ color: "bg.darkBlue", cursor: "pointer" }} />
+              }
+            />
+          )}
+        </Stack>
       </Grid>
       {type === "firstName" && (
         <Grid item xs={12}>

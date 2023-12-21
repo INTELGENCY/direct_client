@@ -264,7 +264,7 @@ function FinalContract() {
             paddingBottom={2}
             icons={<GavelIcon sx={{ color: "bg.darkBlue" }} />}
           />
-          <DataGrids dataRow={rows} dataColumn={columns} />
+          <DataGrids dataRow={rows} toolBarGrid dataColumn={columns} />
         </Card>
       </Grid>
     </Grid>

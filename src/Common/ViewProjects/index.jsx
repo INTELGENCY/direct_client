@@ -64,7 +64,7 @@ function ViewProjects() {
             <TabsCustom onChange={handleChange}>
               <TabCustom label="Projects" value="1" />
               <TabCustom label="Draft" value="2" />
-              <TabCustom label="Create New Projects" value="3" />
+              <TabCustom label="New Project Proposal" value="3" />
             </TabsCustom>
           </Box>
           <TabPanelCustome value="1">
