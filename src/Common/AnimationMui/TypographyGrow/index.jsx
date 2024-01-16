@@ -12,7 +12,7 @@ function TypographyGrow({
 }) {
   return (
     <Grow in timeout={timeout}>
-      <Stack component={"div"} direction={"row"} alignItems={"center"}>
+      <Stack component={"div"} direction={"row"} justifyContent={"center"} alignItems={"center"}>
         <Typography
           lineHeight={lineHeight ? lineHeight : 1}
           width={width ? width : "100%"}

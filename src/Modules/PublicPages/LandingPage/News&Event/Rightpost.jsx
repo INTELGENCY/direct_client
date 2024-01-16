@@ -31,23 +31,18 @@ const ImageTag = styled("img")(({ theme }) => ({
   objectFit: "cover",
 }));
 
-function Rightpost() {
+function Rightpost({data}) {
   return (
     <Stack direction={"row"} justifyContent={"flex-start"} gap={3}>
       <ImageContainer>
-        <ImageTag
-          src={
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtUPizw-9RuKJQd22Phqa5ne39VnXvV_tNibyMZMkeQsIDW7tdDxhgKqjlMtygJdgQczE&usqp=CAU"
-          }
-          alt={"BlogPost"}
-        />
+        <ImageTag src={data.url} alt={"BlogPost"} />
       </ImageContainer>
       <Box>
-        <DateText>10 July 2023</DateText>
+        <DateText>{data.date}</DateText>
         <HeadingText variant="h3" marginTop={1}>
-          {String(`Cloud Computing: A Game-Changer`).length > 30
-            ? String(`Cloud Computing: A Game-Changer`).slice(0, 32) + "..."
-            : String("Cloud Computing: A Game-Changer")}
+          {String(data.Title).length > 30
+            ? String(data.Title).slice(0, 32) + "..."
+            : String(data.Title)}
         </HeadingText>
       </Box>
     </Stack>

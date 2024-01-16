@@ -1,10 +1,15 @@
-import { Card, Grid } from "@mui/material";
+import { Card, Grid, Stack, Typography } from "@mui/material";
 import MainHeadings from "../../../Common/AnimationMui/MainHeadings";
 import Section from "./Section";
-import { BubbleChart, DoneAll, Flare } from "@mui/icons-material";
+import { BubbleChart, DoneAll, Flare, TaskAlt } from "@mui/icons-material";
 import { customTheme } from "../../../Theme/theme";
 import ProjectNameWithoutTabs from "../../../Common/Admin/ProjectNameWithoutTabs";
-
+import BasicInfo from "./BasicInfo";
+const FieldData = [
+  {
+    Name: "name",
+  },
+];
 function WorkFlowDetails() {
   return (
     <Grid container sx={{ pt: 8, pb: 4 }} gap={6}>
@@ -23,10 +28,13 @@ function WorkFlowDetails() {
         </Card>
       </Grid>
       <Grid item xs={12}>
+        <BasicInfo/>
+      </Grid>
+      <Grid item xs={12}>
         <Section
           title={"Completed"}
           icon={
-            <DoneAll
+            <TaskAlt
               sx={{ color: customTheme.palette.bg.darkBlue, fontSize: "30px" }}
             />
           }

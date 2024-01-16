@@ -1,12 +1,14 @@
 import { createTheme } from "@mui/material";
 const darkColor = "#252B42";
-const secondDarkColor = "#161e29";
+const secondDarkColor = "#0b101e";
+const ThirdDarkColor = "#161e29";
 export const customTheme = createTheme({
   // Extend the base theme's palette
   palette: {
     bg: {
       black: "rgb(27, 28, 28)",
       darkBlue: "#252B42",
+      blue: "#319DFF",
       secondDarkBlue: secondDarkColor,
       blue: "#3498db",
       lightPurple: "#5758BB",

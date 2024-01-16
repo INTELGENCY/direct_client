@@ -21,6 +21,7 @@ import MilestoneTable from "./MillestoneTable";
 import { dataProject } from "../../../utils/ProjectsData";
 import TabsCommon from "../../TabsCommon";
 import FinalContract from "./FinalContract";
+import CompletedProjects from "./CompletedProjects";
 const TabCustome = styled(Tab)(({ theme }) => ({
   border: "1px solid #E9E9EB",
   "& .Mui-selected": {
@@ -192,7 +193,7 @@ function All() {
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={7}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
-                Comming Soon!
+                <CompletedProjects />
               </Typography>
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={8}>

@@ -75,9 +75,7 @@ function Leftcard({ item }) {
               WebkitLineClamp: 2,
             }}
           >
-            The Future of Web Development 202{item} Trends to Watch The Future
-            of Web Development 202{item} Trends to Watch The Future of Web
-            Development 202{item} Trends to Watch
+            The Future of Web Development 202{item} Trends to Watch
           </Typography>
           <ParaText
             variant="body2"
@@ -91,9 +89,7 @@ function Leftcard({ item }) {
           >
             This article explores the top trends that are expected to shape the
             landscape of web development in 2023, highlighting the key areas
-            where developers should focus on working. where developers should
-            where developers should focus on working. where developers should
-            focus on working. focus on working. focus on working.
+            where developers should focus on working.
           </ParaText>
           <DateText>January 9, 2023</DateText>
         </GridItemTwo>

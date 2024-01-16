@@ -54,8 +54,8 @@ function ViewProjects() {
       <GridItem item xs={12}>
         <PageHeading variant="h2">Overview</PageHeading>
         <Typography color={"gray"} variant="body2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices
-          lectus sem.{" "}
+          Overview and Project Highlights - Unveiling the key facets and
+          noteworthy achievements that define the essence of the project.
         </Typography>
       </GridItem>
       <Grid item xs={12}>

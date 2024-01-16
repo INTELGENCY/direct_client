@@ -8,10 +8,12 @@ import {
   Typography,
   Tabs,
   Tab,
+  Button,
 } from "@mui/material";
 import { useState } from "react";
 import { dataProject } from "../../../utils/ProjectsData";
 import { customTheme } from "../../../Theme/theme";
+import { motion } from "framer-motion";
 const AvatarUpload = styled(Avatar)(({ theme }) => ({
   width: "170px",
   height: "170px",
@@ -25,7 +27,27 @@ const Pstyled = styled(Typography)(({ theme }) => ({
   // lineHeight: 1.6,
   fontWeight: "400",
 }));
+const ButtonStyled = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.bg.darkBlue,
+  "&:hover": {
+    backgroundColor: theme.palette.bg.secondDarkBlue,
+  },
+}));
 function ProjectName({ value, handleChange, arrayTabs }) {
+  const ButtonVariants = {
+    initial: {
+      opacity: 0,
+      y: 50,
+      // scale: 0.9,
+    },
+    final: {
+      opacity: 1,
+      y: 0,
+      // scale: 1,
+      transition: { type: "spring", damping: 10, stiffness: 150 },
+      // transition: { delay: 1, duration: .5 },
+    },
+  };
   return (
     <Card
       sx={{ p: 3, boxShadow: customTheme.palette.boxShadows.boxShadowTable }}
@@ -38,6 +60,7 @@ function ProjectName({ value, handleChange, arrayTabs }) {
               width={"100%"}
               direction={"column"}
               justifyContent={"space-evenly"}
+              alignItems={"flex-start"}
             >
               <Typography
                 variant="h3"
@@ -51,6 +74,15 @@ function ProjectName({ value, handleChange, arrayTabs }) {
               <Pstyled textAlign={"justify"} width={"85%"} variant="body1">
                 {dataProject[0].description}
               </Pstyled>
+              <ButtonStyled
+                component={motion.div}
+                variants={ButtonVariants}
+                initial={"initial"}
+                animate={"final"}
+                variant="contained"
+              >
+                View More
+              </ButtonStyled>
             </Stack>
           </Stack>
         </Grid>

@@ -33,7 +33,7 @@ function SecondaryForm({
           <InputFields
             type={"text"}
             label={"Research"}
-            placeholder={"Researc"}
+            placeholder={"Research"}
           />
         </Grid>
         <Grid item xs={5.6}>

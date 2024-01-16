@@ -50,37 +50,47 @@ function AddForm() {
             {console.log(values, "values")}
             <Grid item xs={12}>
               <Card sx={{ p: 2 }}>
-                <InputFields
-                  type={"textbox"}
-                  rows={5}
-                  label={"Objectives"}
-                  placeholder={"Write Objectives!"}
-                />
+                <Editor label={"Introduction"} required={true} />
               </Card>
             </Grid>
             <Grid item xs={12}>
               <Card sx={{ p: 2 }}>
-                <Editor label={"Add Description"} required={true} />
+                <Editor label={"Objectives"} required={true} />
               </Card>
             </Grid>
             <Grid item xs={12}>
               <Card sx={{ p: 2 }}>
-                <InputFields
-                  type={"textbox"}
-                  rows={5}
-                  label={"Methodologies"}
-                  placeholder={"Write Objectives!"}
-                />
+                <Editor label={"Methodology"} required={true} />
               </Card>
             </Grid>
             <Grid item xs={12}>
               <Card sx={{ p: 2 }}>
-                <InputFields
-                  type={"textbox"}
-                  rows={5}
-                  label={"Expected Outcomes"}
-                  placeholder={"Write Objectives!"}
-                />
+                <Editor label={"Testing"} required={true} />
+              </Card>
+            </Grid>
+            <Grid item xs={12}>
+              <Card sx={{ p: 2 }}>
+                <Editor label={"Specifications"} required={true} />
+              </Card>
+            </Grid>
+            <Grid item xs={12}>
+              <Card sx={{ p: 2 }}>
+                <Editor label={"Risk Analysis"} required={true} />
+              </Card>
+            </Grid>
+            <Grid item xs={12}>
+              <Card sx={{ p: 2 }}>
+                <Editor label={"HR Requirements"} required={true} />
+              </Card>
+            </Grid>
+            <Grid item xs={12}>
+              <Card sx={{ p: 2 }}>
+                <Editor label={"Instrumentation Requirements"} required={true} />
+              </Card>
+            </Grid>
+            <Grid item xs={12}>
+              <Card sx={{ p: 2 }}>
+                <Editor label={"Deliverables"} required={true} />
               </Card>
             </Grid>
             {/* <Grid item xs={12}>
@@ -106,17 +116,7 @@ function AddForm() {
           </SummaryDiv>
         </Card>
       </Grid> */}
-            <Grid item xs={12}>
-              <Card sx={{ p: 2 }}>
-                <InputFields
-                  variant={"standard"}
-                  type={"textbox"}
-                  rows={5}
-                  label={"Additional Comments"}
-                  placeholder={"Write any comments if you have!"}
-                />
-              </Card>
-            </Grid>
+
             <Grid item xs={12}>
               <FileUploadComp arrayFiles={arrayFiles} />
             </Grid>

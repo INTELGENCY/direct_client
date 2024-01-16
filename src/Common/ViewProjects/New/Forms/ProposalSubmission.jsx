@@ -20,6 +20,7 @@ function ProposalSubmission({
         item
         display={"flex"}
         justifyContent={"center"}
+        alignItems={"center"}
         xs={12}
         sx={{ mt: 2, mb: 2 }}
       >

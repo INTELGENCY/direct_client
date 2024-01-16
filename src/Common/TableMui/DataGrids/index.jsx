@@ -80,6 +80,13 @@ function DataGrids({ checkboxSelection, dataRow, dataColumn, toolBarGrid }) {
             p: 1,
             pl: 2,
             pr: 2,
+            "&:hover": {
+              color: "#494949",
+              background: "#f1f1f1",
+              p: 1,
+              pl: 2,
+              pr: 2,
+            },
           },
         }}
         rows={dataRow ? dataRow : rows}
