@@ -30,7 +30,7 @@ function TabOne({ profileData }) {
             contentData={educationData}
             experienceSection
           />
-          <Award
+          {/* <Award
             headingData={"Awards"}
             profileData={profileData?.awardsSection}
             contentData={educationData}
@@ -39,7 +39,7 @@ function TabOne({ profileData }) {
             profileData={profileData?.scopusSection}
             headingData={"Web of Science / Scopus"}
             contentData={educationData}
-          />
+          /> */}
         </Stack>
       </Grid>
       <Grid item xs={12} lg={3.5} xl={3}>
