@@ -16,7 +16,7 @@ function Editor({
   quillRef,
   checkImageExists,
   value,
-  setValue,
+  setValue = () => {},
   required,
   label,
   tooltipText,
