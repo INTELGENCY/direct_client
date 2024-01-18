@@ -13,10 +13,10 @@ import DataGrids from "../../../TableMui/DataGrids";
 import { useNavigate } from "react-router-dom";
 import { customTheme } from "../../../../Theme/theme";
 import IconsHeadings from "../../../AnimationMui/IconHeadings";
-import { EmojiEvents, Star } from "@mui/icons-material";
+import { Star, TaskAltSharp } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import url from "/pdf/approval of project by funding agency.pdf";
-function AwardOfContract() {
+
+function CompletedProjects() {
   const navigate = useNavigate();
   const columns = [
     {
@@ -110,6 +110,17 @@ function AwardOfContract() {
       headerAlign: "center",
     },
     {
+      field: "ProjectStatus",
+      headerName: "Project Status",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+
+      renderCell: (param) => (
+        <Chip color="success" clickable label={param.row.ProjectStatus} />
+      ),
+    },
+    {
       field: "feedbackResearcher",
       headerName: "Feedback From Researcher",
       width: 300,
@@ -148,7 +159,7 @@ function AwardOfContract() {
 
       renderCell: (param) => (
         <Chip
-          color={"success"}
+          color="success"
           clickable
           label={param.row.approveByFundingAgency}
         />
@@ -184,10 +195,40 @@ function AwardOfContract() {
       headerAlign: "center",
 
       renderCell: (param) => (
+        <>
+          <Button
+            component={motion.div}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => navigate("/directportal/dashboard/viewproposal")}
+            variant="contained"
+            color="primary"
+          >
+            View
+          </Button>
+        </>
+      ),
+      align: "center",
+    },
+    {
+      field: "noMilestones",
+      headerName: "No. of Milestones",
+      width: 150,
+
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "mileStones",
+      headerName: "Milestones Details",
+      width: 150,
+      align: "center",
+      headerAlign: "center",
+
+      renderCell: (param) => (
         <Button
           component={motion.div}
           whileTap={{ scale: 0.9 }}
-          onClick={() => navigate("/directportal/dashboard/viewproposal")}
+          onClick={() => navigate("/directportal/dashboard/projectmanagement")}
           variant="contained"
           color="primary"
         >
@@ -207,10 +248,15 @@ function AwardOfContract() {
       Initiator: "Dr Amer Sohail Kashif",
       StartDate: "11/16/2023",
       EndDate: "11/3/2024",
+      ProjectStatus: "Completed",
       Proposals: "1",
+      noMilestones: "13",
       ProposalsHighRating: "1/1",
       fundingAgency: "Defence",
       approveByFundingAgency: "success",
+      approvelDoc: "/pdf/approval of project by funding agency.pdf",
+      budget: "/pdf/approval of project by funding agency.pdf",
+      milestones: "8",
       approvelDoc: "/pdf/approval of project by funding agency.pdf",
       feedbackResearcher: "",
       ViewProposals: "",
@@ -225,11 +271,11 @@ function AwardOfContract() {
           }}
         >
           <IconsHeadings
-            text={"Award Of Contract"}
+            text={"Complted Projects"}
             paddingLeft={2.7}
             paddingTop={3}
             paddingBottom={2}
-            icons={<EmojiEvents sx={{ color: "bg.darkBlue" }} />}
+            icons={<TaskAltSharp sx={{ color: "bg.darkBlue" }} />}
           />
           <DataGrids dataRow={rows} toolBarGrid dataColumn={columns} />
         </Card>
@@ -238,4 +284,4 @@ function AwardOfContract() {
   );
 }
 
-export default AwardOfContract;
+export default CompletedProjects;

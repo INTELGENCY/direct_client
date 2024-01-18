@@ -34,10 +34,16 @@ function index() {
               element={<ProjectDetails />}
             />
             <Route path="/dashboard/management" element={<ViewLists />} />
-            <Route path="/dashboard/milestone/:id" element={<ViewMilestone />} />
+            <Route
+              path="/dashboard/milestone/:id"
+              element={<ViewMilestone />}
+            />
             <Route path="/dashboard/details" element={<WorkFlowDetails />} />
-            <Route path="/dashboard/edit" element={<EditProject />} />
-            <Route path="/dashboard/requirements" element={<RequirementsFromUser />} />
+            <Route path="/dashboard/edit" element={<PublishReq />} />
+            <Route
+              path="/dashboard/requirements"
+              element={<RequirementsFromUser />}
+            />
             <Route path="/dashboard/proposallist" element={<ProposalList />} />
             <Route
               path="/dashboard/publishrequirements"

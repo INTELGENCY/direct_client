@@ -1,6 +1,15 @@
 import { Share } from "@mui/icons-material";
-import { Avatar, Card, Grid, Stack, Typography, styled } from "@mui/material";
+import {
+  Avatar,
+  Button,
+  Card,
+  Grid,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 import { dataProject } from "../../../utils/ProjectsData";
+import { motion } from "framer-motion";
 const AvatarUpload = styled(Avatar)(({ theme }) => ({
   width: "170px",
   height: "170px",
@@ -14,18 +23,39 @@ const Pstyled = styled(Typography)(({ theme }) => ({
   // lineHeight: 1.6,
   fontWeight: "400",
 }));
+const ButtonStyled = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.bg.darkBlue,
+  "&:hover": {
+    backgroundColor: theme.palette.bg.secondDarkBlue,
+  },
+}));
 function ProjectNameWithoutTabs() {
+  const ButtonVariants = {
+    initial: {
+      opacity: 0,
+      y: 30,
+      // scale: 0.9,
+    },
+    final: {
+      opacity: 1,
+      y: 0,
+      // scale: 1,
+      transition: { type: "spring", damping: 10, stiffness: 200 },
+      // transition: { delay: 1, duration: .5 },
+    },
+  };
   console.log(dataProject, "dataProject");
   return (
     // <Card sx={{ p: 2 }}>
     <Grid container>
       <Grid item xs={12}>
-        <Stack width={"100%"} direction={"row"} gap={2}>
+        <Stack width={"100%"} direction={"row"}  gap={2}>
           <AvatarUpload src={dataProject[0].image} variant="square" />
           <Stack
             width={"100%"}
             direction={"column"}
             justifyContent={"space-evenly"}
+            alignItems={"flex-start"}
           >
             <Typography
               variant="h3"
@@ -39,6 +69,15 @@ function ProjectNameWithoutTabs() {
             <Pstyled textAlign={"justify"} width={"85%"} variant="body1">
               {dataProject[0].description}
             </Pstyled>
+            <ButtonStyled
+              component={motion.button}
+              variants={ButtonVariants}
+              initial={"initial"}
+              animate={"final"}
+              variant="contained"
+            >
+              View More
+            </ButtonStyled>
           </Stack>
         </Stack>
       </Grid>

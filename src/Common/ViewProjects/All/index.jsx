@@ -1,30 +1,27 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
-  Box,
   Grid,
   IconButton,
   InputAdornment,
   Tab,
-  Tabs,
   TextField,
   Typography,
   styled,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import Cards from "../Cards";
-import { BackHand, FilterList, Forward, Search } from "@mui/icons-material";
+import {  FilterList, Search } from "@mui/icons-material";
 import axios from "axios";
 import { keys } from "../../../config";
 import Skeletons from "../../Skeletons";
-import DataGrids from "../../TableMui/DataGrids";
 import ProposalsList from "./ProposalsList";
 import PreAwardFormalities from "./PreAwardFormalities";
 import AwardOfContract from "./AwardOfContract";
 import MilestoneTable from "./MillestoneTable";
 import { dataProject } from "../../../utils/ProjectsData";
-import TabsMui from "../Draft/SubComponents/TabsMui";
 import TabsCommon from "../../TabsCommon";
 import FinalContract from "./FinalContract";
+import CompletedProjects from "./CompletedProjects";
 const TabCustome = styled(Tab)(({ theme }) => ({
   border: "1px solid #E9E9EB",
   "& .Mui-selected": {
@@ -86,7 +83,8 @@ const TabData = [
   "Pre-Award Formalities",
   "Awarded",
   "Contracted",
-  "Milestones",
+  "Projects in Progress",
+  "Projects Completed",
 ];
 function All() {
   const [value, setValue] = useState(1);
@@ -195,7 +193,7 @@ function All() {
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={7}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
-                Comming Soon!
+                <CompletedProjects />
               </Typography>
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={8}>

@@ -4,6 +4,7 @@ import {
   Grid,
   IconButton,
   Stack,
+  TextField,
   Typography,
   styled,
 } from "@mui/material";
@@ -43,16 +44,15 @@ function ProposalTests({
               <img src={FileSVG} />
               <Stack direction={"column"} justifyContent={"space-evenly"}>
                 <Typography variant="h5">
-                  <InputFields
-                    type={"text"}
-                    placeholder={"Enter your Field Name"}
-                    onChange={handleChange}
-                    // onChange={(e) => {
-                    //   e.preventDefault();
-                    //   // setFieldValue(`${section}[${index}]name`, e.target.value);
-                    // }}     
+                  <TextField
+                    sx={{ width: "140%" }}
                     value={data.name}
                     name={`${section}[${index}]name`}
+                    fullWidth
+                    variant="outlined"
+                    type="text"
+                    placeholder={"Enter your Field Name"}
+                    onChange={handleChange}
                   />
                 </Typography>
               </Stack>

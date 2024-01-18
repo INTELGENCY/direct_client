@@ -46,6 +46,7 @@ function StepTwo({
       </Grid>
       <Grid item xs={12}>
         <TablesSecTwo
+  
           values={values.foreignBank}
           sectionName={"foreignBank"}
           errors={errors}

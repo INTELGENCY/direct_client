@@ -16,8 +16,22 @@ function ProposalSubmission({
 }) {
   return (
     <Grid container justifyContent={"center"} alignItems={"center"} gap={3}>
-      <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
-        <TypographyGrow variant={"h1"} text={"Project's Proposal Fields"} />
+      <Grid
+        item
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        xs={12}
+        sx={{ mt: 2, mb: 2 }}
+      >
+        <TypographyGrow
+          variant={"h1"}
+          width={"70%"}
+          lineHeight={1.4}
+          text={
+            "Project Technical/ Financial Oblige Proposal Fields ( to be followed by Researcher, SME, Industry )"
+          }
+        />
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <ProposalValues

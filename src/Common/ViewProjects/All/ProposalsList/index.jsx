@@ -149,7 +149,7 @@ function ProposalsList() {
             paddingBottom={2}
             icons={<ArticleOutlined sx={{ color: "bg.darkBlue" }} />}
           />
-          <DataGrids dataRow={rows} dataColumn={columns} />
+          <DataGrids dataRow={rows} toolBarGrid dataColumn={columns} />
         </Card>
       </Grid>
     </Grid>

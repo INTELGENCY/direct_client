@@ -3,6 +3,7 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import Rightpost from "./Rightpost";
 import { Stack } from "@mui/system";
+import { RightPostData } from "./data";
 const Container = styled("div")(({ theme }) => ({
   boxSizing: "border-box",
   borderRadius: "20px",
@@ -34,11 +35,11 @@ function Rightcard() {
         spacing={4}
         boxSizing={"border-box"}
       >
-        <HeadingText variant="h1">Latest Post</HeadingText>
+        <HeadingText variant="h1">Latest Posts</HeadingText>
 
-        <Rightpost />
-        <Rightpost />
-        <Rightpost />
+        {RightPostData?.map((e, i) => (
+          <Rightpost data={e} />
+        ))}
       </Stack>
     </Container>
   );

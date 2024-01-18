@@ -12,6 +12,7 @@ import SectionContainer from "../../Containers/SectionContainer";
 import Status, { SolidButton, TransparentButton } from "../../Buttons";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const GRID = styled(Grid)(({ theme }) => ({
   ["@media screen  and (min-width:1799px)"]: {},
@@ -36,6 +37,7 @@ const arr = [
 
 function LeftSection({ data }) {
   const [ShowMore, setShowMore] = useState(false);
+  const navigate = useNavigate();
   const profile = useSelector((state) => state.profile.profile);
   const isIndustry = profile?.type === "industry";
   const isAcademia = profile?.type === "academia";
@@ -65,8 +67,8 @@ function LeftSection({ data }) {
               Save Project
               <Bookmark color="red" />
             </TransparentButton>
-            {(isIndustry || isAcademia) && (
-              <SolidButton>
+            {isIndustry && (
+              <SolidButton onClick={() => navigate("/industry/addproposal")}>
                 Send Proposal
                 <ArrowRightAlt sx={{ width: "25px", height: "25px" }} />
               </SolidButton>

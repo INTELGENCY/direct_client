@@ -1,4 +1,4 @@
-import { Button, Divider, Grid } from "@mui/material";
+import { Button, Divider, Grid, Stack } from "@mui/material";
 import PublishSearch from "../../../Common/Admin/PublishSearch";
 import FileUploadCompAdmin from "../../../Common/FileUploadCompAdmin";
 import { useNavigate } from "react-router-dom";
@@ -33,6 +33,7 @@ function PublishReq() {
             <PublishSearch
               title={"Choose Researcher"}
               researcher={true}
+              noTextBox={false}
               dateTitle={"Review Submission Date"}
             />
           </Grid>
@@ -42,6 +43,7 @@ function PublishReq() {
           <Grid item xs={12}>
             <PublishSearch
               title={"Choose Industry"}
+              noTextBox={false}
               researcher={false}
               dateTitle={"Proposal Submission Date"}
             />
@@ -53,12 +55,21 @@ function PublishReq() {
             <FileUploadCompAdmin hideAddMore values={uploadFilesArray} />
           </Grid>
           <Grid item xs={12}>
-            <Button
-              onClick={() => navigate("/directportal/dashboard")}
-              variant="contained"
-            >
-              Save
-            </Button>
+            <Stack gap={2} direction={"row"}>
+              <Button
+                onClick={() => navigate("/directportal/dashboard")}
+                variant="contained"
+              >
+                Save
+              </Button>
+              <Button
+                onClick={() => navigate("/directportal/dashboard")}
+                variant="contained"
+                color="success"
+              >
+                Publish
+              </Button>
+            </Stack>
           </Grid>
         </>
       )}

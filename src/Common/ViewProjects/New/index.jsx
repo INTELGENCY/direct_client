@@ -26,11 +26,11 @@ import SecondaryForm from "./Forms/SecondaryForm.jsx";
 import DesignCharactersitics from "./Forms/DesignCharactersitics/index.jsx";
 
 const steps = [
-  "Breif Introduction",
+  "Brief Introduction",
   "Background",
   "Technical Information",
   "Customizable Fields",
-  "Project's Proposal Fields",
+  "Project Technical/ Financial Oblige Proposal Fields",
 ];
 const GridButtonsSteps = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -194,7 +194,11 @@ function New({ setValue }) {
             <Grid container rowGap={7}>
               <Grid item xs={12}>
                 <Box sx={{ width: "100%", mt: 6 }}>
-                  <Stepper activeStep={activeStep} alternativeLabel>
+                  <Stepper
+                    sx={{ cursor: "pointer" }}
+                    activeStep={activeStep}
+                    alternativeLabel
+                  >
                     {steps.map((label, index) => {
                       const stepProps = {};
                       const labelProps = {};
@@ -207,7 +211,12 @@ function New({ setValue }) {
                         stepProps.completed = false;
                       }
                       return (
-                        <Step key={label} {...stepProps}>
+                        <Step
+                          sx={{ cursor: "pointer" }}
+                          onClick={() => setActiveStep(index)}
+                          key={label}
+                          {...stepProps}
+                        >
                           <StepLabel {...labelProps}>{label}</StepLabel>
                         </Step>
                       );

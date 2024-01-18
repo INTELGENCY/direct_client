@@ -36,7 +36,8 @@ function DesignCharactersitics({
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects
-          title={"Physical Aspect"}
+          helpOutline={`This focuses on dimensional properties such as size, weight, and other measurable attributes`}
+          title={"Physical Specification"}
           icons={
             <DesignServices
               sx={{
@@ -49,6 +50,7 @@ function DesignCharactersitics({
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects
+          helpOutline={`Describe the technical specifications, capabilities, and expected performance of your proposed solution.`}
           title={"Tech/Performance Aspect"}
           icons={
             <Settings
@@ -62,6 +64,7 @@ function DesignCharactersitics({
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects
+          helpOutline={`Emphasize the ability of the proposed technology to seamlessly integrate with the existing military equipment/ infrastructure`}
           title={"Compatibility Aspect"}
           icons={
             <DeveloperBoard
@@ -76,6 +79,7 @@ function DesignCharactersitics({
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects
           title={"Enviromental Aspect"}
+          helpOutline={`Explain how your project will be developed and implemented with environmental sustainability in mind. (temperature, humidity, terrain, etc.)`}
           icons={
             <Air
               sx={{
@@ -89,6 +93,7 @@ function DesignCharactersitics({
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects
           title={"Spec Of Product Conditions"}
+          helpOutline={`Specify the desired capabilities and metrics of the product under various conditions. (Durability, Reliability, Maintainability and Serviceability)`}
           icons={
             <DeviceHub
               sx={{
@@ -102,6 +107,7 @@ function DesignCharactersitics({
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects
           title={"Logistics Aspect"}
+          helpOutline={`Describe the logistical requirements for your proposed technology, including manufacturing, transportation, maintenance, and spare parts availability`}
           icons={
             <EmojiTransportation
               sx={{
@@ -114,7 +120,8 @@ function DesignCharactersitics({
       </Grid>
       <Grid item xs={12} sx={{ mt: 2, mb: 2 }}>
         <CardsOfCreateProjects
-          title={"Fire Hazard"}
+          title={"Fire Hazard Oblige System Safety"}
+          helpOutline={`Describe how your project considers and mitigates potential fire hazards to ensure system safety and personnel protection`}
           icons={
             <FireHydrantAlt
               sx={{

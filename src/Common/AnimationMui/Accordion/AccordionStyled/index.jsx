@@ -65,7 +65,7 @@ function AccordionStyled({ dataAccordion, disabled }) {
         >
           <AccordionSummary>
             <Typography color={disabled ? "Black" : "#4b4949"} variant="h4">
-              {e}
+              {e.title}
             </Typography>
           </AccordionSummary>
           <AccordionDetails>

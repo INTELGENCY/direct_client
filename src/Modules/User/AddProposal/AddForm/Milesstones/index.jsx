@@ -13,6 +13,43 @@ import { FieldArray } from "formik";
 import { TransitionGroup } from "react-transition-group";
 
 function Milesstones({ values, handleChange }) {
+  const arryaData = [
+    {
+      title: "Mobilization",
+      startDate: "20%",
+      endDate: "2 weeks",
+      description:
+        "During this phase, the project team will mobilize resources, including hiring of personnel required to start the project. ",
+    },
+    {
+      title: "Design and Engineering Phase",
+      startDate: "30%",
+      endDate: "21 weeks",
+      description: `The design and engineering team will create the detailed design and engineering drawings of the System. The milestones for this phase include:
+o	Completion of design requirements and specifications 
+o	Completion of 3D CAD modeling and simulation 
+o	Completion of detailed engineering drawings 
+`,
+    },
+    {
+      title: "Manufacturing and Assembly Phaselization",
+      startDate: "40%",
+      endDate: "22 weeks",
+      description: `During this phase, the team will manufacture and assemble the various mechanical components of the FLAIL system. The milestones for this phase include:
+o	Completion of Aux Power Pack fitting
+o	Fabrication of FLAIL Mechanism 
+`,
+    },
+    {
+      title: "Testing and Commissioning Phase",
+      startDate: "10%",
+      endDate: "3 weeks",
+      description: `During this phase, the project team will test and commission the system to ensure that it meets the specific requirements of the User. The milestones for this phase include:
+      o	Completion of factory acceptance testing 
+      o	User Test and Trials 
+`,
+    },
+  ];
   return (
     <FieldArray name="milesStones">
       {({ push, remove }) => (
@@ -55,7 +92,7 @@ function Milesstones({ values, handleChange }) {
               </Button>
             </Grid>
             <Grid item xs={12}>
-              {values.map((e, i) => (
+              {arryaData?.map((e, i) => (
                 <TransitionGroup key={i}>
                   <Collapse in>
                     <Grid
@@ -77,6 +114,7 @@ function Milesstones({ values, handleChange }) {
                       ))} */}
                       <Grid item xs={12}>
                         <InputFields
+                          value={e.title}
                           onChange={handleChange}
                           label={"Title"}
                           type={"text"}
@@ -84,20 +122,23 @@ function Milesstones({ values, handleChange }) {
                       </Grid>
                       <Grid item xs={5.9}>
                         <InputFields
+                          value={e.startDate}
                           onChange={handleChange}
-                          label={"Start Date"}
+                          label={"Payment"}
                           type={"text"}
                         />
                       </Grid>
                       <Grid item xs={5.9}>
                         <InputFields
+                          value={e.endDate}
                           onChange={handleChange}
-                          label={"End Date"}
+                          label={"Duration"}
                           type={"text"}
                         />
                       </Grid>
                       <Grid item xs={12}>
                         <InputFields
+                          value={e.description}
                           onChange={handleChange}
                           label={"Description"}
                           type={"textbox"}

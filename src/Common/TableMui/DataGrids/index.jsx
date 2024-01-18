@@ -1,6 +1,7 @@
 import * as React from "react";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Card, styled } from "@mui/material";
+import { customTheme } from "../../../Theme/theme";
 const CenterAlignedHeaderCell = styled("div")({
   textAlign: "center",
 });
@@ -59,15 +60,33 @@ const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
     border: "none",
   },
 }));
-function DataGrids({ checkboxSelection, dataRow, dataColumn }) {
+function DataGrids({ checkboxSelection, dataRow, dataColumn, toolBarGrid }) {
   return (
     <Card elevation={0} sx={{ height: 400, width: "100%" }}>
       <DataGrid
+        slots={{ toolbar: toolBarGrid ? GridToolbar : null }}
         sx={{
           "&.MuiDataGrid-root": {
             border: "none !important",
             borderWidth: "none !important",
             outline: "none",
+          },
+          "& .MuiDataGrid-toolbarContainer": {
+            pl: 3,
+          },
+          "& .MuiButton-root": {
+            color: "#494949",
+            background: "#e5e7eb",
+            p: 1,
+            pl: 2,
+            pr: 2,
+            "&:hover": {
+              color: "#494949",
+              background: "#f1f1f1",
+              p: 1,
+              pl: 2,
+              pr: 2,
+            },
           },
         }}
         rows={dataRow ? dataRow : rows}

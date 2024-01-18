@@ -6,9 +6,9 @@ export const Status = ({ children }) => {
 
 export default Status;
 
-export const SolidButton = ({ children }) => {
+export const SolidButton = ({ children,...rest }) => {
   return (
-    <SolidButtonStyled fullWidth variant="contained">
+    <SolidButtonStyled {...rest} fullWidth variant="contained">
       {children}
     </SolidButtonStyled>
   );

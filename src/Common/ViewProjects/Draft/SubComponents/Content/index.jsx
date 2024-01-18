@@ -7,15 +7,6 @@ function Content() {
       <Grid item xs={12} md={12} lg={5.9}>
         <CardMui />
       </Grid>
-      <Grid item xs={12} md={12} lg={5.9}>
-        <CardMui />
-      </Grid>
-      <Grid item xs={12} md={12} lg={5.9}>
-        <CardMui />
-      </Grid>
-      <Grid item xs={12} md={12} lg={5.9}>
-        <CardMui />
-      </Grid>
     </Grid>
   );
 }

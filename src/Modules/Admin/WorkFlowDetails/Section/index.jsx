@@ -3,17 +3,46 @@ import IconsHeadings from "../../../../Common/AnimationMui/IconHeadings";
 import AccordionStyled from "../../../../Common/AnimationMui/Accordion/AccordionStyled";
 function Section({ title, icon }) {
   const arrayDataOne = [
-    "Call for Proposals",
-    "Submission of Technical and Financial Propsoals",
-    "Vetting",
-    "Pre-award Formalities",
-    "Awarded",
+    {
+      title: "Call for Proposals",
+      proposals: 12,
+      ProposalSubmissionDate: 12,
+    },
+    {
+      title: "Submission of Technical and Financial Propsoals",
+      proposals: 12,
+      ProposalSubmissionDate: 12,
+    },
+    {
+      title: "Vetting",
+      proposals: 12,
+      ProposalSubmissionDate: 12,
+    },
+    {
+      title: "Pre-award Formalities",
+      proposals: 12,
+      ProposalSubmissionDate: 12,
+    },
+    {
+      title: "Awarded",
+      proposals: 12,
+      ProposalSubmissionDate: 12,
+    },
   ];
   const arrayDataTwo = [
-    "Contracted",
+    {
+      title: "Contracted",
+      proposals: 12,
+      ProposalSubmissionDate: 12,
+    },
   ];
   const arrayDataThree = [
-    "Milestones",
+    {
+      title: "Milestones",
+      proposals: 12,
+      ProposalSubmissionDate: 12,
+    },
+
   ];
   return (
     <Grid container gap={3}>
