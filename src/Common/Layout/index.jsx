@@ -157,7 +157,7 @@ const Container = styled("div")(({ theme }) => ({
   paddingBlock: "20px",
   backgroundColor: theme.palette.bg.secondDarkBlue,
   color: "#fff",
-}));   
+}));
 
 const SectionLogo = styled("div")(({ open }) => ({
   display: "flex",
@@ -202,12 +202,13 @@ function Index() {
     setOpen(false);
   };
   const handlenavigate = (url) => {
+    console.log(url, "url");
     console.log("handle click");
     if (isAcademia) {
       navigate(`/academia/projects`);
     }
     if (isAdmin) {
-      navigate(`/directportal/dashboard`);
+      navigate(`${url}`);
     }
     if (isIndustry) {
       navigate(`/industry/projects`);
@@ -371,7 +372,7 @@ function Index() {
                 ) : (
                   <ListItemButton
                     key={i}
-                    onClick={() => handlenavigate("projects")}
+                    onClick={() => handlenavigate(e?.navigate)}
                   >
                     <ListItemIcon>{e?.icon}</ListItemIcon>
                     <ListItemText primary={e.title} />

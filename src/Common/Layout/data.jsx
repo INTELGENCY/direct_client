@@ -25,6 +25,7 @@ export const adminNavigationList = [
   {
     title: "Projects",
     type: "noChildren",
+    navigate: "/directportal/dashboard",
     icon: <Science sx={{ color: "#F1F1F1" }} />,
     children: [
       {
@@ -58,16 +59,19 @@ export const adminNavigationList = [
   },
   {
     title: "User Requirements",
+    navigate: "/directportal/dashboard/requirements",
     type: "noChildren",
     icon: <BusinessCenter sx={{ color: "#F1F1F1" }} />,
   },
   {
     title: "Team",
+    navigate: "/directportal/dashboard",
     type: "noChildren",
     icon: <Group sx={{ color: "#F1F1F1" }} />,
   },
   {
     title: "Communication",
+    navigate: "/directportal/dashboard",
     type: "noChildren",
     icon: <Chat sx={{ color: "#F1F1F1" }} />,
   },

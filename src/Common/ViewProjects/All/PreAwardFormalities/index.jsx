@@ -1,22 +1,9 @@
-import {
-  Button,
-  Card,
-  Chip,
-  Fade,
-  Grid,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Button, Card, Fade, Grid, Tooltip, Typography } from "@mui/material";
 import DataGrids from "../../../TableMui/DataGrids";
 import { useNavigate } from "react-router-dom";
 import { customTheme } from "../../../../Theme/theme";
 import IconsHeadings from "../../../AnimationMui/IconHeadings";
-import {
-  ArticleOutlined,
-  Propane,
-  SourceRounded,
-  UploadFile,
-} from "@mui/icons-material";
+import { SourceRounded } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
 function PreAwardFormalities() {
@@ -140,6 +127,19 @@ function PreAwardFormalities() {
       Initiator: "Dr Amer Sohail Kashif",
       StartDate: "11/16/2023",
       EndDate: "11/3/2024",
+      ProjectStatus: "ongoing",
+      Proposals: "1",
+      ProposalsHighRating: "1/1",
+      fundingAgency: "Defence",
+      ViewProposals: "",
+    },
+    {
+      id: 2,
+      ProjectNames: "Mechanical Mine Field Breaching System",
+      Category: "Defence",
+      Initiator: "Dr Kashif Sohail",
+      StartDate: "December 16, 2023",
+      EndDate: "January 16, 2024",
       ProjectStatus: "ongoing",
       Proposals: "1",
       ProposalsHighRating: "1/1",

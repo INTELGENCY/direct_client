@@ -1,4 +1,5 @@
 import BallImage from "/assets/Project/imageMain.png";
+import ProjectImageTwo from "/assets/Project/imageOfSecondTank.png";
 export const dataProject = [
   {
     id: "90785643",
@@ -12,6 +13,73 @@ export const dataProject = [
     image: BallImage,
     startDate: "November 11, 2023",
     endDate: null,
+    faqs: {
+      data: [
+        {
+          heading: ` Will there be dedicated applications for the Smart Ball Based Surveillance System in the future?`,
+          content: ` Any future dedicated applications will be subject to additional terms and conditions, with details provided upon release.`,
+        },
+        {
+          heading: ` How are modifications and updates handled for the system?`,
+          content: ` Modifications and updates may occur to improve system performance. Users are encouraged to stay informed about the latest features and changes.`,
+        },
+        {
+          heading: `What measures are in place for data security and privacy?`,
+          content: `Data security and privacy are paramount. Deploying agencies are responsible for adhering to legal and ethical standards in securing and handling collected data.`,
+        },
+      ],
+    },
+  },
+  {
+    id: "90785644",
+    title: "Mechanical Mine Field Breaching System",
+    description: ``,
+    descriptionInHtml: `<h2>Main Task/Requirement / Objective</h2>
+    <p>a. Must be capable of clearing APM/ATM (anti-personnel mine/anti-tank mine) all types of mines (pressure actuated shape charge anti-tank mines and inert mines as developed by enemy) with explosive quantity up to 8 kg TNT. Having capability of operating day and night, in all weather conditions.</p>
+    <p>b. Must be able to sustain 6-10 blasts of ATMs with explosive quantity up to 8 kg TNT each.</p>
+
+    <h2>Essential and Desirable Parameters</h2>
+    <p>a. Must be able to operate in plains desert / semi desert and semi mountainous terrain with effective clearance of 90-95%.</p>
+    <p>b. Must be able to provide level-III protection as per STANAG 4569</p>
+    <p>c. Man operated chassis for drive of under carriage with communication means (wired / wireless) for remote guidance of driver by the commander who is at a safe distance.</p>
+    <p>d. Mineable width of the demining lane shall be at least 3.5 m.</p>
+    <p>e. The demining system should have the capability to mark and neutralize the detected mines / UXO.</p>
+    <p>f. The demining process should be user friendly and the system should be easy to learn and operate.</p>
+    <p>g. The system should be reliable and have minimum downtime during demining operations.</p>
+    <p>h. The system should be transportable by C-130 aircraft.</p>
+`,
+    description: `The primary task at hand involves the development of a demining system that possesses the capability to clear APM/ATM (anti-personnel mine/anti-tank mine) of all types. This includes pressure-actuated shape charge anti-tank mines and inert mines developed by the enemy, with an explosive quantity of up to 8 kg TNT. It should be operational both day and night and in all weather conditions. Additionally, the system should be able to sustain 6-10 blasts of ATMs, each containing an explosive quantity of up to 8 kg TNT.
+
+Moving on to essential and desirable parameters, the system must be designed to operate effectively in plains, desert/semi-desert, and semi-mountainous terrain, ensuring a clearance rate of 90-95%. Level-III protection, following STANAG 4569 standards, is deemed necessary. The chassis should be man-operated for the undercarriage drive, equipped with communication means (wired/wireless) to facilitate remote guidance of the driver by the commander from a safe distance.
+
+The demining lane's mineable width is specified to be at least 3.5 meters. Furthermore, the demining system should possess the capability to mark and neutralize detected mines/UXO. The demining process itself is expected to be user-friendly, ensuring ease of learning and operation. Reliability is a key requirement, with minimal downtime during demining operations.
+
+Lastly, the system must be designed for transportability by C-130 aircraft, emphasizing the importance of logistical considerations in its deployment.
+`,
+    image: ProjectImageTwo,
+    startDate: "December 11, 2023",
+    endDate: null,
+    faqs: {
+      data: [
+       
+        {
+          heading: `How does the demining system ensure operational effectiveness in different conditions?`,
+          content: `The system is designed to operate both day and night and in all weather conditions, emphasizing its versatility and adaptability.`,
+        },
+        {
+          heading: `What is the significance of the 6-10 blasts sustainability requirement for ATMs?`,
+          content: `The system is expected to sustain 6-10 blasts of ATMs, each with an explosive quantity of up to 8 kg TNT, showcasing its robustness and durability in challenging scenarios.`,
+        },
+        {
+          heading: `What are the essential and desirable parameters for the demining system?`,
+          content: `Parameters include operating effectiveness in various terrains, level-III protection according to STANAG 4569 standards, man-operated chassis with communication means, specified mineable width, and the capability to mark and neutralize detected mines/UXO.`,
+        },
+        {
+          heading: `Why is transportability by C-130 aircraft mentioned as a requirement?`,
+          content: `The system must be designed for transportability by C-130 aircraft, highlighting the need for logistical considerations and ease of deployment in various locations.`,
+        },
+      ],
+    },
   },
 ];
 
