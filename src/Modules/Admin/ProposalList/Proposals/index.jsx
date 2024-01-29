@@ -32,7 +32,7 @@ const rows = [
     researcherName: "Abdullah Asif",
   },
 ];
-function Proposals() {
+function Proposals({ dataProject }) {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);

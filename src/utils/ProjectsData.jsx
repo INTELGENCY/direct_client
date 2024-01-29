@@ -2,7 +2,7 @@ import BallImage from "/assets/Project/imageMain.png";
 import ProjectImageTwo from "/assets/Project/imageOfSecondTank.png";
 export const dataProject = [
   {
-    id: "90785643",
+    id: 90785643,
     title: "Smart Ball Based Surveillance System using AI (BKV-1)",
     description: `Intelligence operations play a vital role in the national security of a country. Law enforcement forces rely on the intelligence reports to conduct operations for preventing terrorist activities. It is important that intelligence reports be accurate and timely. One of the main challenges faced by the law enforcement forces during Surveillance and Reconnaissance missions are the lack of infrastructure for communication and monitoring. Mostly these operations were conducted in remote areas, with no such facilities. Recognizing this need for law enforcement forces and also to address this challenge we proposed a wireless based multi camera imagery device for real-time capturing and transmission of imagery data to a nearly deployed Ad-hoc mobile base station. The proposed solution consists of a software and hardware pipeline for a throwable  ball shaped imaging device, that would be able to capture the high resolution imagery  data using multiple RGB cameras and transmit that data to a base-station. At base  station, the artificial intelligence algorithm will be applied to the imagery data for detecting the person of interest. Using throwable imagery devices for surveillance application will allow law enforcement forces to effectively locate, observe and engage a range of targets in their       intelligence, surveillance and reconnaissance (ISR) mission
       ${" "}      
@@ -31,7 +31,7 @@ export const dataProject = [
     },
   },
   {
-    id: "90785644",
+    id: 90785644,
     title: "Mechanical Mine Field Breaching System",
     description: ``,
     descriptionInHtml: `<h2>Main Task/Requirement / Objective</h2>
@@ -61,7 +61,6 @@ Lastly, the system must be designed for transportability by C-130 aircraft, emph
     endDate: null,
     faqs: {
       data: [
-       
         {
           heading: `How does the demining system ensure operational effectiveness in different conditions?`,
           content: `The system is designed to operate both day and night and in all weather conditions, emphasizing its versatility and adaptability.`,

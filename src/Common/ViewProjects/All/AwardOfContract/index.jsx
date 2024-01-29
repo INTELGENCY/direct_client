@@ -95,16 +95,16 @@ function AwardOfContract() {
     },
     {
       field: "StartDate",
-      headerName: "Start Date",
-      width: 150,
+      headerName: "Start Date of Proposal",
+      width: 250,
 
       align: "center",
       headerAlign: "center",
     },
     {
       field: "EndDate",
-      headerName: "End Date",
-      width: 150,
+      headerName: "End Date of Proposal",
+      width: 250,
 
       align: "center",
       headerAlign: "center",
@@ -183,11 +183,13 @@ function AwardOfContract() {
       align: "center",
       headerAlign: "center",
 
-      renderCell: (param) => (
+      renderCell: (params) => (
         <Button
           component={motion.div}
           whileTap={{ scale: 0.9 }}
-          onClick={() => navigate("/directportal/dashboard/viewproposal")}
+          onClick={() =>
+            navigate(`/directportal/dashboard/proposallist/${params?.value}`)
+          }
           variant="contained"
           color="primary"
         >
@@ -205,15 +207,15 @@ function AwardOfContract() {
       Category: "Defence",
       industry: "M/S Octathorn",
       Initiator: "Dr Amer Sohail Kashif",
-      StartDate: "11/16/2023",
-      EndDate: "11/3/2024",
+      StartDate: "December 16, 2023",
+      EndDate: "January 26, 2023",
       Proposals: "1",
       ProposalsHighRating: "1/1",
       fundingAgency: "Defence",
       approveByFundingAgency: "success",
       approvelDoc: "/pdf/approval of project by funding agency.pdf",
       feedbackResearcher: "",
-      ViewProposals: "",
+      ViewProposals: 90785643,
     },
   ];
   return (

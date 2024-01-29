@@ -44,7 +44,7 @@ function index() {
               path="/dashboard/requirements"
               element={<RequirementsFromUser />}
             />
-            <Route path="/dashboard/proposallist" element={<ProposalList />} />
+            <Route path="/dashboard/proposallist/:id" element={<ProposalList />} />
             <Route
               path="/dashboard/publishrequirements"
               element={<PublishReq />}

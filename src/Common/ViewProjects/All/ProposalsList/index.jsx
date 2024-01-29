@@ -75,21 +75,21 @@ function ProposalsList() {
     },
     {
       field: "StartDate",
-      headerName: "Start Date",
-      width: 150,
+      headerName: "Start Date of Proposal",
+      width: 250,
 
       align: "center",
       headerAlign: "center",
     },
     {
       field: "EndDate",
-      headerName: "End Date",
-      width: 150,
+      headerName: "End Date of Proposal",
+      width: 250,
 
       align: "center",
       headerAlign: "center",
     },
-    
+
     {
       field: "Proposals",
       headerName: "No. of Proposals",
@@ -105,14 +105,17 @@ function ProposalsList() {
       align: "center",
       headerAlign: "center",
 
-      renderCell: (param) => (
+      renderCell: (params) => (
         <Button
           component={motion.div}
           whileTap={{ scale: 0.9 }}
-          onClick={() => navigate("/directportal/dashboard/proposallist")}
+          onClick={() =>
+            navigate(`/directportal/dashboard/proposallist/${params?.value}`)
+          }
           variant="contained"
           color="primary"
         >
+          {console.log(params)}
           View
         </Button>
       ),
@@ -130,7 +133,7 @@ function ProposalsList() {
       EndDate: "January 16, 2024",
       ProjectStatus: "ongoing",
       Proposals: "1",
-      ViewProposals: "",
+      ViewProposals: 90785643,
       fundingAgency: "Defence",
     },
     {
@@ -142,7 +145,7 @@ function ProposalsList() {
       EndDate: "January 12, 2024",
       ProjectStatus: "ongoing",
       Proposals: "5",
-      ViewProposals: "",
+      ViewProposals: 90785644,
       fundingAgency: "Defence",
     },
   ];

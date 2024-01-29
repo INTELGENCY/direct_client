@@ -1,20 +1,13 @@
-import { Button, Card, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Grid, Paper, Stack, Typography } from "@mui/material";
 import MainHeadings from "../../../Common/AnimationMui/MainHeadings";
 import DisplayUploadedFiles from "../../../Common/DisplayUploadedFiles";
 import IconsHeadings from "../../../Common/AnimationMui/IconHeadings";
 import {
   AccountBalance,
   Analytics,
-  Approval,
-  ApprovalRounded,
-  BugReport,
-  Build,
-  CloudUpload,
   Description,
-  Equalizer,
   Language,
   Start,
-  TextSnippet,
 } from "@mui/icons-material";
 import MilesStonesAdmin from "./MilesStonesAdmin";
 import { useState } from "react";
@@ -310,7 +303,7 @@ function ViewProposals() {
               text={"Financial Proposal"}
               icons={<AccountBalance sx={{ color: "#252B42" }} />}
             />
-            <Grid container sx={{mt:2}} rowGap={2}>
+            <Grid container sx={{ mt: 2 }} rowGap={2}>
               {FinancialProposalsArray.map((e) => (
                 <Grid item xs={3}>
                   <Stack direction={"row"} alignItems={"center"} gap={1}>

@@ -40,18 +40,24 @@ function ProjectDetails() {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   useEffect(() => {
-    setLoading(true);
-    fetch(keys.api + "projects/getproject/?id=" + id)
-      .then((e) => e.json())
-      .then((e) => {
-        console.log(e);
-        setProjectData(e.result);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.log(e);
-        setLoading(false);
-      });
+    const fetchProjects = () => {
+      setLoading(true);
+      fetch(keys.api + "projects/getproject/?id=" + id)
+        .then((e) => e.json())
+        .then((e) => {
+          console.log(e);
+          setProjectData(e.result);
+          setLoading(false);
+        })
+        .catch((e) => {
+          console.log(e);
+          setLoading(false);
+        });
+    };
+    const filterStaticProjects = () => {
+    setLoading(true)
+    };
+    filterStaticProjects();
   }, []);
   return (
     <Container>
@@ -60,8 +66,7 @@ function ProjectDetails() {
       </ItemOne>
       <ItemTwo>
         <RightSection
-          data={id === 90785643 ? dataProject[0] : dataProject[1]
-          }
+          data={id === 90785643 ? dataProject[0] : dataProject[1]}
         />
       </ItemTwo>
     </Container>
