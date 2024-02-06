@@ -53,10 +53,10 @@ const Pstyled = styled(Typography)(({ theme }) => ({
   // lineHeight: 1.6,
   fontWeight: "400",
 }));
-function CardMui() {
+function CardMui({ cardData }) {
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
-  const handleCloseModal = () => setOpenModal(false); 
+  const handleCloseModal = () => setOpenModal(false);
   return (
     <Card sx={{ p: 2, maxWidth: "100%" }} elevation={4}>
       <Grid container gap={2}>
@@ -69,36 +69,14 @@ function CardMui() {
             fontWeight={600}
             variant="h3"
           >
-            Smart Ball Based Surveillance System using AI (BKV-1)
+            {cardData?.title}
           </TypographyMui>
           <IconButton sx={{ marginLeft: "auto" }}>
             <Edit />
           </IconButton>
         </GridFlexItem>
         <Grid item xs={12}>
-          <Pstyled variant="body1">
-            Intelligence operations play a vital role in the national security
-            of a country. Law enforcement forces rely on the intelligence
-            reports to conduct operations for preventing terrorist activities.
-            It is important that intelligence reports be accurate and timely.
-            One of the main challenges faced by the law enforcement forces
-            during Surveillance and Reconnaissance missions are the lack of
-            infrastructure for communication and monitoring. Mostly these
-            operations were conducted in remote areas, with no such facilities.
-            Recognizing this need for law enforcement forces and also to address
-            this challenge we proposed a wireless based multi camera imagery
-            device for real-time capturing and transmission of imagery data to a
-            nearly deployed Ad-hoc mobile base station. The proposed solution
-            consists of a software and hardware pipeline for a throwable ball
-            shaped imaging device, that would be able to capture the high
-            resolution imagery data using multiple RGB cameras and transmit that
-            data to a base-station. At base  station, the artificial
-            intelligence algorithm will be applied to the imagery data for
-            detecting the person of interest. Using throwable imagery devices
-            for surveillance application will allow law enforcement forces to
-            effectively locate, observe and engage a range of targets in their
-            intelligence, surveillance and reconnaissance (ISR) mission
-          </Pstyled>
+          <Pstyled variant="body1">{cardData?.description}</Pstyled>
         </Grid>
         <GridBtn item xs={12}>
           <Button

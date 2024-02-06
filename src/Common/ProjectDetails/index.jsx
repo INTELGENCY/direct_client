@@ -35,31 +35,39 @@ const ItemTwo = styled("div")(({ theme }) => ({
 }));
 function ProjectDetails() {
   const [projectData, setProjectData] = useState(null);
-   const profile = useSelector((state) => state.profile.profile);
-   const isAdmin = profile?.type === "admin" || profile?.type === "super";
+  const profile = useSelector((state) => state.profile.profile);
+  const isAdmin = profile?.type === "admin" || profile?.type === "super";
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   useEffect(() => {
-    setLoading(true);
-    fetch(keys.api + "projects/getproject/?id=" + id)
-      .then((e) => e.json())
-      .then((e) => {
-        console.log(e);
-        setProjectData(e.result);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.log(e);
-        setLoading(false);
-      });
+    const fetchProjects = () => {
+      setLoading(true);
+      fetch(keys.api + "projects/getproject/?id=" + id)
+        .then((e) => e.json())
+        .then((e) => {
+          console.log(e);
+          setProjectData(e.result);
+          setLoading(false);
+        })
+        .catch((e) => {
+          console.log(e);
+          setLoading(false);
+        });
+    };
+    const filterStaticProjects = () => {
+    setLoading(true)
+    };
+    filterStaticProjects();
   }, []);
   return (
     <Container>
       <ItemOne>
-        <LeftSection data={dataProject[0]} />
+        <LeftSection data={id === 90785643 ? dataProject[0] : dataProject[1]} />
       </ItemOne>
       <ItemTwo>
-        <RightSection data={dataProject[0]} />
+        <RightSection
+          data={id === 90785643 ? dataProject[0] : dataProject[1]}
+        />
       </ItemTwo>
     </Container>
   );

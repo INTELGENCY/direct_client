@@ -20,7 +20,7 @@ const RightBorder = styled("div")(({ theme }) => ({
   border: "2px solid #3787FF",
   borderRadius: "17px",
 }));
-function SectionTwo() {
+function SectionTwo({ data }) {
   return (
     <Grid container gap={3}>
       <Grid item xs={12}>
@@ -31,7 +31,7 @@ function SectionTwo() {
         </Dividers>
       </Grid>
       <Grid item xs={12}>
-        <Accordions />
+        <Accordions dataAccodions={data} />
       </Grid>
       {/* <LastGrid item xs={12}>
         <Button variant="outlined">View All</Button>

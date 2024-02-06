@@ -20,7 +20,7 @@ const GRID = styled(Grid)(({ theme }) => ({
 const arr = [
   {
     title: "Job Expiry",
-    status: "Expired",
+    status: "December 12th, 2024 ",
     Icon: <CalendarMonth />,
   },
   {

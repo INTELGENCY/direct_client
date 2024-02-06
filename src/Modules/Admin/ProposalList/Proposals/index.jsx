@@ -1,22 +1,15 @@
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Avatar,
-  AvatarGroup,
   Button,
   Card,
   Grid,
-  IconButton,
   Rating,
   Stack,
-  TextField,
   Typography,
 } from "@mui/material";
 import DataGrids from "../../../../Common/TableMui/DataGrids";
 import { ShareOutlined, Star } from "@mui/icons-material";
 import MainHeadings from "../../../../Common/AnimationMui/MainHeadings";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import ModalMui from "../../../../Common/ModalMui";
@@ -24,16 +17,25 @@ import InputFields from "../../../../Common/InputFields/InputFields";
 import SelectFields from "../../../../Common/SelectFields";
 import ProposalFeedBack from "./ProposalFeedBack";
 import PublishSearch from "../../../../Common/Admin/PublishSearch";
-const rows = [
+const rowsOne = [
   {
     id: 1,
     companyName: "M/S Octathorn",
-    submissionDate: "11/3/2024",
+    submissionDate: "January 11, 2024",
     researcherName: "Abdullah Asif",
   },
 ];
-function Proposals() {
+const rowsTwo = [
+  {
+    id: 1,
+    companyName: "M/S Tech Valley ",
+    submissionDate: "January 11, 2024",
+    researcherName: "Tiwana Asif",
+  },
+];
+function Proposals({ dataProject }) {
   const navigate = useNavigate();
+  const { id: ParamsId } = useParams();
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
@@ -123,7 +125,9 @@ function Proposals() {
         <Button
           component={motion.div}
           whileTap={{ scale: 0.9 }}
-          onClick={() => navigate("/directportal/dashboard/viewproposal")}
+          onClick={() =>
+            navigate(`/directportal/dashboard/viewproposal/${ParamsId}`)
+          }
           variant="contained"
         >
           View
@@ -188,7 +192,10 @@ function Proposals() {
       </Grid>
       <Grid item xs={12}>
         <Card elevation={2}>
-          <DataGrids dataRow={rows} dataColumn={columns} />
+          <DataGrids
+            dataRow={ParamsId == 90785644 ? rowsTwo : rowsOne}
+            dataColumn={columns}
+          />
         </Card>
       </Grid>
       <ModalMui

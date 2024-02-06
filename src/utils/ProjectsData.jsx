@@ -1,7 +1,8 @@
 import BallImage from "/assets/Project/imageMain.png";
+import ProjectImageTwo from "/assets/Project/imageOfSecondTank.png";
 export const dataProject = [
   {
-    id: "90785643",
+    id: 90785643,
     title: "Smart Ball Based Surveillance System using AI (BKV-1)",
     description: `Intelligence operations play a vital role in the national security of a country. Law enforcement forces rely on the intelligence reports to conduct operations for preventing terrorist activities. It is important that intelligence reports be accurate and timely. One of the main challenges faced by the law enforcement forces during Surveillance and Reconnaissance missions are the lack of infrastructure for communication and monitoring. Mostly these operations were conducted in remote areas, with no such facilities. Recognizing this need for law enforcement forces and also to address this challenge we proposed a wireless based multi camera imagery device for real-time capturing and transmission of imagery data to a nearly deployed Ad-hoc mobile base station. The proposed solution consists of a software and hardware pipeline for a throwable  ball shaped imaging device, that would be able to capture the high resolution imagery  data using multiple RGB cameras and transmit that data to a base-station. At base  station, the artificial intelligence algorithm will be applied to the imagery data for detecting the person of interest. Using throwable imagery devices for surveillance application will allow law enforcement forces to effectively locate, observe and engage a range of targets in their       intelligence, surveillance and reconnaissance (ISR) mission
       ${" "}      
@@ -12,6 +13,72 @@ export const dataProject = [
     image: BallImage,
     startDate: "November 11, 2023",
     endDate: null,
+    faqs: {
+      data: [
+        {
+          heading: ` Will there be dedicated applications for the Smart Ball Based Surveillance System in the future?`,
+          content: ` Any future dedicated applications will be subject to additional terms and conditions, with details provided upon release.`,
+        },
+        {
+          heading: ` How are modifications and updates handled for the system?`,
+          content: ` Modifications and updates may occur to improve system performance. Users are encouraged to stay informed about the latest features and changes.`,
+        },
+        {
+          heading: `What measures are in place for data security and privacy?`,
+          content: `Data security and privacy are paramount. Deploying agencies are responsible for adhering to legal and ethical standards in securing and handling collected data.`,
+        },
+      ],
+    },
+  },
+  {
+    id: 90785644,
+    title: "Mechanical Mine Field Breaching System",
+    description: ``,
+    descriptionInHtml: `<h2>Main Task/Requirement / Objective</h2>
+    <p>a. Must be capable of clearing APM/ATM (anti-personnel mine/anti-tank mine) all types of mines (pressure actuated shape charge anti-tank mines and inert mines as developed by enemy) with explosive quantity up to 8 kg TNT. Having capability of operating day and night, in all weather conditions.</p>
+    <p>b. Must be able to sustain 6-10 blasts of ATMs with explosive quantity up to 8 kg TNT each.</p>
+
+    <h2>Essential and Desirable Parameters</h2>
+    <p>a. Must be able to operate in plains desert / semi desert and semi mountainous terrain with effective clearance of 90-95%.</p>
+    <p>b. Must be able to provide level-III protection as per STANAG 4569</p>
+    <p>c. Man operated chassis for drive of under carriage with communication means (wired / wireless) for remote guidance of driver by the commander who is at a safe distance.</p>
+    <p>d. Mineable width of the demining lane shall be at least 3.5 m.</p>
+    <p>e. The demining system should have the capability to mark and neutralize the detected mines / UXO.</p>
+    <p>f. The demining process should be user friendly and the system should be easy to learn and operate.</p>
+    <p>g. The system should be reliable and have minimum downtime during demining operations.</p>
+    <p>h. The system should be transportable by C-130 aircraft.</p>
+`,
+    description: `The primary task at hand involves the development of a demining system that possesses the capability to clear APM/ATM (anti-personnel mine/anti-tank mine) of all types. This includes pressure-actuated shape charge anti-tank mines and inert mines developed by the enemy, with an explosive quantity of up to 8 kg TNT. It should be operational both day and night and in all weather conditions. Additionally, the system should be able to sustain 6-10 blasts of ATMs, each containing an explosive quantity of up to 8 kg TNT.
+
+Moving on to essential and desirable parameters, the system must be designed to operate effectively in plains, desert/semi-desert, and semi-mountainous terrain, ensuring a clearance rate of 90-95%. Level-III protection, following STANAG 4569 standards, is deemed necessary. The chassis should be man-operated for the undercarriage drive, equipped with communication means (wired/wireless) to facilitate remote guidance of the driver by the commander from a safe distance.
+
+The demining lane's mineable width is specified to be at least 3.5 meters. Furthermore, the demining system should possess the capability to mark and neutralize detected mines/UXO. The demining process itself is expected to be user-friendly, ensuring ease of learning and operation. Reliability is a key requirement, with minimal downtime during demining operations.
+
+Lastly, the system must be designed for transportability by C-130 aircraft, emphasizing the importance of logistical considerations in its deployment.
+`,
+    image: ProjectImageTwo,
+    startDate: "December 11, 2023",
+    endDate: null,
+    faqs: {
+      data: [
+        {
+          heading: `How does the demining system ensure operational effectiveness in different conditions?`,
+          content: `The system is designed to operate both day and night and in all weather conditions, emphasizing its versatility and adaptability.`,
+        },
+        {
+          heading: `What is the significance of the 6-10 blasts sustainability requirement for ATMs?`,
+          content: `The system is expected to sustain 6-10 blasts of ATMs, each with an explosive quantity of up to 8 kg TNT, showcasing its robustness and durability in challenging scenarios.`,
+        },
+        {
+          heading: `What are the essential and desirable parameters for the demining system?`,
+          content: `Parameters include operating effectiveness in various terrains, level-III protection according to STANAG 4569 standards, man-operated chassis with communication means, specified mineable width, and the capability to mark and neutralize detected mines/UXO.`,
+        },
+        {
+          heading: `Why is transportability by C-130 aircraft mentioned as a requirement?`,
+          content: `The system must be designed for transportability by C-130 aircraft, highlighting the need for logistical considerations and ease of deployment in various locations.`,
+        },
+      ],
+    },
   },
 ];
 
@@ -19,10 +86,10 @@ export const TasksProject = [
   {
     id: 1,
     title: "Project Planning and Research",
-    progress: 90,
+    progress: 100,
     startDate: "November 20, 2023",
     endDate: "December 4, 2023",
-    status: "in progress",
+    status: "completed",
     statusColor: "blue",
     description:
       "This initial phase focuses on comprehensive project planning and in-depth research. The team will define the scope and objectives of the surveillance system, outline specific use cases, and conduct thorough research on camera technologies and AI algorithms. The goal is to establish a solid foundation for the project's success.",
@@ -313,5 +380,73 @@ export const TasksProject = [
         endDate: "April 2, 2024",
       },
     ],
+  },
+];
+export const TasksProjectTwo = [
+  {
+    id: 1,
+    title: "Mobilization",
+    progress: 90,
+    startDate: "November 20, 2023",
+    endDate: "December 4, 2023",
+    status: "in progress",
+    statusColor: "blue",
+    cost:`20%`,
+    description:
+    "During this phase, the project team will mobilize resources, including hiring of personnel required to start the project. ",
+  },
+  {
+    id: 2,
+    title: "Design and Engineering Phase",
+    progress: 50,
+    startDate: "December 5, 2023",
+    cost:`30%`,
+    endDate: "December 18, 2023",
+    status: "in progress",
+    statusColor: "blue",
+    description: `The design and engineering team will create the detailed design and engineering drawings of the System. The milestones for this phase include:
+    Completion of design requirements and specifications 
+    Completion of 3D CAD modeling and simulation 
+    Completion of detailed engineering drawings 
+    `,
+  },
+  {
+    id: 3,
+    cost:`40%`,
+    title: "Manufacturing and Assembly Phase",
+    progress: 60,
+    startDate: "December 19, 2023",
+    endDate: "January 1, 2024",
+    status: "in progress",
+    statusColor: "blue",
+    description: `During this phase, the team will manufacture and assemble the various mechanical components of the FLAIL system. The milestones for this phase include:
+    Completion of Aux Power Pack fitting
+    Fabrication of FLAIL Mechanism 
+    `,
+  },
+  {
+    id: 4,
+    title: "Hydraulic Pump, Gearbox including couplings ",
+    cost:`10%`,
+    progress: 0,
+    startDate: "January 2, 2024",
+    endDate: "January 15, 2024",
+    status: "not started",
+    description:
+    "The hydraulic pump will generate the necessary pressure which will be driven through Aux Power Pack. The gearbox and couplings will provide the connections. ",
+    statusColor: "none",
+  },
+  {
+    id: 5,
+    title: "Testing and Commissioning Phase",
+    progress: 0,
+    cost:`20%`,
+    startDate: "January 16, 2024",
+    endDate: "January 29, 2024",
+    status: "not started",
+    statusColor: "none",
+    description: `During this phase, the project team will test and commission the system to ensure that it meets the specific requirements of the User. The milestones for this phase include:o	Completion of factory acceptance testing 
+    User Test and Trials 
+    `,
   },
 ];

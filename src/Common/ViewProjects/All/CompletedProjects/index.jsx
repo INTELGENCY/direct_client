@@ -194,12 +194,14 @@ function CompletedProjects() {
       align: "center",
       headerAlign: "center",
 
-      renderCell: (param) => (
+      renderCell: (params) => (
         <>
           <Button
             component={motion.div}
             whileTap={{ scale: 0.9 }}
-            onClick={() => navigate("/directportal/dashboard/viewproposal")}
+            onClick={() =>
+              navigate(`/directportal/dashboard/proposallist/${params?.value}`)
+            }
             variant="contained"
             color="primary"
           >
@@ -246,8 +248,8 @@ function CompletedProjects() {
       Category: "Defence",
       industry: "M/S Octathorn",
       Initiator: "Dr Amer Sohail Kashif",
-      StartDate: "11/16/2023",
-      EndDate: "11/3/2024",
+      StartDate: "Febuary 13, 2024",
+      EndDate: "January 13, 2025",
       ProjectStatus: "Completed",
       Proposals: "1",
       noMilestones: "13",
@@ -259,7 +261,7 @@ function CompletedProjects() {
       milestones: "8",
       approvelDoc: "/pdf/approval of project by funding agency.pdf",
       feedbackResearcher: "",
-      ViewProposals: "",
+      ViewProposals: 90785643,
     },
   ];
   return (

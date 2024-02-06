@@ -1,22 +1,9 @@
-import {
-  Button,
-  Card,
-  Chip,
-  Fade,
-  Grid,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Button, Card, Fade, Grid, Tooltip, Typography } from "@mui/material";
 import DataGrids from "../../../TableMui/DataGrids";
 import { useNavigate } from "react-router-dom";
 import { customTheme } from "../../../../Theme/theme";
 import IconsHeadings from "../../../AnimationMui/IconHeadings";
-import {
-  ArticleOutlined,
-  Propane,
-  SourceRounded,
-  UploadFile,
-} from "@mui/icons-material";
+import { SourceRounded } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
 function PreAwardFormalities() {
@@ -80,16 +67,16 @@ function PreAwardFormalities() {
     },
     {
       field: "StartDate",
-      headerName: "Start Date",
-      width: 150,
+      headerName: "Start Date of Proposal",
+      width: 250,
 
       align: "center",
       headerAlign: "center",
     },
     {
       field: "EndDate",
-      headerName: "End Date",
-      width: 150,
+      headerName: "End Date of Proposal",
+      width: 250,
 
       align: "center",
       headerAlign: "center",
@@ -117,11 +104,13 @@ function PreAwardFormalities() {
       align: "center",
       headerAlign: "center",
 
-      renderCell: (param) => (
+      renderCell: (params) => (
         <Button
           component={motion.div}
           whileTap={{ scale: 0.9 }}
-          onClick={() => navigate("/directportal/dashboard/proposallist")}
+          onClick={() =>
+            navigate(`/directportal/dashboard/proposallist/${params?.value}`)
+          }
           variant="contained"
           color="primary"
         >
@@ -138,13 +127,26 @@ function PreAwardFormalities() {
       ProjectNames: "Smart Ball Based Surveillance System using AI (BKV-1)",
       Category: "Defence",
       Initiator: "Dr Amer Sohail Kashif",
-      StartDate: "11/16/2023",
-      EndDate: "11/3/2024",
+      StartDate: "December 16, 2023",
+      EndDate: "January 26, 2024",
       ProjectStatus: "ongoing",
       Proposals: "1",
       ProposalsHighRating: "1/1",
       fundingAgency: "Defence",
-      ViewProposals: "",
+      ViewProposals: 90785643,
+    },
+    {
+      id: 2,
+      ProjectNames: "Mechanical Mine Field Breaching System",
+      Category: "Defence",
+      Initiator: "Dr Kashif Sohail",
+      StartDate: "December 26, 2023",
+      EndDate: "January 16, 2024",
+      ProjectStatus: "ongoing",
+      Proposals: "1",
+      ProposalsHighRating: "1/1",
+      fundingAgency: "Defence",
+      ViewProposals: 90785644,
     },
   ];
   return (

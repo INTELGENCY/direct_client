@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import Cards from "../Cards";
-import {  FilterList, Search } from "@mui/icons-material";
+import { FilterList, Search } from "@mui/icons-material";
 import axios from "axios";
 import { keys } from "../../../config";
 import Skeletons from "../../Skeletons";
@@ -105,7 +105,7 @@ function All() {
         console.log(error);
       }
     };
-    fetchAllPosts();
+    // fetchAllPosts();
   }, []);
 
   const handleChange = (event, newValue) => {
@@ -192,9 +192,7 @@ function All() {
               <MilestoneTable />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={7}>
-              <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>
-                <CompletedProjects />
-              </Typography>
+              <CompletedProjects />
             </TabPanel>
             <TabPanel sx={{ paddingInline: "0px" }} value={8}>
               <Typography variant="h1" textAlign={"center"} sx={{ mt: 6 }}>

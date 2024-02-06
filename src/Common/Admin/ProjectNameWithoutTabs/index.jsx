@@ -29,7 +29,7 @@ const ButtonStyled = styled(Button)(({ theme }) => ({
     backgroundColor: theme.palette.bg.secondDarkBlue,
   },
 }));
-function ProjectNameWithoutTabs() {
+function ProjectNameWithoutTabs(prop) {
   const ButtonVariants = {
     initial: {
       opacity: 0,
@@ -44,13 +44,18 @@ function ProjectNameWithoutTabs() {
       // transition: { delay: 1, duration: .5 },
     },
   };
-  console.log(dataProject, "dataProject");
+  console.log(prop.dataProject, "dataProject");
   return (
     // <Card sx={{ p: 2 }}>
     <Grid container>
       <Grid item xs={12}>
-        <Stack width={"100%"} direction={"row"}  gap={2}>
-          <AvatarUpload src={dataProject[0].image} variant="square" />
+        <Stack width={"100%"} direction={"row"} gap={2}>
+          <AvatarUpload
+            src={
+              prop.dataProject ? prop.dataProject.image : dataProject[0]?.image
+            }
+            variant="square"
+          />
           <Stack
             width={"100%"}
             direction={"column"}
@@ -64,10 +69,10 @@ function ProjectNameWithoutTabs() {
               display={"block"}
               width={"80%"}
             >
-              {dataProject[0].title}
+              {prop.dataProject ? prop.dataProject.title : dataProject[0].title}
             </Typography>
             <Pstyled textAlign={"justify"} width={"85%"} variant="body1">
-              {dataProject[0].description}
+              {prop.dataProject?.description ? prop.dataProject?.description : dataProject[0].description}
             </Pstyled>
             <ButtonStyled
               component={motion.button}
