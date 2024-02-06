@@ -28,7 +28,7 @@ function index() {
         <Route path="/" element={<Authenticator admin />}>
           <Route path="/dashboard" element={<LayoutCommon />}>
             <Route index element={<Project />} />
-            <Route path="/dashboard/viewproposal" element={<ViewProposals />} />
+            <Route path="/dashboard/viewproposal/:id" element={<ViewProposals />} />
             <Route
               path="/dashboard/projectdetails/:id"
               element={<ProjectDetails />}

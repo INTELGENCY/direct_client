@@ -68,6 +68,16 @@ const TimeLineContent = ({ name, content }) => {
         </Stack>
       </Grid>
       <Grid item xs={12}>
+        <Stack direction={"row"} gap={0.7}>
+          <Typography color={"black"} fontWeight={400}>
+            Cost:
+          </Typography>
+          <Typography color={"black"} fontWeight={400}>
+            {content?.cost}
+          </Typography>
+        </Stack>
+      </Grid>
+      <Grid item xs={12}>
         <Typography
           paddingBottom={2}
           variant="body1"

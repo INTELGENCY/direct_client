@@ -86,10 +86,10 @@ export const TasksProject = [
   {
     id: 1,
     title: "Project Planning and Research",
-    progress: 90,
+    progress: 100,
     startDate: "November 20, 2023",
     endDate: "December 4, 2023",
-    status: "in progress",
+    status: "completed",
     statusColor: "blue",
     description:
       "This initial phase focuses on comprehensive project planning and in-depth research. The team will define the scope and objectives of the surveillance system, outline specific use cases, and conduct thorough research on camera technologies and AI algorithms. The goal is to establish a solid foundation for the project's success.",
@@ -380,5 +380,73 @@ export const TasksProject = [
         endDate: "April 2, 2024",
       },
     ],
+  },
+];
+export const TasksProjectTwo = [
+  {
+    id: 1,
+    title: "Mobilization",
+    progress: 90,
+    startDate: "November 20, 2023",
+    endDate: "December 4, 2023",
+    status: "in progress",
+    statusColor: "blue",
+    cost:`20%`,
+    description:
+    "During this phase, the project team will mobilize resources, including hiring of personnel required to start the project. ",
+  },
+  {
+    id: 2,
+    title: "Design and Engineering Phase",
+    progress: 50,
+    startDate: "December 5, 2023",
+    cost:`30%`,
+    endDate: "December 18, 2023",
+    status: "in progress",
+    statusColor: "blue",
+    description: `The design and engineering team will create the detailed design and engineering drawings of the System. The milestones for this phase include:
+    Completion of design requirements and specifications 
+    Completion of 3D CAD modeling and simulation 
+    Completion of detailed engineering drawings 
+    `,
+  },
+  {
+    id: 3,
+    cost:`40%`,
+    title: "Manufacturing and Assembly Phase",
+    progress: 60,
+    startDate: "December 19, 2023",
+    endDate: "January 1, 2024",
+    status: "in progress",
+    statusColor: "blue",
+    description: `During this phase, the team will manufacture and assemble the various mechanical components of the FLAIL system. The milestones for this phase include:
+    Completion of Aux Power Pack fitting
+    Fabrication of FLAIL Mechanism 
+    `,
+  },
+  {
+    id: 4,
+    title: "Hydraulic Pump, Gearbox including couplings ",
+    cost:`10%`,
+    progress: 0,
+    startDate: "January 2, 2024",
+    endDate: "January 15, 2024",
+    status: "not started",
+    description:
+    "The hydraulic pump will generate the necessary pressure which will be driven through Aux Power Pack. The gearbox and couplings will provide the connections. ",
+    statusColor: "none",
+  },
+  {
+    id: 5,
+    title: "Testing and Commissioning Phase",
+    progress: 0,
+    cost:`20%`,
+    startDate: "January 16, 2024",
+    endDate: "January 29, 2024",
+    status: "not started",
+    statusColor: "none",
+    description: `During this phase, the project team will test and commission the system to ensure that it meets the specific requirements of the User. The milestones for this phase include:o	Completion of factory acceptance testing 
+    User Test and Trials 
+    `,
   },
 ];
