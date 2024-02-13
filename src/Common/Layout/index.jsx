@@ -298,7 +298,7 @@ function Index() {
                       }}
                     >
                       <ListItemIcon>{e?.icon}</ListItemIcon>
-                      <ListItemText primary={e.title} />
+                      <ListItemText primary={e?.title} />
                       {listItem ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
                     <Collapse in={listItem} timeout="auto" unmountOnExit>

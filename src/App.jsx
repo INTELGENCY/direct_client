@@ -12,6 +12,9 @@ import SignupButtons from "./Modules/SignupButtons";
 import { CssBaseline } from "@mui/material";
 import Alerts from "./Common/Alert";
 import { useSelector } from "react-redux";
+import "./App.css";
+import "froala-editor/css/froala_style.min.css";
+import "froala-editor/css/froala_editor.pkgd.min.css";
 
 function App() {
   const loading = useSelector((state) => state.loading.loading);

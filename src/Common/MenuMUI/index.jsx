@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 function MenuMui({ reference, handleCloseMenu }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const profile = useSelector((state) => state.profile.profile);
-  console.log(profile.type, "profile data");
+  const profile = useSelector((state) => state?.profile?.profile);
+  console.log(profile?.type, "profile data");
   return (
     <div>
       <Menu
@@ -20,7 +20,7 @@ function MenuMui({ reference, handleCloseMenu }) {
       >
         <MenuItem
           onClick={() =>
-            profile.type === "academia"
+            profile?.type === "academia"
               ? navigate("/academia/profile")
               : navigate("/industry/profile")
           }
